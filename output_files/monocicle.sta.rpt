@@ -1,5 +1,5 @@
 Timing Analyzer report for monocicle
-Wed Oct 30 12:32:49 2024
+Wed Oct 30 22:49:50 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -101,14 +101,14 @@ Parallel compilation attempted to use more processors than were available, which
 ; Number detected on machine  ; 2           ;
 ; Maximum allowed             ; 4           ;
 ;                             ;             ;
-; Average used                ; 1.08        ;
+; Average used                ; 1.10        ;
 ; Maximum used                ; 4           ;
 ;                             ;             ;
 ; Usage by Processor          ; % Time Used ;
 ;     Processor 1             ; 100.0%      ;
-;     Processor 2             ;   2.8%      ;
-;     Processors 3 (overused) ;   2.7%      ;
-;     Processors 4 (overused) ;   2.7%      ;
+;     Processor 2             ;   3.6%      ;
+;     Processors 3 (overused) ;   3.3%      ;
+;     Processors 4 (overused) ;   3.0%      ;
 +-----------------------------+-------------+
 
 
@@ -680,7 +680,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Oct 30 12:32:31 2024
+    Info: Processing started: Wed Oct 30 22:49:31 2024
 Info: Command: quartus_sta monocicle -c monocicle
 Info: qsta_default_script.tcl version: #1
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
@@ -771,10 +771,10 @@ Info (332146): Worst-case minimum pulse width slack is -0.665
     Info (332119):    -0.665             -43.553 clk 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5128 megabytes
-    Info: Processing ended: Wed Oct 30 12:32:49 2024
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:16
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 5145 megabytes
+    Info: Processing ended: Wed Oct 30 22:49:50 2024
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:17
 
 

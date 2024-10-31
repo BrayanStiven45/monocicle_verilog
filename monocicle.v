@@ -140,12 +140,13 @@ module monocicle (
 			.out(next_pc)
 	 );
 	 
-	 DataMemory DataMem(
+	 DataMemory_2 DataMem(
 			.address(AluRes),
-			.write_data(ru2),
-			.mem_write(DMWr),
-			.size(DMCTrl),
-			.read_data(read_data)
+			.DataWr(ru2),
+			.DMWr(DMWr),
+			.DMCtrl(DMCTrl),
+			.DataRd(read_data),
+			.clk(clk)
 	 );
 	 
 	 mux_2 muxWrite(

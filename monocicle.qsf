@@ -136,6 +136,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg3[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg3[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to seg3[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sel
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name QIP_FILE ram_brayan.qip
 set_global_assignment -name VERILOG_FILE DataMemory_2.v
+set_global_assignment -name QIP_FILE ram.qip
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
