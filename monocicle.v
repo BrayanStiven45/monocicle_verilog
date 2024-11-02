@@ -1,11 +1,16 @@
 module monocicle (
     input clk,
-	 input sel,         // Selector para mostrar los 16 bits más o menos significativos del PC
+	 input [2:0] sel,         // Selector para mostrar los 16 bits más o menos significativos del PC
     output [6:0] seg0, // Salida del primer display de 7 segmentos
     output [6:0] seg1, // Salida del segundo display de 7 segmentos
     output [6:0] seg2, // Salida del tercer display de 7 segmentos
-    output [6:0] seg3 // Salida del cuarto display de 7 segmentos
+    output [6:0] seg3, // Salida del cuarto display de 7 segmentos
+	 
+	 // datos para seleccionar el registro de la memoria de registros
+	 input [4:0] address_register
+	 
 );
+	wire [31:0] selected_register;
 	wire [31:0] pc;
 	wire [31:0] suma;
 	wire [31:0] next_pc;     
@@ -41,15 +46,11 @@ module monocicle (
         .next_pc(next_pc),
         .pc(pc)
     );
-
-    // Instancia del sumador
-    PCAdder adder(
-        .pc_in(pc),          // Entrada del valor actual del PC
-        .pc_out(suma)    // Salida del PC incrementado en 4
-    );
 	 
 	 pc_display display_pc (
-        .pc(pc),            // Pasamos el valor del PC al display
+        .pc(pc),		  // Pasamos el valor del PC al display
+		  .register(selected_register), // Le pasamos el registro
+		  .instruction(instruction),
         .sel(sel),          // Pasamos el selector
         .seg_display0(seg0), // Conectamos las salidas a los displays
         .seg_display1(seg1),
@@ -57,10 +58,19 @@ module monocicle (
         .seg_display3(seg3)
     );
 
+    // Instancia del sumador
+    PCAdder adder(
+        .pc_in(pc),          // Entrada del valor actual del PC
+        .pc_out(suma)    // Salida del PC incrementado en 4
+    );
+	 
+	 
+
 	 instruction_memory ins_mem(
 			.pc(pc),
 			.instruction(instruction)
 	 );
+	
 	 
 	 instruction_decoder insdec(
 			.in(instruction),
@@ -102,7 +112,10 @@ module monocicle (
 			.rd(rd),        
 			.writeData(dataWR), 
 			.readData1(ru1), 
-			.readData2(ru2)
+			.readData2(ru2),
+			
+			.displaySelect(address_register),
+			.displayData(selected_register)
 	 );
 	 
 	 mux_1 muxAluA(
@@ -125,6 +138,7 @@ module monocicle (
 			.ALUOp(AluOp),
 			.ALURes(AluRes)
 	 );
+	 
 	 
 	 Branch_Unit Branch_U(
 			.RS1(ru1),

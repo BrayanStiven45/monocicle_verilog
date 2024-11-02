@@ -6,7 +6,11 @@ module memory_register (
     input wire [4:0] rd,        // Entrada de 32 bits para seleccionar registro destino
     input wire [31:0] writeData, // Datos para escribir en el registro destino
     output wire [31:0] readData1, // Salida de los datos leídos del registro fuente 1
-    output wire [31:0] readData2  // Salida de los datos leídos del registro fuente 2
+    output wire [31:0] readData2,  // Salida de los datos leídos del registro fuente 2
+	 
+	 //Para mostrar en la fpga
+	 input wire [4:0] displaySelect, // Entrada de seleccion par seleccionar el registro que se quiere mostrar en el display de fpga
+	 output wire [31:0] displayData // Salida del registro que se quiere mostrar en la fpga
 );
 
     // Definir los 32 registros de 32 bits
@@ -15,6 +19,8 @@ module memory_register (
     // Leer los registros correspondientes
     assign readData1 = registers[rs1];
     assign readData2 = registers[rs2];
+	 
+	 assign displayData = registers[displaySelect];
 
     // Escritura en el registro rd cuando regWrite está activo
     always @(posedge clk) begin
@@ -22,5 +28,6 @@ module memory_register (
             registers[rd] <= writeData;
         end
     end
+	 
 
 endmodule

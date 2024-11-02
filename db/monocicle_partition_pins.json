@@ -116,7 +116,35 @@
 					"strict" : false
 				},
 				{
-					"name" : "sel",
+					"name" : "sel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "address_register[0]",
+					"strict" : false
+				},
+				{
+					"name" : "address_register[2]",
+					"strict" : false
+				},
+				{
+					"name" : "address_register[1]",
+					"strict" : false
+				},
+				{
+					"name" : "address_register[3]",
+					"strict" : false
+				},
+				{
+					"name" : "address_register[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sel[2]",
 					"strict" : false
 				},
 				{

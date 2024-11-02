@@ -21,7 +21,7 @@ module immediate_generator(
   wire [24:0] tipo_j;
   wire [20:0] apo_tipo_j;
   wire [31:0] out_j;
-
+	
   // Instancia del demux_3
   demux_3 #(
     .Bits(32),
