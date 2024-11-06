@@ -128,11 +128,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "address_register[2]",
+					"name" : "address_register[1]",
 					"strict" : false
 				},
 				{
-					"name" : "address_register[1]",
+					"name" : "address_register[2]",
 					"strict" : false
 				},
 				{

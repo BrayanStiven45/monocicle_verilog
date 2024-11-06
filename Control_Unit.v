@@ -152,7 +152,7 @@ module AluOp (
   input [6:0] funct7,
   output [3:0] out
 );
-  
+  reg [3:0] out_apo;
   wire s1;
   wire and_1;
   wire and_2;
@@ -181,42 +181,19 @@ module AluOp (
   assign fun3_7[2:0] = funct3;
   assign fun3_7[3] = funct7[5];
   
-  Mux_4x1_NBits #(
-    .Bits(4)
-  ) Mux (
-    .sel(sel),
-    .in_0(4'b0),
-    .in_1(in[4:1]),
-    .in_2(fun3_0),
-    .in_3(fun3_7),
-    .out(out)
-  );
+  always @ (*) begin
+		case (sel)
+				3'b0: out_apo = 4'b0;
+				// es para la instruccion U-Lui que deja pasar el valor en la Alu si realizar ninguna operacion dentro de la alu
+				3'b001: out_apo = in[4:1]; 
+				3'b010: out_apo = fun3_0;
+				3'b011: out_apo = fun3_7;
+				default:
+					 out_apo = 4'b0;
+		endcase
+	end
+	assign out = out_apo;
   
-  
-endmodule
-
-
-module Mux_4x1_NBits #(
-    parameter Bits = 2
-)
-(
-  input [1:0] sel,
-  input [(Bits - 1):0] in_0,
-  input [(Bits - 1):0] in_1,
-  input [(Bits - 1):0] in_2,
-  input [(Bits - 1):0] in_3,
-  output reg [(Bits - 1):0] out
-);
-    always @ (*) begin
-        case (sel)
-            3'h0: out = in_0;
-            3'h1: out = in_1;
-            3'h2: out = in_2;
-            3'h3: out = in_3;
-            default:
-                out = 'h0;
-        endcase
-    end
 endmodule
 
 module Brop (
@@ -224,6 +201,8 @@ module Brop (
   input [2:0] funct3,
   output [4:0] out
 );
+
+  reg [4:0] out_apo;
   wire or_1;
   wire s1;
   wire s2;
@@ -242,17 +221,17 @@ module Brop (
   assign fun3_1[4:3] = 2'b01; 
   assign fun3_1[2:0] = funct3;
   
-  
-  Mux_4x1_NBits #(
-    .Bits(5)
-  ) Mux (
-    .sel(sel),
-    .in_0(5'b0),
-    .in_1(5'b0),
-    .in_2(5'h10),
-    .in_3(fun3_1),
-    .out(out)
-  );
+  always @ (*) begin
+        case (sel)
+            3'b00: out_apo = 5'b0;
+            3'b01: out_apo = 5'b0;
+            3'b10: out_apo = 5'b10000;
+            3'b11: out_apo = fun3_1;
+            default:
+                out_apo = 5'b0;
+        endcase
+    end
+	assign out = out_apo;
   
 endmodule
   
@@ -273,39 +252,22 @@ module DMCTrl (
   output [2:0] out
 );
   wire s;
+  reg [2:0] out_apo;
   
   assign s = in[0] & in[1] & ~in[2] & ~in[3] & ~in[4] & ~in[6];
   
-  Mux_2x1_NBits #(
-    .Bits(3)
-  )mux (
-    .sel(s),
-    .in_0(3'h3),
-    .in_1(funct3),
-    .out(out)
-  );
-  
-  
-endmodule
-
-
-module Mux_2x1_NBits #(
-    parameter Bits = 2
-)
-(
-  input sel,
-  input [(Bits - 1):0] in_0,
-  input [(Bits - 1):0] in_1,
-  output reg [(Bits - 1):0] out
-);
-    always @ (*) begin
-        case (sel)
-            3'h0: out = in_0;
-            3'h1: out = in_1;
+  always @ (*) begin
+        case (s)
+				// No importa el valor del de la posicion 0 de sel
+            1'b0: out_apo = 3'b011;
+            1'b1: out_apo = funct3;
             default:
-                out = 'h0;
+                out_apo = 3'b0;
         endcase
     end
+	 assign out = out_apo;
+  
+  
 endmodule
 
 

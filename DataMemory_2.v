@@ -5,6 +5,7 @@ module DataMemory_2(
 	input DMWr,      // 1: write, 0: read
 	input [2:0] DMCtrl,     
 	output reg [31:0] DataRd
+	
 );
 	wire [8:0] addr = address[10:2];
 	wire [31:0] read_data;
@@ -41,6 +42,7 @@ module DataMemory_2(
 		.clock(clk),
 		.q(read_data[31:24])
 	);
+	
 	
 	always @(*) begin
         if (DMWr) begin

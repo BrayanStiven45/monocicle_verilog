@@ -20,7 +20,7 @@ module pc_display (
 			3'b100: selected_bits = instruction[15:0]; // se muestran los bits menos significativos del registro
 			3'b101: selected_bits = instruction[31:16]; // se muestran los bits mas significativos del registro
 			default: selected_bits = 16'b0;
-		endcase;
+		endcase
 		// Extracción de los 4 bits para cada display (hexadecimal)
 		hex_digit0 = selected_bits[15:12];  // Dígito más significativo
 		hex_digit1 = selected_bits[11:8];   // Segundo dígito

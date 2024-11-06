@@ -1,5 +1,5 @@
-Analysis & Synthesis report for monocicle
-Fri Nov  1 13:26:31 2024
+Analysis & Elaboration report for monocicle
+Tue Nov  5 22:48:06 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -7,62 +7,21 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis IP Cores Summary
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated
- 15. Source assignments for DataMemory_2:DataMem|ram:ram_1|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated
- 16. Source assignments for DataMemory_2:DataMem|ram:ram_2|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated
- 17. Source assignments for DataMemory_2:DataMem|ram:ram_3|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated
- 18. Parameter Settings for User Entity Instance: Control_Unit:con_unit|AluOp:aluop|Mux_4x1_NBits:Mux
- 19. Parameter Settings for User Entity Instance: Control_Unit:con_unit|Brop:brop|Mux_4x1_NBits:Mux
- 20. Parameter Settings for User Entity Instance: Control_Unit:con_unit|DMCTrl:dmctrl|Mux_2x1_NBits:mux
- 21. Parameter Settings for User Entity Instance: immediate_generator:imm_gen|demux_3:demux_3_io
- 22. Parameter Settings for User Entity Instance: immediate_generator:imm_gen|signEx:signEx_io_i
- 23. Parameter Settings for User Entity Instance: immediate_generator:imm_gen|signEx:signEx_io_s
- 24. Parameter Settings for User Entity Instance: immediate_generator:imm_gen|signEx:signEx_io_b
- 25. Parameter Settings for User Entity Instance: immediate_generator:imm_gen|signEx:signEx_io_j
- 26. Parameter Settings for User Entity Instance: immediate_generator:imm_gen|mux_3:mux_3_io
- 27. Parameter Settings for User Entity Instance: Branch_Unit:Branch_U|CompSigned:CompSigned_BEQ
- 28. Parameter Settings for User Entity Instance: Branch_Unit:Branch_U|CompSigned:CompSigned_BNE
- 29. Parameter Settings for User Entity Instance: Branch_Unit:Branch_U|CompSigned:CompSigned_BLT
- 30. Parameter Settings for User Entity Instance: Branch_Unit:Branch_U|CompSigned:CompSigned_BGE
- 31. Parameter Settings for User Entity Instance: Branch_Unit:Branch_U|CompUnsigned:CompUnsigned_BLTU
- 32. Parameter Settings for User Entity Instance: Branch_Unit:Branch_U|CompUnsigned:CompUnsigned_BGEU
- 33. Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component
- 34. Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_1|altsyncram:altsyncram_component
- 35. Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_2|altsyncram:altsyncram_component
- 36. Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_3|altsyncram:altsyncram_component
- 37. altsyncram Parameter Settings by Entity Instance
- 38. Port Connectivity Checks: "Branch_Unit:Branch_U|Mux_32x1:Mux_32x1_Select"
- 39. Port Connectivity Checks: "Branch_Unit:Branch_U|CompUnsigned:CompUnsigned_BGEU"
- 40. Port Connectivity Checks: "Branch_Unit:Branch_U|CompUnsigned:CompUnsigned_BLTU"
- 41. Port Connectivity Checks: "Branch_Unit:Branch_U|CompSigned:CompSigned_BGE"
- 42. Port Connectivity Checks: "Branch_Unit:Branch_U|CompSigned:CompSigned_BLT"
- 43. Port Connectivity Checks: "Branch_Unit:Branch_U|CompSigned:CompSigned_BNE"
- 44. Port Connectivity Checks: "Branch_Unit:Branch_U|CompSigned:CompSigned_BEQ"
- 45. Port Connectivity Checks: "mux_1:muxAluB"
- 46. Port Connectivity Checks: "immediate_generator:imm_gen|mux_3:mux_3_io"
- 47. Port Connectivity Checks: "immediate_generator:imm_gen|signEx:signEx_io_j"
- 48. Port Connectivity Checks: "immediate_generator:imm_gen|signEx:signEx_io_b"
- 49. Port Connectivity Checks: "immediate_generator:imm_gen|demux_3:demux_3_io"
- 50. Port Connectivity Checks: "immediate_generator:imm_gen"
- 51. Port Connectivity Checks: "Control_Unit:con_unit|DMCTrl:dmctrl|Mux_2x1_NBits:mux"
- 52. Port Connectivity Checks: "Control_Unit:con_unit|Brop:brop|Mux_4x1_NBits:Mux"
- 53. Port Connectivity Checks: "Control_Unit:con_unit|AluOp:aluop|Mux_4x1_NBits:Mux"
- 54. Post-Synthesis Netlist Statistics for Top Partition
- 55. Elapsed Time Per Partition
- 56. Analysis & Synthesis Messages
- 57. Analysis & Synthesis Suppressed Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration IP Cores Summary
+  5. Source assignments for DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated
+  6. Source assignments for DataMemory_2:DataMem|ram:ram_1|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated
+  7. Source assignments for DataMemory_2:DataMem|ram:ram_2|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated
+  8. Source assignments for DataMemory_2:DataMem|ram:ram_3|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated
+  9. Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component
+ 10. Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_1|altsyncram:altsyncram_component
+ 11. Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_2|altsyncram:altsyncram_component
+ 12. Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_3|altsyncram:altsyncram_component
+ 13. altsyncram Parameter Settings by Entity Instance
+ 14. Analysis & Elaboration Settings
+ 15. Analysis & Elaboration Messages
+ 16. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -86,260 +45,43 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Nov  1 13:26:31 2024          ;
-; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name                   ; monocicle                                      ;
-; Top-level Entity Name           ; monocicle                                      ;
-; Family                          ; Cyclone V                                      ;
-; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 1024                                           ;
-; Total pins                      ; 37                                             ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 16,384                                         ;
-; Total DSP Blocks                ; 0                                              ;
-; Total HSSI RX PCSs              ; 0                                              ;
-; Total HSSI PMA RX Deserializers ; 0                                              ;
-; Total HSSI TX PCSs              ; 0                                              ;
-; Total HSSI PMA TX Serializers   ; 0                                              ;
-; Total PLLs                      ; 0                                              ;
-; Total DLLs                      ; 0                                              ;
-+---------------------------------+------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
-; Option                                                                          ; Setting            ; Default Value      ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; monocicle          ; monocicle          ;
-; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
-; Maximum processors allowed for parallel compilation                             ; 4                  ;                    ;
-; Use smart compilation                                                           ; Off                ; Off                ;
-; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
-; Enable compact report table                                                     ; Off                ; Off                ;
-; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
-; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
-; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
-; Preserve fewer node names                                                       ; On                 ; On                 ;
-; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
-; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
-; State Machine Processing                                                        ; Auto               ; Auto               ;
-; Safe State Machine                                                              ; Off                ; Off                ;
-; Extract Verilog State Machines                                                  ; On                 ; On                 ;
-; Extract VHDL State Machines                                                     ; On                 ; On                 ;
-; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
-; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
-; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
-; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
-; Parallel Synthesis                                                              ; On                 ; On                 ;
-; DSP Block Balancing                                                             ; Auto               ; Auto               ;
-; NOT Gate Push-Back                                                              ; On                 ; On                 ;
-; Power-Up Don't Care                                                             ; On                 ; On                 ;
-; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
-; Remove Duplicate Registers                                                      ; On                 ; On                 ;
-; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
-; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
-; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
-; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
-; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
-; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
-; Optimization Technique                                                          ; Balanced           ; Balanced           ;
-; Carry Chain Length                                                              ; 70                 ; 70                 ;
-; Auto Carry Chains                                                               ; On                 ; On                 ;
-; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
-; Auto ROM Replacement                                                            ; On                 ; On                 ;
-; Auto RAM Replacement                                                            ; On                 ; On                 ;
-; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
-; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
-; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
-; Strict RAM Replacement                                                          ; Off                ; Off                ;
-; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
-; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
-; Auto Resource Sharing                                                           ; Off                ; Off                ;
-; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
-; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
-; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
-; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
-; Report Parameter Settings                                                       ; On                 ; On                 ;
-; Report Source Assignments                                                       ; On                 ; On                 ;
-; Report Connectivity Checks                                                      ; On                 ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
-; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
-; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
-; HDL message level                                                               ; Level2             ; Level2             ;
-; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
-; Clock MUX Protection                                                            ; On                 ; On                 ;
-; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
-; Block Design Naming                                                             ; Auto               ; Auto               ;
-; SDC constraint protection                                                       ; Off                ; Off                ;
-; Synthesis Effort                                                                ; Auto               ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
-; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
-; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
-; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
-; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
-; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
++--------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                 ;
++-------------------------------+------------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Tue Nov  5 22:48:06 2024          ;
+; Quartus Prime Version         ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                 ; monocicle                                      ;
+; Top-level Entity Name         ; monocicle                                      ;
+; Family                        ; Cyclone V                                      ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                      ;
+; Total registers               ; N/A until Partition Merge                      ;
+; Total pins                    ; N/A until Partition Merge                      ;
+; Total virtual pins            ; N/A until Partition Merge                      ;
+; Total block memory bits       ; N/A until Partition Merge                      ;
+; Total PLLs                    ; N/A until Partition Merge                      ;
+; Total DLLs                    ; N/A until Partition Merge                      ;
++-------------------------------+------------------------------------------------+
 
 
 Parallel compilation attempted to use more processors than were available, which may cause increased compilation time. For lowest compilation time, correct your settings.
-+-------------------------------------------+
-; Parallel Compilation                      ;
-+-----------------------------+-------------+
-; Processors                  ; Number      ;
-+-----------------------------+-------------+
-; Number detected on machine  ; 2           ;
-; Maximum allowed             ; 4           ;
-;                             ;             ;
-; Average used                ; 1.00        ;
-; Maximum used                ; 4           ;
-;                             ;             ;
-; Usage by Processor          ; % Time Used ;
-;     Processor 1             ; 100.0%      ;
-;     Processor 2             ;   0.0%      ;
-;     Processors 3 (overused) ;   0.0%      ;
-;     Processors 4 (overused) ;   0.0%      ;
-+-----------------------------+-------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                  ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                              ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
-; PCadder.v                        ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/PCadder.v              ;         ;
-; PC.v                             ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/PC.v                   ;         ;
-; monocicle.v                      ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v            ;         ;
-; memory_register.v                ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/memory_register.v      ;         ;
-; instruction_memory.v             ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/instruction_memory.v   ;         ;
-; instruction_decoder.v            ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/instruction_decoder.v  ;         ;
-; immediate_generator.v            ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/immediate_generator.v  ;         ;
-; Control_Unit.v                   ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v         ;         ;
-; Branch_Unit.v                    ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Branch_Unit.v          ;         ;
-; ALU.v                            ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/ALU.v                  ;         ;
-; mux_1.v                          ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/mux_1.v                ;         ;
-; mux_2.v                          ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/mux_2.v                ;         ;
-; hex_to_7seg.v                    ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/hex_to_7seg.v          ;         ;
-; pc_display.v                     ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/pc_display.v           ;         ;
-; DataMemory_2.v                   ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/DataMemory_2.v         ;         ;
-; ram.v                            ; yes             ; User Wizard-Generated File   ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/ram.v                  ;         ;
-; instructions.mem                 ; yes             ; Auto-Found Unspecified File  ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/instructions.mem       ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                                  ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                                           ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                                     ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                                                  ;         ;
-; aglobal231.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                                                  ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                                   ;         ;
-; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                                                      ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                                      ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                                                    ;         ;
-; db/altsyncram_jil1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/db/altsyncram_jil1.tdf ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 1176      ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 1331      ;
-;     -- 7 input functions                    ; 30        ;
-;     -- 6 input functions                    ; 837       ;
-;     -- 5 input functions                    ; 197       ;
-;     -- 4 input functions                    ; 114       ;
-;     -- <=3 input functions                  ; 153       ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 1024      ;
-;                                             ;           ;
-; I/O pins                                    ; 37        ;
-; Total MLAB memory bits                      ; 0         ;
-; Total block memory bits                     ; 16384     ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 1056      ;
-; Total fan-out                               ; 10652     ;
-; Average fan-out                             ; 4.33      ;
-+---------------------------------------------+-----------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                  ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                      ; Entity Name        ; Library Name ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------------+--------------+
-; |monocicle                                   ; 1331 (0)            ; 1024 (0)                  ; 16384             ; 0          ; 37   ; 0            ; |monocicle                                                                                               ; monocicle          ; work         ;
-;    |ALU:alu|                                 ; 141 (141)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|ALU:alu                                                                                       ; ALU                ; work         ;
-;    |Branch_Unit:Branch_U|                    ; 15 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Branch_Unit:Branch_U                                                                          ; Branch_Unit        ; work         ;
-;       |Mux_32x1:Mux_32x1_Select|             ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Branch_Unit:Branch_U|Mux_32x1:Mux_32x1_Select                                                 ; Mux_32x1           ; work         ;
-;    |Control_Unit:con_unit|                   ; 13 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit                                                                         ; Control_Unit       ; work         ;
-;       |AluOp:aluop|                          ; 6 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|AluOp:aluop                                                             ; AluOp              ; work         ;
-;          |Mux_4x1_NBits:Mux|                 ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|AluOp:aluop|Mux_4x1_NBits:Mux                                           ; Mux_4x1_NBits      ; work         ;
-;       |Aluasrc:alua|                         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|Aluasrc:alua                                                            ; Aluasrc            ; work         ;
-;       |Alubsrc:alubsrc|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|Alubsrc:alubsrc                                                         ; Alubsrc            ; work         ;
-;       |RuDataWrSrc:rudata|                   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|RuDataWrSrc:rudata                                                      ; RuDataWrSrc        ; work         ;
-;       |Ruwr:ruwr|                            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|Ruwr:ruwr                                                               ; Ruwr               ; work         ;
-;    |DataMemory_2:DataMem|                    ; 2 (2)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |monocicle|DataMemory_2:DataMem                                                                          ; DataMemory_2       ; work         ;
-;       |ram:ram_0|                            ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |monocicle|DataMemory_2:DataMem|ram:ram_0                                                                ; ram                ; work         ;
-;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |monocicle|DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component                                ; altsyncram         ; work         ;
-;             |altsyncram_jil1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |monocicle|DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated ; altsyncram_jil1    ; work         ;
-;       |ram:ram_1|                            ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |monocicle|DataMemory_2:DataMem|ram:ram_1                                                                ; ram                ; work         ;
-;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |monocicle|DataMemory_2:DataMem|ram:ram_1|altsyncram:altsyncram_component                                ; altsyncram         ; work         ;
-;             |altsyncram_jil1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |monocicle|DataMemory_2:DataMem|ram:ram_1|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated ; altsyncram_jil1    ; work         ;
-;       |ram:ram_2|                            ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |monocicle|DataMemory_2:DataMem|ram:ram_2                                                                ; ram                ; work         ;
-;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |monocicle|DataMemory_2:DataMem|ram:ram_2|altsyncram:altsyncram_component                                ; altsyncram         ; work         ;
-;             |altsyncram_jil1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |monocicle|DataMemory_2:DataMem|ram:ram_2|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated ; altsyncram_jil1    ; work         ;
-;       |ram:ram_3|                            ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |monocicle|DataMemory_2:DataMem|ram:ram_3                                                                ; ram                ; work         ;
-;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |monocicle|DataMemory_2:DataMem|ram:ram_3|altsyncram:altsyncram_component                                ; altsyncram         ; work         ;
-;             |altsyncram_jil1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096              ; 0          ; 0    ; 0            ; |monocicle|DataMemory_2:DataMem|ram:ram_3|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated ; altsyncram_jil1    ; work         ;
-;    |PC:p|                                    ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |monocicle|PC:p                                                                                          ; PC                 ; work         ;
-;    |PCAdder:adder|                           ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|PCAdder:adder                                                                                 ; PCAdder            ; work         ;
-;    |instruction_memory:ins_mem|              ; 49 (49)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|instruction_memory:ins_mem                                                                    ; instruction_memory ; work         ;
-;    |memory_register:mem_reg|                 ; 576 (576)           ; 992 (992)                 ; 0                 ; 0          ; 0    ; 0            ; |monocicle|memory_register:mem_reg                                                                       ; memory_register    ; work         ;
-;    |mux_1:muxAluA|                           ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|mux_1:muxAluA                                                                                 ; mux_1              ; work         ;
-;    |mux_1:muxAluB|                           ; 28 (28)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|mux_1:muxAluB                                                                                 ; mux_1              ; work         ;
-;    |mux_2:muxWrite|                          ; 67 (67)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|mux_2:muxWrite                                                                                ; mux_2              ; work         ;
-;    |pc_display:display_pc|                   ; 378 (350)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc                                                                         ; pc_display         ; work         ;
-;       |hex_to_7seg:display0|                 ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc|hex_to_7seg:display0                                                    ; hex_to_7seg        ; work         ;
-;       |hex_to_7seg:display1|                 ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc|hex_to_7seg:display1                                                    ; hex_to_7seg        ; work         ;
-;       |hex_to_7seg:display2|                 ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc|hex_to_7seg:display2                                                    ; hex_to_7seg        ; work         ;
-;       |hex_to_7seg:display3|                 ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc|hex_to_7seg:display3                                                    ; hex_to_7seg        ; work         ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                        ;
-+----------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
-; Name                                                                                                     ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
-+----------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
-; DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 512          ; 8            ; --           ; --           ; 4096 ; None ;
-; DataMemory_2:DataMem|ram:ram_1|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 512          ; 8            ; --           ; --           ; 4096 ; None ;
-; DataMemory_2:DataMem|ram:ram_2|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 512          ; 8            ; --           ; --           ; 4096 ; None ;
-; DataMemory_2:DataMem|ram:ram_3|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 512          ; 8            ; --           ; --           ; 4096 ; None ;
-+----------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                       ;
+; Analysis & Elaboration IP Cores Summary                                                                                     ;
 +--------+--------------+---------+--------------+--------------+-------------------------------------------+-----------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                           ; IP Include File ;
 +--------+--------------+---------+--------------+--------------+-------------------------------------------+-----------------+
@@ -348,89 +90,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Altera ; RAM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |monocicle|DataMemory_2:DataMem|ram:ram_2 ; ram.v           ;
 ; Altera ; RAM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |monocicle|DataMemory_2:DataMem|ram:ram_3 ; ram.v           ;
 +--------+--------------+---------+--------------+--------------+-------------------------------------------+-----------------+
-
-
-+----------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                     ;
-+------------------------------------------+---------------------------------------------+
-; Register name                            ; Reason for Removal                          ;
-+------------------------------------------+---------------------------------------------+
-; memory_register:mem_reg|registers[0][12] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][28] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][13] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][29] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][14] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][30] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][15] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][31] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][8]  ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][24] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][9]  ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][25] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][10] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][26] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][11] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][27] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][4]  ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][20] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][5]  ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][21] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][6]  ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][22] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][7]  ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][23] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][0]  ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][16] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][1]  ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][17] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][2]  ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][18] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][19] ; Stuck at GND due to stuck port clock_enable ;
-; memory_register:mem_reg|registers[0][3]  ; Stuck at GND due to stuck port clock_enable ;
-; Total Number of Removed Registers = 32   ;                                             ;
-+------------------------------------------+---------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                         ;
-+------------------------------------------+--------------------------------+-----------------------------------------+
-; Register name                            ; Reason for Removal             ; Registers Removed due to This Register  ;
-+------------------------------------------+--------------------------------+-----------------------------------------+
-; memory_register:mem_reg|registers[0][12] ; Stuck at GND                   ; memory_register:mem_reg|registers[0][0] ;
-;                                          ; due to stuck port clock_enable ;                                         ;
-+------------------------------------------+--------------------------------+-----------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 1024  ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 30    ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 994   ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
-; 8:1                ; 31 bits   ; 155 LEs       ; 62 LEs               ; 93 LEs                 ; No         ; |monocicle|ALU:alu|Mux23                 ;
-; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; No         ; |monocicle|memory_register:mem_reg|Mux4  ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux28          ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |monocicle|memory_register:mem_reg|Mux54 ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux16          ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux0           ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; No         ; |monocicle|pc_display:display_pc|Mux3    ;
-; 70:1               ; 7 bits    ; 322 LEs       ; 322 LEs              ; 0 LEs                  ; No         ; |monocicle|pc_display:display_pc|Mux13   ;
-; 69:1               ; 6 bits    ; 276 LEs       ; 276 LEs              ; 0 LEs                  ; No         ; |monocicle|pc_display:display_pc|Mux14   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -467,161 +126,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+--------------------+------+--------------------------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                      ;
 +---------------------------------+--------------------+------+--------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Control_Unit:con_unit|AluOp:aluop|Mux_4x1_NBits:Mux ;
-+----------------+-------+-------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                    ;
-+----------------+-------+-------------------------------------------------------------------------+
-; Bits           ; 4     ; Signed Integer                                                          ;
-+----------------+-------+-------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Control_Unit:con_unit|Brop:brop|Mux_4x1_NBits:Mux ;
-+----------------+-------+-----------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                  ;
-+----------------+-------+-----------------------------------------------------------------------+
-; Bits           ; 5     ; Signed Integer                                                        ;
-+----------------+-------+-----------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Control_Unit:con_unit|DMCTrl:dmctrl|Mux_2x1_NBits:mux ;
-+----------------+-------+---------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                      ;
-+----------------+-------+---------------------------------------------------------------------------+
-; Bits           ; 3     ; Signed Integer                                                            ;
-+----------------+-------+---------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: immediate_generator:imm_gen|demux_3:demux_3_io ;
-+----------------+-------+--------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                               ;
-+----------------+-------+--------------------------------------------------------------------+
-; Bits           ; 32    ; Signed Integer                                                     ;
-; Default        ; 0     ; Signed Integer                                                     ;
-+----------------+-------+--------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: immediate_generator:imm_gen|signEx:signEx_io_i ;
-+----------------+-------+--------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                               ;
-+----------------+-------+--------------------------------------------------------------------+
-; Bits_in        ; 12    ; Signed Integer                                                     ;
-; Bits_out       ; 32    ; Signed Integer                                                     ;
-+----------------+-------+--------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: immediate_generator:imm_gen|signEx:signEx_io_s ;
-+----------------+-------+--------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                               ;
-+----------------+-------+--------------------------------------------------------------------+
-; Bits_in        ; 12    ; Signed Integer                                                     ;
-; Bits_out       ; 32    ; Signed Integer                                                     ;
-+----------------+-------+--------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: immediate_generator:imm_gen|signEx:signEx_io_b ;
-+----------------+-------+--------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                               ;
-+----------------+-------+--------------------------------------------------------------------+
-; Bits_in        ; 13    ; Signed Integer                                                     ;
-; Bits_out       ; 32    ; Signed Integer                                                     ;
-+----------------+-------+--------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: immediate_generator:imm_gen|signEx:signEx_io_j ;
-+----------------+-------+--------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                               ;
-+----------------+-------+--------------------------------------------------------------------+
-; Bits_in        ; 21    ; Signed Integer                                                     ;
-; Bits_out       ; 32    ; Signed Integer                                                     ;
-+----------------+-------+--------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: immediate_generator:imm_gen|mux_3:mux_3_io ;
-+----------------+-------+----------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                           ;
-+----------------+-------+----------------------------------------------------------------+
-; Bits           ; 32    ; Signed Integer                                                 ;
-+----------------+-------+----------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Branch_Unit:Branch_U|CompSigned:CompSigned_BEQ ;
-+----------------+-------+--------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                               ;
-+----------------+-------+--------------------------------------------------------------------+
-; Bits           ; 32    ; Signed Integer                                                     ;
-+----------------+-------+--------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Branch_Unit:Branch_U|CompSigned:CompSigned_BNE ;
-+----------------+-------+--------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                               ;
-+----------------+-------+--------------------------------------------------------------------+
-; Bits           ; 32    ; Signed Integer                                                     ;
-+----------------+-------+--------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Branch_Unit:Branch_U|CompSigned:CompSigned_BLT ;
-+----------------+-------+--------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                               ;
-+----------------+-------+--------------------------------------------------------------------+
-; Bits           ; 32    ; Signed Integer                                                     ;
-+----------------+-------+--------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Branch_Unit:Branch_U|CompSigned:CompSigned_BGE ;
-+----------------+-------+--------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                               ;
-+----------------+-------+--------------------------------------------------------------------+
-; Bits           ; 32    ; Signed Integer                                                     ;
-+----------------+-------+--------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Branch_Unit:Branch_U|CompUnsigned:CompUnsigned_BLTU ;
-+----------------+-------+-------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                    ;
-+----------------+-------+-------------------------------------------------------------------------+
-; Bits           ; 32    ; Signed Integer                                                          ;
-+----------------+-------+-------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Branch_Unit:Branch_U|CompUnsigned:CompUnsigned_BGEU ;
-+----------------+-------+-------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                    ;
-+----------------+-------+-------------------------------------------------------------------------+
-; Bits           ; 32    ; Signed Integer                                                          ;
-+----------------+-------+-------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------------------------------------------------------------------------------------+
@@ -921,350 +425,181 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------+
-; Port Connectivity Checks: "Branch_Unit:Branch_U|Mux_32x1:Mux_32x1_Select" ;
-+-------+-------+----------+------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                        ;
-+-------+-------+----------+------------------------------------------------+
-; in_0  ; Input ; Info     ; Stuck at GND                                   ;
-; in_1  ; Input ; Info     ; Stuck at GND                                   ;
-; in_2  ; Input ; Info     ; Stuck at GND                                   ;
-; in_3  ; Input ; Info     ; Stuck at GND                                   ;
-; in_4  ; Input ; Info     ; Stuck at GND                                   ;
-; in_5  ; Input ; Info     ; Stuck at GND                                   ;
-; in_6  ; Input ; Info     ; Stuck at GND                                   ;
-; in_7  ; Input ; Info     ; Stuck at GND                                   ;
-; in_10 ; Input ; Info     ; Stuck at GND                                   ;
-; in_11 ; Input ; Info     ; Stuck at GND                                   ;
-; in_16 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_17 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_18 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_19 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_20 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_21 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_22 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_23 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_24 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_25 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_26 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_27 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_28 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_29 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_30 ; Input ; Info     ; Stuck at VCC                                   ;
-; in_31 ; Input ; Info     ; Stuck at VCC                                   ;
-+-------+-------+----------+------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                           ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; monocicle          ; monocicle          ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation                             ; 4                  ;                    ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Branch_Unit:Branch_U|CompUnsigned:CompUnsigned_BGEU"                                                     ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; lt   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Branch_Unit:Branch_U|CompUnsigned:CompUnsigned_BLTU"                                                     ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; gt   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; eq   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Branch_Unit:Branch_U|CompSigned:CompSigned_BGE"                                                          ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; lt   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Branch_Unit:Branch_U|CompSigned:CompSigned_BLT"                                                          ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; gt   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; eq   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Branch_Unit:Branch_U|CompSigned:CompSigned_BNE"                                                          ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; gt   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; lt   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Branch_Unit:Branch_U|CompSigned:CompSigned_BEQ"                                                          ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; gt   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; lt   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux_1:muxAluB"                                                                                                                                  ;
-+------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                          ;
-+------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; in_1 ; Input ; Warning  ; Input port expression (25 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in_1[31..25]" will be connected to GND. ;
-+------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------+
-; Port Connectivity Checks: "immediate_generator:imm_gen|mux_3:mux_3_io" ;
-+-------------+-------+----------+---------------------------------------+
-; Port        ; Type  ; Severity ; Details                               ;
-+-------------+-------+----------+---------------------------------------+
-; in_2[11..0] ; Input ; Info     ; Stuck at GND                          ;
-; in_3[31..1] ; Input ; Info     ; Stuck at GND                          ;
-; in_3[0]     ; Input ; Info     ; Stuck at VCC                          ;
-; in_4[31..1] ; Input ; Info     ; Stuck at GND                          ;
-; in_4[0]     ; Input ; Info     ; Stuck at VCC                          ;
-; in_7[31..1] ; Input ; Info     ; Stuck at GND                          ;
-; in_7[0]     ; Input ; Info     ; Stuck at VCC                          ;
-+-------------+-------+----------+---------------------------------------+
-
-
-+----------------------------------------------------------------------------+
-; Port Connectivity Checks: "immediate_generator:imm_gen|signEx:signEx_io_j" ;
-+-------+-------+----------+-------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                         ;
-+-------+-------+----------+-------------------------------------------------+
-; in[0] ; Input ; Info     ; Stuck at GND                                    ;
-+-------+-------+----------+-------------------------------------------------+
-
-
-+----------------------------------------------------------------------------+
-; Port Connectivity Checks: "immediate_generator:imm_gen|signEx:signEx_io_b" ;
-+-------+-------+----------+-------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                         ;
-+-------+-------+----------+-------------------------------------------------+
-; in[0] ; Input ; Info     ; Stuck at GND                                    ;
-+-------+-------+----------+-------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "immediate_generator:imm_gen|demux_3:demux_3_io"                                                                                      ;
-+--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                                                                      ;
-+--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
-; out_0        ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (25 bits) it drives; bit(s) "out_0[31..25]" have no fanouts ;
-; out_0[12..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                          ;
-; out_1        ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (25 bits) it drives; bit(s) "out_1[31..25]" have no fanouts ;
-; out_1[17..5] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                          ;
-; out_2        ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (25 bits) it drives; bit(s) "out_2[31..25]" have no fanouts ;
-; out_2[4..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                          ;
-; out_5        ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (25 bits) it drives; bit(s) "out_5[31..25]" have no fanouts ;
-; out_5[17..5] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                          ;
-; out_6        ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (25 bits) it drives; bit(s) "out_6[31..25]" have no fanouts ;
-; out_6[4..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                          ;
-; out_3        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                     ;
-; out_4        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                     ;
-; out_7        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                     ;
-+--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "immediate_generator:imm_gen"                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Control_Unit:con_unit|DMCTrl:dmctrl|Mux_2x1_NBits:mux" ;
-+------------+-------+----------+---------------------------------------------------+
-; Port       ; Type  ; Severity ; Details                                           ;
-+------------+-------+----------+---------------------------------------------------+
-; in_0[1..0] ; Input ; Info     ; Stuck at VCC                                      ;
-; in_0[2]    ; Input ; Info     ; Stuck at GND                                      ;
-+------------+-------+----------+---------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Control_Unit:con_unit|Brop:brop|Mux_4x1_NBits:Mux" ;
-+------------+-------+----------+-----------------------------------------------+
-; Port       ; Type  ; Severity ; Details                                       ;
-+------------+-------+----------+-----------------------------------------------+
-; in_0       ; Input ; Info     ; Stuck at GND                                  ;
-; in_1       ; Input ; Info     ; Stuck at GND                                  ;
-; in_2[3..0] ; Input ; Info     ; Stuck at GND                                  ;
-; in_2[4]    ; Input ; Info     ; Stuck at VCC                                  ;
-; in_3[4]    ; Input ; Info     ; Stuck at GND                                  ;
-; in_3[3]    ; Input ; Info     ; Stuck at VCC                                  ;
-+------------+-------+----------+-----------------------------------------------+
-
-
-+---------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Control_Unit:con_unit|AluOp:aluop|Mux_4x1_NBits:Mux" ;
-+---------+-------+----------+----------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                            ;
-+---------+-------+----------+----------------------------------------------------+
-; in_0    ; Input ; Info     ; Stuck at GND                                       ;
-; in_2[3] ; Input ; Info     ; Stuck at GND                                       ;
-+---------+-------+----------+----------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 1024                        ;
-;     ENA               ; 994                         ;
-;     SLD               ; 30                          ;
-; arriav_lcell_comb     ; 1335                        ;
-;     arith             ; 63                          ;
-;         1 data inputs ; 30                          ;
-;         4 data inputs ; 1                           ;
-;         5 data inputs ; 32                          ;
-;     extend            ; 30                          ;
-;         7 data inputs ; 30                          ;
-;     normal            ; 1242                        ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 32                          ;
-;         3 data inputs ; 91                          ;
-;         4 data inputs ; 113                         ;
-;         5 data inputs ; 165                         ;
-;         6 data inputs ; 837                         ;
-; boundary_port         ; 37                          ;
-; stratixv_ram_block    ; 32                          ;
-;                       ;                             ;
-; Max LUT depth         ; 10.10                       ;
-; Average LUT depth     ; 7.74                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:14     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Fri Nov  1 13:25:15 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off monocicle -c monocicle
+    Info: Processing started: Tue Nov  5 22:46:18 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off monocicle -c monocicle --analysis_and_elaboration
 Warning (125092): Tcl Script File ram_brayan.qip not found
     Info (125063): set_global_assignment -name QIP_FILE ram_brayan.qip
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Warning (20031): Parallel compilation is enabled for 4 processors, but there are only 2 processors in the system. Runtime may increase due to over usage of the processor space.
 Info (12021): Found 1 design units, including 1 entities, in source file datamemory.v
-    Info (12023): Found entity 1: DataMemory File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/DataMemory.v Line: 1
+    Info (12023): Found entity 1: DataMemory File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/DataMemory.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pcadder.v
-    Info (12023): Found entity 1: PCAdder File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/PCadder.v Line: 1
+    Info (12023): Found entity 1: PCAdder File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/PCadder.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pc.v
-    Info (12023): Found entity 1: PC File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/PC.v Line: 1
+    Info (12023): Found entity 1: PC File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/PC.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file monocicle.v
-    Info (12023): Found entity 1: monocicle File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v Line: 1
+    Info (12023): Found entity 1: monocicle File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file memory_register.v
-    Info (12023): Found entity 1: memory_register File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/memory_register.v Line: 1
+    Info (12023): Found entity 1: memory_register File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/memory_register.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file instruction_memory.v
-    Info (12023): Found entity 1: instruction_memory File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/instruction_memory.v Line: 1
+    Info (12023): Found entity 1: instruction_memory File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instruction_memory.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file instruction_decoder.v
-    Info (12023): Found entity 1: instruction_decoder File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/instruction_decoder.v Line: 1
-Info (12021): Found 4 design units, including 4 entities, in source file immediate_generator.v
-    Info (12023): Found entity 1: immediate_generator File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/immediate_generator.v Line: 1
-    Info (12023): Found entity 2: demux_3 File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/immediate_generator.v Line: 120
-    Info (12023): Found entity 3: signEx File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/immediate_generator.v Line: 149
-    Info (12023): Found entity 4: mux_3 File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/immediate_generator.v Line: 163
-Info (12021): Found 12 design units, including 12 entities, in source file control_unit.v
-    Info (12023): Found entity 1: Control_Unit File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 1
-    Info (12023): Found entity 2: Aluasrc File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 67
-    Info (12023): Found entity 3: Ruwr File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 86
-    Info (12023): Found entity 4: immsrc File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 106
-    Info (12023): Found entity 5: Alubsrc File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 138
-    Info (12023): Found entity 6: AluOp File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 149
-    Info (12023): Found entity 7: Mux_4x1_NBits File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 199
-    Info (12023): Found entity 8: Brop File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 222
-    Info (12023): Found entity 9: DMWr File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 260
-    Info (12023): Found entity 10: DMCTrl File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 270
-    Info (12023): Found entity 11: Mux_2x1_NBits File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 292
-    Info (12023): Found entity 12: RuDataWrSrc File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 312
-Info (12021): Found 4 design units, including 4 entities, in source file branch_unit.v
-    Info (12023): Found entity 1: CompSigned File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Branch_Unit.v Line: 1
-    Info (12023): Found entity 2: CompUnsigned File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Branch_Unit.v Line: 17
-    Info (12023): Found entity 3: Mux_32x1 File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Branch_Unit.v Line: 33
-    Info (12023): Found entity 4: Branch_Unit File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Branch_Unit.v Line: 111
+    Info (12023): Found entity 1: instruction_decoder File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instruction_decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file immediate_generator.v
+    Info (12023): Found entity 1: immediate_generator File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/immediate_generator.v Line: 1
+Info (12021): Found 10 design units, including 10 entities, in source file control_unit.v
+    Info (12023): Found entity 1: Control_Unit File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 1
+    Info (12023): Found entity 2: Aluasrc File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 67
+    Info (12023): Found entity 3: Ruwr File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 86
+    Info (12023): Found entity 4: immsrc File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 106
+    Info (12023): Found entity 5: Alubsrc File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 138
+    Info (12023): Found entity 6: AluOp File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 149
+    Info (12023): Found entity 7: Brop File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 199
+    Info (12023): Found entity 8: DMWr File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 239
+    Info (12023): Found entity 9: DMCTrl File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 249
+    Info (12023): Found entity 10: RuDataWrSrc File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 274
+Info (12021): Found 1 design units, including 1 entities, in source file branch_unit.v
+    Info (12023): Found entity 1: Branch_Unit File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Branch_Unit.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
-    Info (12023): Found entity 1: ALU File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/ALU.v Line: 1
+    Info (12023): Found entity 1: ALU File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ALU.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mux_1.v
-    Info (12023): Found entity 1: mux_1 File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/mux_1.v Line: 1
+    Info (12023): Found entity 1: mux_1 File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/mux_1.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mux_2.v
-    Info (12023): Found entity 1: mux_2 File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/mux_2.v Line: 1
+    Info (12023): Found entity 1: mux_2 File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/mux_2.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file hex_to_7seg.v
-    Info (12023): Found entity 1: hex_to_7seg File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/hex_to_7seg.v Line: 1
+    Info (12023): Found entity 1: hex_to_7seg File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/hex_to_7seg.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pc_display.v
-    Info (12023): Found entity 1: pc_display File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/pc_display.v Line: 1
+    Info (12023): Found entity 1: pc_display File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/pc_display.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file datamemory_2.v
-    Info (12023): Found entity 1: DataMemory_2 File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/DataMemory_2.v Line: 1
+    Info (12023): Found entity 1: DataMemory_2 File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/DataMemory_2.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ram.v
-    Info (12023): Found entity 1: ram File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/ram.v Line: 40
+    Info (12023): Found entity 1: ram File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ram.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file testbench_simulation.v
-    Info (12023): Found entity 1: testbench File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/testbench_simulation.v Line: 3
+    Info (12023): Found entity 1: testbench_simulation File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/testbench_simulation.v Line: 3
 Info (12127): Elaborating entity "monocicle" for the top level hierarchy
-Info (12128): Elaborating entity "PC" for hierarchy "PC:p" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v Line: 48
-Info (12128): Elaborating entity "pc_display" for hierarchy "pc_display:display_pc" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v Line: 59
-Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "pc_display:display_pc|hex_to_7seg:display0" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/pc_display.v Line: 36
-Info (12128): Elaborating entity "PCAdder" for hierarchy "PCAdder:adder" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v Line: 65
-Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:ins_mem" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v Line: 72
-Warning (10850): Verilog HDL warning at instruction_memory.v(10): number of words (33) in memory file does not match the number of elements in the address range [0:511] File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/instruction_memory.v Line: 10
-Warning (10030): Net "memory.data_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/instruction_memory.v Line: 6
-Warning (10030): Net "memory.waddr_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/instruction_memory.v Line: 6
-Warning (10030): Net "memory.we_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/instruction_memory.v Line: 6
-Info (12128): Elaborating entity "instruction_decoder" for hierarchy "instruction_decoder:insdec" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v Line: 84
-Info (12128): Elaborating entity "Control_Unit" for hierarchy "Control_Unit:con_unit" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v Line: 99
-Info (12128): Elaborating entity "Aluasrc" for hierarchy "Control_Unit:con_unit|Aluasrc:alua" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 19
-Info (12128): Elaborating entity "Ruwr" for hierarchy "Control_Unit:con_unit|Ruwr:ruwr" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 24
-Info (12128): Elaborating entity "immsrc" for hierarchy "Control_Unit:con_unit|immsrc:imsrc" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 29
-Info (12128): Elaborating entity "Alubsrc" for hierarchy "Control_Unit:con_unit|Alubsrc:alubsrc" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 34
-Info (12128): Elaborating entity "AluOp" for hierarchy "Control_Unit:con_unit|AluOp:aluop" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 41
-Info (12128): Elaborating entity "Mux_4x1_NBits" for hierarchy "Control_Unit:con_unit|AluOp:aluop|Mux_4x1_NBits:Mux" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 193
-Info (12128): Elaborating entity "Brop" for hierarchy "Control_Unit:con_unit|Brop:brop" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 47
-Info (12128): Elaborating entity "Mux_4x1_NBits" for hierarchy "Control_Unit:con_unit|Brop:brop|Mux_4x1_NBits:Mux" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 255
-Info (12128): Elaborating entity "DMWr" for hierarchy "Control_Unit:con_unit|DMWr:dmwr" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 52
-Info (12128): Elaborating entity "DMCTrl" for hierarchy "Control_Unit:con_unit|DMCTrl:dmctrl" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 58
-Info (12128): Elaborating entity "Mux_2x1_NBits" for hierarchy "Control_Unit:con_unit|DMCTrl:dmctrl|Mux_2x1_NBits:mux" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 286
-Info (12128): Elaborating entity "RuDataWrSrc" for hierarchy "Control_Unit:con_unit|RuDataWrSrc:rudata" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Control_Unit.v Line: 63
-Info (12128): Elaborating entity "immediate_generator" for hierarchy "immediate_generator:imm_gen" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v Line: 105
-Info (12128): Elaborating entity "demux_3" for hierarchy "immediate_generator:imm_gen|demux_3:demux_3_io" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/immediate_generator.v Line: 37
-Info (12128): Elaborating entity "signEx" for hierarchy "immediate_generator:imm_gen|signEx:signEx_io_i" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/immediate_generator.v Line: 49
-Info (12128): Elaborating entity "signEx" for hierarchy "immediate_generator:imm_gen|signEx:signEx_io_b" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/immediate_generator.v Line: 82
-Info (12128): Elaborating entity "signEx" for hierarchy "immediate_generator:imm_gen|signEx:signEx_io_j" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/immediate_generator.v Line: 98
-Info (12128): Elaborating entity "mux_3" for hierarchy "immediate_generator:imm_gen|mux_3:mux_3_io" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/immediate_generator.v Line: 114
-Info (12128): Elaborating entity "memory_register" for hierarchy "memory_register:mem_reg" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v Line: 119
-Info (12128): Elaborating entity "mux_1" for hierarchy "mux_1:muxAluA" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v Line: 126
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v Line: 140
-Info (12128): Elaborating entity "Branch_Unit" for hierarchy "Branch_Unit:Branch_U" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v Line: 148
-Info (12128): Elaborating entity "CompSigned" for hierarchy "Branch_Unit:Branch_U|CompSigned:CompSigned_BEQ" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Branch_Unit.v Line: 136
-Info (12128): Elaborating entity "CompUnsigned" for hierarchy "Branch_Unit:Branch_U|CompUnsigned:CompUnsigned_BLTU" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Branch_Unit.v Line: 173
-Info (12128): Elaborating entity "Mux_32x1" for hierarchy "Branch_Unit:Branch_U|Mux_32x1:Mux_32x1_Select" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/Branch_Unit.v Line: 225
-Info (12128): Elaborating entity "DataMemory_2" for hierarchy "DataMemory_2:DataMem" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v Line: 164
-Info (12128): Elaborating entity "ram" for hierarchy "DataMemory_2:DataMem|ram:ram_0" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/DataMemory_2.v Line: 19
-Info (12128): Elaborating entity "altsyncram" for hierarchy "DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/ram.v Line: 86
-Info (12130): Elaborated megafunction instantiation "DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/ram.v Line: 86
-Info (12133): Instantiated megafunction "DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/ram.v Line: 86
+Info (12128): Elaborating entity "PC" for hierarchy "PC:p" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 49
+Info (12128): Elaborating entity "pc_display" for hierarchy "pc_display:display_pc" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 60
+Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "pc_display:display_pc|hex_to_7seg:display0" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/pc_display.v Line: 36
+Info (12128): Elaborating entity "PCAdder" for hierarchy "PCAdder:adder" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 66
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:ins_mem" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 73
+Warning (10030): Net "memory.data_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instruction_memory.v Line: 6
+Warning (10030): Net "memory.waddr_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instruction_memory.v Line: 6
+Warning (10030): Net "memory.we_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instruction_memory.v Line: 6
+Info (12128): Elaborating entity "instruction_decoder" for hierarchy "instruction_decoder:insdec" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 85
+Info (12128): Elaborating entity "Control_Unit" for hierarchy "Control_Unit:con_unit" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 100
+Info (12128): Elaborating entity "Aluasrc" for hierarchy "Control_Unit:con_unit|Aluasrc:alua" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 19
+Info (12128): Elaborating entity "Ruwr" for hierarchy "Control_Unit:con_unit|Ruwr:ruwr" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 24
+Info (12128): Elaborating entity "immsrc" for hierarchy "Control_Unit:con_unit|immsrc:imsrc" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 29
+Info (12128): Elaborating entity "Alubsrc" for hierarchy "Control_Unit:con_unit|Alubsrc:alubsrc" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 34
+Info (12128): Elaborating entity "AluOp" for hierarchy "Control_Unit:con_unit|AluOp:aluop" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 41
+Info (12128): Elaborating entity "Brop" for hierarchy "Control_Unit:con_unit|Brop:brop" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 47
+Info (12128): Elaborating entity "DMWr" for hierarchy "Control_Unit:con_unit|DMWr:dmwr" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 52
+Info (12128): Elaborating entity "DMCTrl" for hierarchy "Control_Unit:con_unit|DMCTrl:dmctrl" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 58
+Info (12128): Elaborating entity "RuDataWrSrc" for hierarchy "Control_Unit:con_unit|RuDataWrSrc:rudata" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 63
+Info (12128): Elaborating entity "immediate_generator" for hierarchy "immediate_generator:imm_gen" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 106
+Info (12128): Elaborating entity "memory_register" for hierarchy "memory_register:mem_reg" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 120
+Info (12128): Elaborating entity "mux_1" for hierarchy "mux_1:muxAluA" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 127
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 141
+Info (12128): Elaborating entity "Branch_Unit" for hierarchy "Branch_Unit:Branch_U" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 149
+Info (12128): Elaborating entity "DataMemory_2" for hierarchy "DataMemory_2:DataMem" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 165
+Info (12128): Elaborating entity "ram" for hierarchy "DataMemory_2:DataMem|ram:ram_0" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/DataMemory_2.v Line: 20
+Info (12128): Elaborating entity "altsyncram" for hierarchy "DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ram.v Line: 86
+Info (12130): Elaborated megafunction instantiation "DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ram.v Line: 86
+Info (12133): Instantiated megafunction "DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ram.v Line: 86
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "intended_device_family" = "Cyclone V"
@@ -1280,30 +615,20 @@ Info (12133): Instantiated megafunction "DataMemory_2:DataMem|ram:ram_0|altsyncr
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jil1.tdf
-    Info (12023): Found entity 1: altsyncram_jil1 File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/db/altsyncram_jil1.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_jil1 File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/db/altsyncram_jil1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_jil1" for hierarchy "DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "mux_2" for hierarchy "mux_2:muxWrite" File: C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/monocicle.v Line: 172
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/db/monocicle.ram0_instruction_memory_68fd8bb8.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/output_files/monocicle.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2408 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 28 output pins
-    Info (21061): Implemented 2339 logic cells
-    Info (21064): Implemented 32 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4864 megabytes
-    Info: Processing ended: Fri Nov  1 13:26:31 2024
-    Info: Elapsed time: 00:01:16
-    Info: Total CPU time (on all processors): 00:01:21
+Info (12128): Elaborating entity "mux_2" for hierarchy "mux_2:muxWrite" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 173
+Info (144001): Generated suppressed messages file C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/output_files/monocicle.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4803 megabytes
+    Info: Processing ended: Tue Nov  5 22:48:07 2024
+    Info: Elapsed time: 00:01:49
+    Info: Total CPU time (on all processors): 00:01:12
 
 
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/valen/Escritorio/universidad/6 semestre/Arquitectura de Computadores/Monocicle in verilog/output_files/monocicle.map.smsg.
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/output_files/monocicle.map.smsg.
 
 

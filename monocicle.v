@@ -9,6 +9,7 @@ module monocicle (
 	 // datos para seleccionar el registro de la memoria de registros
 	 input [4:0] address_register
 	 
+	 
 );
 	wire [31:0] selected_register;
 	wire [31:0] pc;
@@ -40,7 +41,7 @@ module monocicle (
 	wire NextPCSrc;
 	wire [31:0] AluRes;
 	wire [31:0] read_data;
-
+	
     PC p(
         .clk(clk),
         .next_pc(next_pc),
@@ -127,7 +128,7 @@ module monocicle (
 	 
 	 mux_1 muxAluB(
 			.in_0(ru2),
-			.in_1(immediate),
+			.in_1(imm_gen32),
 			.sel(AlubSrc),
 			.out(B)
 	 );
