@@ -13,11 +13,16 @@ module testbench_simulation;
 	 wire dmwr;
 	 wire [31:0] registro;
 	 wire [31:0] read_muestra;
+	 wire [8:0] address_of_ram;
+	 wire clk_ram;
+	 wire ruwr;
+	 wire [4:0] out_rd;
+	 wire [1:0] rudatawrsrc;
 
     monocicle uut(
         .clk(clk),
         .sel(3'b0),
-        .address_register(5'b1111),
+        .address_register(5'b1011),
         .pc_out(pc_out),
         .ins_memory_out(ins_memory_out),
         .alures_1(alures_1),
@@ -27,18 +32,24 @@ module testbench_simulation;
 		  .dmctrl(dmctrl),
 		  .dmwr(dmwr),
 		  .registro(registro),
-		  .read_muestra(read_muestra)
+		  .read_muestra(read_muestra),
+		  .address_of_ram(address_of_ram),
+		  .clk_ram(clk_ram),
+		  .ruwr_2(ruwr),
+		  .out_rd(out_rd),
+		  .rudatawrsrc(rudatawrsrc)
     );
 
     initial begin
+			
         clk = 0;
         forever #10 clk = ~clk;
     end
 
     initial begin
-        $monitor("At time %0t: pc = %b, instruction_memory = %b,read_data = %b, AluRes = %b, data_ram = %b",
-                 $time, pc_out, ins_memory_out,read_muestra, alures_1, data_ram);
-        #500;  // Run simulation for 500 time units
+        $monitor("At time %0t:pc = %b, instruction = %b, AluRes = %b, rudatawrsrc = %b, rd = %b, registro = %b, data_ram = %b",
+                 $time,pc_out,ins_memory_out, alures_1, rudatawrsrc,out_rd, registro ,data_ram);
+        #500;
         $finish;
     end
     

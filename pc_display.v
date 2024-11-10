@@ -32,22 +32,22 @@ module pc_display (
     // Conversión de los dígitos hexadecimales a 7 segmentos
     hex_to_7seg display0 (
         .hex_digit(hex_digit0),
-        .seg(seg_display0)  // Conectar al primer display
+        .seg(seg_display3)  // Conectar al primer display
     );
     
     hex_to_7seg display1 (
         .hex_digit(hex_digit1),
-        .seg(seg_display1)  // Conectar al segundo display
+        .seg(seg_display2)  // Conectar al segundo display
     );
     
     hex_to_7seg display2 (
         .hex_digit(hex_digit2),
-        .seg(seg_display2)  // Conectar al tercer display
+        .seg(seg_display1)  // Conectar al tercer display
     );
     
     hex_to_7seg display3 (
         .hex_digit(hex_digit3),
-        .seg(seg_display3)  // Conectar al cuarto display
+        .seg(seg_display0)  // Conectar al cuarto display
     );
     
 endmodule

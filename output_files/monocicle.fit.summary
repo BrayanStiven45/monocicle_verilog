@@ -1,16 +1,16 @@
-Fitter Status : Successful - Tue Nov  5 22:29:53 2024
+Fitter Status : Successful - Sat Nov  9 18:34:20 2024
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : monocicle
 Top-level Entity Name : monocicle
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 1,198 / 32,070 ( 4 % )
-Total registers : 1250
+Logic utilization (in ALMs) : 3,982 / 32,070 ( 12 % )
+Total registers : 2324
 Total pins : 37 / 457 ( 8 % )
 Total virtual pins : 0
-Total block memory bits : 16,384 / 4,065,280 ( < 1 % )
-Total RAM Blocks : 3 / 397 ( < 1 % )
+Total block memory bits : 0 / 4,065,280 ( 0 % )
+Total RAM Blocks : 0 / 397 ( 0 % )
 Total DSP Blocks : 0 / 87 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

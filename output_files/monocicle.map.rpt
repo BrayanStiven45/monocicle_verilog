@@ -1,5 +1,5 @@
-Analysis & Elaboration report for monocicle
-Tue Nov  5 22:48:06 2024
+Analysis & Synthesis report for monocicle
+Sat Nov  9 18:22:31 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -7,21 +7,20 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration IP Cores Summary
-  5. Source assignments for DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated
-  6. Source assignments for DataMemory_2:DataMem|ram:ram_1|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated
-  7. Source assignments for DataMemory_2:DataMem|ram:ram_2|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated
-  8. Source assignments for DataMemory_2:DataMem|ram:ram_3|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated
-  9. Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component
- 10. Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_1|altsyncram:altsyncram_component
- 11. Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_2|altsyncram:altsyncram_component
- 12. Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_3|altsyncram:altsyncram_component
- 13. altsyncram Parameter Settings by Entity Instance
- 14. Analysis & Elaboration Settings
- 15. Analysis & Elaboration Messages
- 16. Analysis & Elaboration Suppressed Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -45,388 +44,31 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+--------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                 ;
-+-------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Tue Nov  5 22:48:06 2024          ;
-; Quartus Prime Version         ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name                 ; monocicle                                      ;
-; Top-level Entity Name         ; monocicle                                      ;
-; Family                        ; Cyclone V                                      ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                      ;
-; Total registers               ; N/A until Partition Merge                      ;
-; Total pins                    ; N/A until Partition Merge                      ;
-; Total virtual pins            ; N/A until Partition Merge                      ;
-; Total block memory bits       ; N/A until Partition Merge                      ;
-; Total PLLs                    ; N/A until Partition Merge                      ;
-; Total DLLs                    ; N/A until Partition Merge                      ;
-+-------------------------------+------------------------------------------------+
-
-
-Parallel compilation attempted to use more processors than were available, which may cause increased compilation time. For lowest compilation time, correct your settings.
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 2           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration IP Cores Summary                                                                                     ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------------+-----------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                           ; IP Include File ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------------+-----------------+
-; Altera ; RAM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |monocicle|DataMemory_2:DataMem|ram:ram_0 ; ram.v           ;
-; Altera ; RAM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |monocicle|DataMemory_2:DataMem|ram:ram_1 ; ram.v           ;
-; Altera ; RAM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |monocicle|DataMemory_2:DataMem|ram:ram_2 ; ram.v           ;
-; Altera ; RAM: 1-PORT  ; 23.1    ; N/A          ; N/A          ; |monocicle|DataMemory_2:DataMem|ram:ram_3 ; ram.v           ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------------+-----------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------+
-; Source assignments for DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                     ;
-+---------------------------------+--------------------+------+--------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                      ;
-+---------------------------------+--------------------+------+--------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------+
-; Source assignments for DataMemory_2:DataMem|ram:ram_1|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                     ;
-+---------------------------------+--------------------+------+--------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                      ;
-+---------------------------------+--------------------+------+--------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------+
-; Source assignments for DataMemory_2:DataMem|ram:ram_2|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                     ;
-+---------------------------------+--------------------+------+--------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                      ;
-+---------------------------------+--------------------+------+--------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------+
-; Source assignments for DataMemory_2:DataMem|ram:ram_3|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                     ;
-+---------------------------------+--------------------+------+--------------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                      ;
-+---------------------------------+--------------------+------+--------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+-------------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                            ;
-+------------------------------------+----------------------+-------------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                         ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                      ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                    ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                    ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                  ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                         ;
-; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                         ;
-; WIDTH_A                            ; 8                    ; Signed Integer                                  ;
-; WIDTHAD_A                          ; 9                    ; Signed Integer                                  ;
-; NUMWORDS_A                         ; 512                  ; Signed Integer                                  ;
-; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                         ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                         ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                         ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                         ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                         ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                         ;
-; WIDTH_B                            ; 1                    ; Untyped                                         ;
-; WIDTHAD_B                          ; 1                    ; Untyped                                         ;
-; NUMWORDS_B                         ; 1                    ; Untyped                                         ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                         ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                         ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                         ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                         ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                         ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                         ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                         ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                         ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                         ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                         ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                         ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                         ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                  ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                         ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                         ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                         ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                         ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                         ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                         ;
-; INIT_FILE                          ; UNUSED               ; Untyped                                         ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                         ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                         ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                         ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                         ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                         ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                         ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                         ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                         ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                         ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                         ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                         ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                         ;
-; CBXI_PARAMETER                     ; altsyncram_jil1      ; Untyped                                         ;
-+------------------------------------+----------------------+-------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_1|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+-------------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                            ;
-+------------------------------------+----------------------+-------------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                         ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                      ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                    ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                    ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                  ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                         ;
-; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                         ;
-; WIDTH_A                            ; 8                    ; Signed Integer                                  ;
-; WIDTHAD_A                          ; 9                    ; Signed Integer                                  ;
-; NUMWORDS_A                         ; 512                  ; Signed Integer                                  ;
-; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                         ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                         ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                         ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                         ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                         ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                         ;
-; WIDTH_B                            ; 1                    ; Untyped                                         ;
-; WIDTHAD_B                          ; 1                    ; Untyped                                         ;
-; NUMWORDS_B                         ; 1                    ; Untyped                                         ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                         ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                         ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                         ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                         ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                         ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                         ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                         ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                         ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                         ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                         ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                         ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                         ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                  ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                         ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                         ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                         ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                         ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                         ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                         ;
-; INIT_FILE                          ; UNUSED               ; Untyped                                         ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                         ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                         ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                         ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                         ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                         ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                         ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                         ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                         ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                         ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                         ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                         ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                         ;
-; CBXI_PARAMETER                     ; altsyncram_jil1      ; Untyped                                         ;
-+------------------------------------+----------------------+-------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_2|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+-------------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                            ;
-+------------------------------------+----------------------+-------------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                         ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                      ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                    ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                    ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                  ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                         ;
-; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                         ;
-; WIDTH_A                            ; 8                    ; Signed Integer                                  ;
-; WIDTHAD_A                          ; 9                    ; Signed Integer                                  ;
-; NUMWORDS_A                         ; 512                  ; Signed Integer                                  ;
-; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                         ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                         ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                         ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                         ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                         ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                         ;
-; WIDTH_B                            ; 1                    ; Untyped                                         ;
-; WIDTHAD_B                          ; 1                    ; Untyped                                         ;
-; NUMWORDS_B                         ; 1                    ; Untyped                                         ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                         ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                         ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                         ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                         ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                         ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                         ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                         ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                         ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                         ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                         ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                         ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                         ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                  ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                         ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                         ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                         ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                         ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                         ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                         ;
-; INIT_FILE                          ; UNUSED               ; Untyped                                         ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                         ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                         ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                         ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                         ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                         ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                         ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                         ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                         ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                         ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                         ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                         ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                         ;
-; CBXI_PARAMETER                     ; altsyncram_jil1      ; Untyped                                         ;
-+------------------------------------+----------------------+-------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DataMemory_2:DataMem|ram:ram_3|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+-------------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                            ;
-+------------------------------------+----------------------+-------------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                         ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                      ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                    ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                    ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                  ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                         ;
-; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                         ;
-; WIDTH_A                            ; 8                    ; Signed Integer                                  ;
-; WIDTHAD_A                          ; 9                    ; Signed Integer                                  ;
-; NUMWORDS_A                         ; 512                  ; Signed Integer                                  ;
-; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                         ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                         ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                         ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                         ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                         ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                         ;
-; WIDTH_B                            ; 1                    ; Untyped                                         ;
-; WIDTHAD_B                          ; 1                    ; Untyped                                         ;
-; NUMWORDS_B                         ; 1                    ; Untyped                                         ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                         ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                         ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                         ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                         ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                         ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                         ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                         ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                         ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                         ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                         ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                         ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                         ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                  ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                         ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                         ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                         ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                         ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                         ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                         ;
-; INIT_FILE                          ; UNUSED               ; Untyped                                         ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                         ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                         ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                         ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                         ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                         ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                         ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                         ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                         ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                         ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                         ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                         ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                         ;
-; CBXI_PARAMETER                     ; altsyncram_jil1      ; Untyped                                         ;
-+------------------------------------+----------------------+-------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                                           ;
-+-------------------------------------------+----------------------------------------------------------------+
-; Name                                      ; Value                                                          ;
-+-------------------------------------------+----------------------------------------------------------------+
-; Number of entity instances                ; 4                                                              ;
-; Entity Instance                           ; DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; SINGLE_PORT                                                    ;
-;     -- WIDTH_A                            ; 8                                                              ;
-;     -- NUMWORDS_A                         ; 512                                                            ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                                         ;
-;     -- WIDTH_B                            ; 1                                                              ;
-;     -- NUMWORDS_B                         ; 1                                                              ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                         ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                   ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                           ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                      ;
-; Entity Instance                           ; DataMemory_2:DataMem|ram:ram_1|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; SINGLE_PORT                                                    ;
-;     -- WIDTH_A                            ; 8                                                              ;
-;     -- NUMWORDS_A                         ; 512                                                            ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                                         ;
-;     -- WIDTH_B                            ; 1                                                              ;
-;     -- NUMWORDS_B                         ; 1                                                              ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                         ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                   ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                           ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                      ;
-; Entity Instance                           ; DataMemory_2:DataMem|ram:ram_2|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; SINGLE_PORT                                                    ;
-;     -- WIDTH_A                            ; 8                                                              ;
-;     -- NUMWORDS_A                         ; 512                                                            ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                                         ;
-;     -- WIDTH_B                            ; 1                                                              ;
-;     -- NUMWORDS_B                         ; 1                                                              ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                         ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                   ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                           ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                      ;
-; Entity Instance                           ; DataMemory_2:DataMem|ram:ram_3|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; SINGLE_PORT                                                    ;
-;     -- WIDTH_A                            ; 8                                                              ;
-;     -- NUMWORDS_A                         ; 512                                                            ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                                         ;
-;     -- WIDTH_B                            ; 1                                                              ;
-;     -- NUMWORDS_B                         ; 1                                                              ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                         ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                   ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                           ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                      ;
-+-------------------------------------------+----------------------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Nov  9 18:22:30 2024          ;
+; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                   ; monocicle                                      ;
+; Top-level Entity Name           ; monocicle                                      ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 2048                                           ;
+; Total pins                      ; 37                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -513,16 +155,371 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
+Parallel compilation attempted to use more processors than were available, which may cause increased compilation time. For lowest compilation time, correct your settings.
++-------------------------------------------+
+; Parallel Compilation                      ;
++-----------------------------+-------------+
+; Processors                  ; Number      ;
++-----------------------------+-------------+
+; Number detected on machine  ; 2           ;
+; Maximum allowed             ; 4           ;
+;                             ;             ;
+; Average used                ; 1.00        ;
+; Maximum used                ; 4           ;
+;                             ;             ;
+; Usage by Processor          ; % Time Used ;
+;     Processor 1             ; 100.0%      ;
+;     Processor 2             ;   0.0%      ;
+;     Processors 3 (overused) ;   0.0%      ;
+;     Processors 4 (overused) ;   0.0%      ;
++-----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                          ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; DataMemory.v                     ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/DataMemory.v          ;         ;
+; PCadder.v                        ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/PCadder.v             ;         ;
+; PC.v                             ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/PC.v                  ;         ;
+; monocicle.v                      ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v           ;         ;
+; memory_register.v                ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/memory_register.v     ;         ;
+; instruction_memory.v             ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instruction_memory.v  ;         ;
+; instruction_decoder.v            ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instruction_decoder.v ;         ;
+; immediate_generator.v            ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/immediate_generator.v ;         ;
+; Control_Unit.v                   ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v        ;         ;
+; Branch_Unit.v                    ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Branch_Unit.v         ;         ;
+; ALU.v                            ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ALU.v                 ;         ;
+; mux_1.v                          ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/mux_1.v               ;         ;
+; mux_2.v                          ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/mux_2.v               ;         ;
+; hex_to_7seg.v                    ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/hex_to_7seg.v         ;         ;
+; pc_display.v                     ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/pc_display.v          ;         ;
+; instructions.mem                 ; yes             ; Auto-Found Unspecified File  ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instructions.mem      ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 4161      ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 4831      ;
+;     -- 7 input functions                    ; 76        ;
+;     -- 6 input functions                    ; 3307      ;
+;     -- 5 input functions                    ; 446       ;
+;     -- 4 input functions                    ; 273       ;
+;     -- <=3 input functions                  ; 729       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 2048      ;
+;                                             ;           ;
+; I/O pins                                    ; 37        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 2048      ;
+; Total fan-out                               ; 31929     ;
+; Average fan-out                             ; 4.59      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                    ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Entity Name         ; Library Name ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+---------------------+--------------+
+; |monocicle                       ; 4831 (0)            ; 2048 (0)                  ; 0                 ; 0          ; 37   ; 0            ; |monocicle                                            ; monocicle           ; work         ;
+;    |ALU:alu|                     ; 144 (144)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|ALU:alu                                    ; ALU                 ; work         ;
+;    |Branch_Unit:Branch_U|        ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Branch_Unit:Branch_U                       ; Branch_Unit         ; work         ;
+;    |Control_Unit:con_unit|       ; 15 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit                      ; Control_Unit        ; work         ;
+;       |AluOp:aluop|              ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|AluOp:aluop          ; AluOp               ; work         ;
+;       |Aluasrc:alua|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|Aluasrc:alua         ; Aluasrc             ; work         ;
+;       |DMWr:dmwr|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|DMWr:dmwr            ; DMWr                ; work         ;
+;       |RuDataWrSrc:rudata|       ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|RuDataWrSrc:rudata   ; RuDataWrSrc         ; work         ;
+;       |Ruwr:ruwr|                ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|Ruwr:ruwr            ; Ruwr                ; work         ;
+;       |immsrc:imsrc|             ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|immsrc:imsrc         ; immsrc              ; work         ;
+;    |DataMemory:DataMem|          ; 2489 (2489)         ; 1024 (1024)               ; 0                 ; 0          ; 0    ; 0            ; |monocicle|DataMemory:DataMem                         ; DataMemory          ; work         ;
+;    |PC:p|                        ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |monocicle|PC:p                                       ; PC                  ; work         ;
+;    |PCAdder:adder|               ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|PCAdder:adder                              ; PCAdder             ; work         ;
+;    |immediate_generator:imm_gen| ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|immediate_generator:imm_gen                ; immediate_generator ; work         ;
+;    |instruction_memory:ins_mem|  ; 52 (52)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|instruction_memory:ins_mem                 ; instruction_memory  ; work         ;
+;    |memory_register:mem_reg|     ; 595 (595)           ; 992 (992)                 ; 0                 ; 0          ; 0    ; 0            ; |monocicle|memory_register:mem_reg                    ; memory_register     ; work         ;
+;    |mux_1:muxAluA|               ; 48 (48)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|mux_1:muxAluA                              ; mux_1               ; work         ;
+;    |mux_1:muxAluB|               ; 49 (49)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|mux_1:muxAluB                              ; mux_1               ; work         ;
+;    |mux_2:muxWrite|              ; 1012 (1012)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|mux_2:muxWrite                             ; mux_2               ; work         ;
+;    |pc_display:display_pc|       ; 377 (349)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc                      ; pc_display          ; work         ;
+;       |hex_to_7seg:display0|     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc|hex_to_7seg:display0 ; hex_to_7seg         ; work         ;
+;       |hex_to_7seg:display1|     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc|hex_to_7seg:display1 ; hex_to_7seg         ; work         ;
+;       |hex_to_7seg:display2|     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc|hex_to_7seg:display2 ; hex_to_7seg         ; work         ;
+;       |hex_to_7seg:display3|     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc|hex_to_7seg:display3 ; hex_to_7seg         ; work         ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++------------------------------------------+----------------------------------------+
+; Register name                            ; Reason for Removal                     ;
++------------------------------------------+----------------------------------------+
+; memory_register:mem_reg|registers[0][0]  ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][1]  ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][2]  ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][3]  ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][4]  ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][5]  ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][6]  ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][7]  ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][8]  ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][9]  ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][10] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][11] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][12] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][13] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][14] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][15] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][16] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][17] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][18] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][19] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][20] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][21] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][22] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][23] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][24] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][25] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][26] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][27] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][28] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][29] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][30] ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][31] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 32   ;                                        ;
++------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2048  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 30    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2018  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; memory_register:mem_reg|registers[2][6] ; 3       ;
+; Total number of inverted registers = 1  ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[127][6] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[126][6] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[125][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[124][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[123][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[122][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[121][5] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[120][6] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[119][7] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[118][7] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[117][6] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[116][6] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[115][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[114][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[113][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[112][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[111][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[110][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[109][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[108][3] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[107][0] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[106][0] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[105][0] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[104][7] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[103][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[102][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[101][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[100][1] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[99][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[98][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[97][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[96][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[95][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[94][4]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[93][4]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[92][4]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[91][4]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[90][0]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[89][2]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[88][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[87][4]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[86][7]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[85][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[84][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[83][2]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[82][2]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[81][2]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[80][5]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[79][5]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[78][5]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[77][7]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[76][5]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[75][7]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[74][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[73][0]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[72][0]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[71][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[70][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[69][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[68][4]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[67][0]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[66][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[65][4]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[64][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[63][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[62][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[61][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[60][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[59][2]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[58][2]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[57][2]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[56][4]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[55][2]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[54][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[53][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[52][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[51][2]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[50][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[49][5]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[48][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[47][4]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[46][2]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[45][2]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[44][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[43][5]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[42][5]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[41][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[40][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[39][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[38][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[37][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[36][0]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[35][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[34][4]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[33][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[32][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[31][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[30][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[29][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[28][7]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[27][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[26][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[25][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[24][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[23][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[22][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[21][6]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[20][4]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[19][2]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[18][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[17][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[16][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[15][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[14][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[13][3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[12][1]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[11][0]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[10][5]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[9][4]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[8][4]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[7][7]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[6][4]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[5][7]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[4][7]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[3][7]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[2][4]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[1][7]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[0][2]   ;
+; 8:1                ; 31 bits   ; 155 LEs       ; 62 LEs               ; 93 LEs                 ; No         ; |monocicle|ALU:alu|Mux24                     ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |monocicle|mux_1:muxAluB|out[21]             ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |monocicle|mux_1:muxAluB|out[18]             ;
+; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; No         ; |monocicle|memory_register:mem_reg|Mux25     ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |monocicle|memory_register:mem_reg|Mux44     ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |monocicle|mux_1:muxAluB|out[3]              ;
+; 68:1               ; 7 bits    ; 315 LEs       ; 315 LEs              ; 0 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux28              ;
+; 70:1               ; 8 bits    ; 368 LEs       ; 368 LEs              ; 0 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux11              ;
+; 133:1              ; 7 bits    ; 616 LEs       ; 616 LEs              ; 0 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux22              ;
+; 134:1              ; 8 bits    ; 712 LEs       ; 712 LEs              ; 0 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux1               ;
+; 67:1               ; 2 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; No         ; |monocicle|pc_display:display_pc|Mux1        ;
+; 70:1               ; 7 bits    ; 322 LEs       ; 322 LEs              ; 0 LEs                  ; No         ; |monocicle|pc_display:display_pc|Mux6        ;
+; 69:1               ; 6 bits    ; 276 LEs       ; 276 LEs              ; 0 LEs                  ; No         ; |monocicle|pc_display:display_pc|Mux15       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 2048                        ;
+;     ENA               ; 2018                        ;
+;     SLD               ; 30                          ;
+; arriav_lcell_comb     ; 4835                        ;
+;     arith             ; 158                         ;
+;         1 data inputs ; 124                         ;
+;         4 data inputs ; 2                           ;
+;         5 data inputs ; 32                          ;
+;     extend            ; 76                          ;
+;         7 data inputs ; 76                          ;
+;     normal            ; 4601                        ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 96                          ;
+;         3 data inputs ; 508                         ;
+;         4 data inputs ; 271                         ;
+;         5 data inputs ; 414                         ;
+;         6 data inputs ; 3307                        ;
+; boundary_port         ; 37                          ;
+;                       ;                             ;
+; Max LUT depth         ; 18.70                       ;
+; Average LUT depth     ; 14.21                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:01:58     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Nov  5 22:46:18 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off monocicle -c monocicle --analysis_and_elaboration
-Warning (125092): Tcl Script File ram_brayan.qip not found
-    Info (125063): set_global_assignment -name QIP_FILE ram_brayan.qip
+    Info: Processing started: Sat Nov  9 18:19:41 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off monocicle -c monocicle
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Warning (20031): Parallel compilation is enabled for 4 processors, but there are only 2 processors in the system. Runtime may increase due to over usage of the processor space.
 Info (12021): Found 1 design units, including 1 entities, in source file datamemory.v
@@ -564,23 +561,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file hex_to_
     Info (12023): Found entity 1: hex_to_7seg File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/hex_to_7seg.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pc_display.v
     Info (12023): Found entity 1: pc_display File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/pc_display.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file datamemory_2.v
-    Info (12023): Found entity 1: DataMemory_2 File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/DataMemory_2.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file ram.v
-    Info (12023): Found entity 1: ram File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ram.v Line: 40
+Warning (12019): Can't analyze file -- file DataMemory_2.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file testbench_simulation.v
     Info (12023): Found entity 1: testbench_simulation File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/testbench_simulation.v Line: 3
 Info (12127): Elaborating entity "monocicle" for the top level hierarchy
-Info (12128): Elaborating entity "PC" for hierarchy "PC:p" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 49
-Info (12128): Elaborating entity "pc_display" for hierarchy "pc_display:display_pc" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 60
+Info (12128): Elaborating entity "PC" for hierarchy "PC:p" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 82
+Info (12128): Elaborating entity "pc_display" for hierarchy "pc_display:display_pc" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 93
 Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "pc_display:display_pc|hex_to_7seg:display0" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/pc_display.v Line: 36
-Info (12128): Elaborating entity "PCAdder" for hierarchy "PCAdder:adder" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 66
-Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:ins_mem" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 73
+Info (12128): Elaborating entity "PCAdder" for hierarchy "PCAdder:adder" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 99
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:ins_mem" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 106
 Warning (10030): Net "memory.data_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instruction_memory.v Line: 6
 Warning (10030): Net "memory.waddr_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instruction_memory.v Line: 6
 Warning (10030): Net "memory.we_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instruction_memory.v Line: 6
-Info (12128): Elaborating entity "instruction_decoder" for hierarchy "instruction_decoder:insdec" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 85
-Info (12128): Elaborating entity "Control_Unit" for hierarchy "Control_Unit:con_unit" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 100
+Info (12128): Elaborating entity "instruction_decoder" for hierarchy "instruction_decoder:insdec" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 118
+Info (12128): Elaborating entity "Control_Unit" for hierarchy "Control_Unit:con_unit" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 133
 Info (12128): Elaborating entity "Aluasrc" for hierarchy "Control_Unit:con_unit|Aluasrc:alua" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 19
 Info (12128): Elaborating entity "Ruwr" for hierarchy "Control_Unit:con_unit|Ruwr:ruwr" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 24
 Info (12128): Elaborating entity "immsrc" for hierarchy "Control_Unit:con_unit|immsrc:imsrc" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 29
@@ -590,45 +584,31 @@ Info (12128): Elaborating entity "Brop" for hierarchy "Control_Unit:con_unit|Bro
 Info (12128): Elaborating entity "DMWr" for hierarchy "Control_Unit:con_unit|DMWr:dmwr" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 52
 Info (12128): Elaborating entity "DMCTrl" for hierarchy "Control_Unit:con_unit|DMCTrl:dmctrl" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 58
 Info (12128): Elaborating entity "RuDataWrSrc" for hierarchy "Control_Unit:con_unit|RuDataWrSrc:rudata" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 63
-Info (12128): Elaborating entity "immediate_generator" for hierarchy "immediate_generator:imm_gen" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 106
-Info (12128): Elaborating entity "memory_register" for hierarchy "memory_register:mem_reg" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 120
-Info (12128): Elaborating entity "mux_1" for hierarchy "mux_1:muxAluA" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 127
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 141
-Info (12128): Elaborating entity "Branch_Unit" for hierarchy "Branch_Unit:Branch_U" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 149
-Info (12128): Elaborating entity "DataMemory_2" for hierarchy "DataMemory_2:DataMem" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 165
-Info (12128): Elaborating entity "ram" for hierarchy "DataMemory_2:DataMem|ram:ram_0" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/DataMemory_2.v Line: 20
-Info (12128): Elaborating entity "altsyncram" for hierarchy "DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ram.v Line: 86
-Info (12130): Elaborated megafunction instantiation "DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ram.v Line: 86
-Info (12133): Instantiated megafunction "DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ram.v Line: 86
-    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
-    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "intended_device_family" = "Cyclone V"
-    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
-    Info (12134): Parameter "lpm_type" = "altsyncram"
-    Info (12134): Parameter "numwords_a" = "512"
-    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
-    Info (12134): Parameter "outdata_aclr_a" = "NONE"
-    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
-    Info (12134): Parameter "power_up_uninitialized" = "TRUE"
-    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
-    Info (12134): Parameter "widthad_a" = "9"
-    Info (12134): Parameter "width_a" = "8"
-    Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jil1.tdf
-    Info (12023): Found entity 1: altsyncram_jil1 File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/db/altsyncram_jil1.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_jil1" for hierarchy "DataMemory_2:DataMem|ram:ram_0|altsyncram:altsyncram_component|altsyncram_jil1:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "mux_2" for hierarchy "mux_2:muxWrite" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 173
+Info (12128): Elaborating entity "immediate_generator" for hierarchy "immediate_generator:imm_gen" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 139
+Info (12128): Elaborating entity "memory_register" for hierarchy "memory_register:mem_reg" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 153
+Info (12128): Elaborating entity "mux_1" for hierarchy "mux_1:muxAluA" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 160
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 174
+Info (12128): Elaborating entity "Branch_Unit" for hierarchy "Branch_Unit:Branch_U" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 182
+Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:DataMem" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 198
+Info (12128): Elaborating entity "mux_2" for hierarchy "mux_2:muxWrite" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 206
+Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/output_files/monocicle.map.smsg
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4803 megabytes
-    Info: Processing ended: Tue Nov  5 22:48:07 2024
-    Info: Elapsed time: 00:01:49
-    Info: Total CPU time (on all processors): 00:01:12
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 5891 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 5854 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4850 megabytes
+    Info: Processing ended: Sat Nov  9 18:22:31 2024
+    Info: Elapsed time: 00:02:50
+    Info: Total CPU time (on all processors): 00:02:36
 
 
-+--------------------------------------------+
-; Analysis & Elaboration Suppressed Messages ;
-+--------------------------------------------+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
 The suppressed messages can be found in C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/output_files/monocicle.map.smsg.
 
 

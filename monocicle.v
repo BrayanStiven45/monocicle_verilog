@@ -10,7 +10,25 @@ module monocicle (
 	 input [4:0] address_register
 	 
 	 
+	 //salidas para prueba en testbench de modelsim
+//	 output wire [31:0] pc_out,
+//    output wire [31:0] ins_memory_out,
+//	 output wire [31:0] alures_1,
+//    output wire [31:0] data_ram,
+//	 output wire [31:0] out_rs1,
+//	 output wire [31:0] out_rs2,
+//	 output wire [2:0] dmctrl,
+//	 output wire dmwr,
+//	 output wire [31:0] registro,
+//	 output wire [31:0] read_muestra,
+//	 output wire [8:0] address_of_ram,
+//	 output wire clk_ram,
+//	 output wire ruwr_2,
+//	 output wire [4:0] out_rd,
+//	 output wire [1:0] rudatawrsrc
+//	 
 );
+	
 	wire [31:0] selected_register;
 	wire [31:0] pc;
 	wire [31:0] suma;
@@ -41,6 +59,21 @@ module monocicle (
 	wire NextPCSrc;
 	wire [31:0] AluRes;
 	wire [31:0] read_data;
+	
+	// Asignaciones a las salidas para el testBench
+//	assign pc_out = pc;
+//	assign ins_memory_out = instruction;
+//	assign alures_1 = AluRes;
+//	assign data_ram = read_data;
+//	assign out_rs1 = ru1;
+//	assign out_rs2 = ru2;
+//	assign out_rd = rd;
+//	assign dmctrl = DMCTrl;
+//	assign dmwr = DMWr;
+//	assign registro = selected_register;
+//	assign read_muestra = read_data;
+//	assign ruwr_2 = Ruwr;
+//	assign rudatawrsrc = RuDataWrSrc;
 	
     PC p(
         .clk(clk),
@@ -155,7 +188,7 @@ module monocicle (
 			.out(next_pc)
 	 );
 	 
-	 DataMemory_2 DataMem(
+	DataMemory DataMem(
 			.address(AluRes),
 			.DataWr(ru2),
 			.DMWr(DMWr),
