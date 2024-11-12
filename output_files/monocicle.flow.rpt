@@ -1,5 +1,5 @@
 Flow report for monocicle
-Sat Nov  9 18:36:26 2024
+Tue Nov 12 01:27:04 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,16 +41,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Sat Nov  9 18:36:26 2024          ;
+; Flow Status                     ; Successful - Tue Nov 12 01:27:04 2024          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; monocicle                                      ;
 ; Top-level Entity Name           ; monocicle                                      ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEMA5F31C6                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 3,982 / 32,070 ( 12 % )                        ;
-; Total registers                 ; 2324                                           ;
-; Total pins                      ; 37 / 457 ( 8 % )                               ;
+; Logic utilization (in ALMs)     ; 4,585 / 32,070 ( 14 % )                        ;
+; Total registers                 ; 2382                                           ;
+; Total pins                      ; 65 / 457 ( 14 % )                              ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                          ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                                 ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/09/2024 18:19:43 ;
+; Start date & time ; 11/12/2024 01:10:42 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; monocicle           ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 151838102998.173119438216872           ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 151838102998.173139184112740           ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; testbench_simulation              ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -110,12 +110,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:02:48     ; 1.0                     ; 4850 MB             ; 00:02:34                           ;
-; Fitter               ; 00:11:47     ; 1.2                     ; 6506 MB             ; 00:13:38                           ;
-; Assembler            ; 00:00:25     ; 1.0                     ; 4899 MB             ; 00:00:23                           ;
-; Timing Analyzer      ; 00:01:20     ; 3.3                     ; 5284 MB             ; 00:01:52                           ;
-; EDA Netlist Writer   ; 00:00:08     ; 1.0                     ; 4767 MB             ; 00:00:08                           ;
-; Total                ; 00:16:28     ; --                      ; --                  ; 00:18:35                           ;
+; Analysis & Synthesis ; 00:02:44     ; 1.0                     ; 4861 MB             ; 00:02:44                           ;
+; Fitter               ; 00:11:21     ; 1.2                     ; 6516 MB             ; 00:15:05                           ;
+; Assembler            ; 00:00:27     ; 1.0                     ; 4899 MB             ; 00:00:24                           ;
+; Timing Analyzer      ; 00:01:23     ; 3.2                     ; 5311 MB             ; 00:02:00                           ;
+; EDA Netlist Writer   ; 00:00:09     ; 1.0                     ; 4776 MB             ; 00:00:09                           ;
+; Total                ; 00:16:04     ; --                      ; --                  ; 00:20:22                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

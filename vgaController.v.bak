@@ -1,0 +1,21 @@
+module vgaController(
+	input clk_50,
+	input [31:0] instruction,
+	input [31:0] pc,
+);
+	
+
+endmodule
+
+module clk50_25(
+  input clk50,
+  output clk25
+);
+
+  reg [1:0] state;
+  always @(posedge clk50) begin
+    state <= state + 2'b1;
+	end
+
+  assign clock25 = (state == 2'b0 || state == 2'b10) ? 1'b1 : 1'b0;
+endmodule

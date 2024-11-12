@@ -1,0 +1,18 @@
+module sync(
+	
+	input clk
+	
+);
+	
+endmodule
+
+module counter(
+	input clk,
+	input enable,
+	input reset,
+	input [9:0] stop,
+	output [9:0] out
+	
+);
+	
+	

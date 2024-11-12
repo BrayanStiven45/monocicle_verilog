@@ -5,6 +5,14 @@ module monocicle (
     output [6:0] seg1, // Salida del segundo display de 7 segmentos
     output [6:0] seg2, // Salida del tercer display de 7 segmentos
     output [6:0] seg3, // Salida del cuarto display de 7 segmentos
+	 //VGA
+	 output hsync,
+	 output vsync,
+	 output [7:0] R,
+	 output [7:0] G,
+	 output [7:0] Bl,
+	 output vga_clk25,
+	 input clk50,
 	 
 	 // datos para seleccionar el registro de la memoria de registros
 	 input [4:0] address_register
@@ -74,6 +82,20 @@ module monocicle (
 //	assign read_muestra = read_data;
 //	assign ruwr_2 = Ruwr;
 //	assign rudatawrsrc = RuDataWrSrc;
+
+	vgaController vga(
+		.clk50(clk50),
+		.instruction(instruction),
+		.pc(pc),
+		.hsync_Out(hsync),
+		.vsync_Out(vsync),
+		.clk_25(vga_clk25),
+		.R(R),
+		.G(G),
+		.B(Bl)
+	);
+
+
 	
     PC p(
         .clk(clk),
