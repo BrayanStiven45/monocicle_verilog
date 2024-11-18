@@ -1,10 +1,10 @@
 module monocicle (
     input clk,
-	 input [2:0] sel,         // Selector para mostrar los 16 bits más o menos significativos del PC
-    output [6:0] seg0, // Salida del primer display de 7 segmentos
-    output [6:0] seg1, // Salida del segundo display de 7 segmentos
-    output [6:0] seg2, // Salida del tercer display de 7 segmentos
-    output [6:0] seg3, // Salida del cuarto display de 7 segmentos
+//	 input [2:0] sel,         // Selector para mostrar los 16 bits más o menos significativos del PC
+//    output [6:0] seg0, // Salida del primer display de 7 segmentos
+//    output [6:0] seg1, // Salida del segundo display de 7 segmentos
+//    output [6:0] seg2, // Salida del tercer display de 7 segmentos
+//    output [6:0] seg3, // Salida del cuarto display de 7 segmentos
 	 //VGA
 	 output hsync,
 	 output vsync,
@@ -83,36 +83,50 @@ module monocicle (
 //	assign ruwr_2 = Ruwr;
 //	assign rudatawrsrc = RuDataWrSrc;
 
-	vgaController vga(
-		.clk50(clk50),
+	wire [4:0] select_register_vga; // para seleccionar el registro que se mostrara en la vga
+	wire [31:0] register_vga;
+	vga vga_1(
+		.clock(clk50),
 		.instruction(instruction),
 		.pc(pc),
-		.hsync_Out(hsync),
-		.vsync_Out(vsync),
-		.clk_25(vga_clk25),
-		.R(R),
-		.G(G),
-		.B(Bl)
+		.opcode(opcode),
+		.rd(rd),
+		.funct3(funct3),
+		.rs1(rs1),
+		.rs2(rs2),
+		.funct7(funct7),
+		.register_select(select_register_vga),
+		.register(register_vga),
+		.vga_hsync(hsync),
+		.vga_vsync(vsync),
+		.vga_clock(vga_clk25),
+		.vga_red(R),
+		.vga_green(G),
+		.vga_blue(Bl)
 	);
 
-
+	wire clk_mono;
+	reg activar;
+	always @(posedge clk) begin
+		 clk_mono <= ~clk_mono; // Alterna el estado en cada flanco positivo
+	end
 	
     PC p(
-        .clk(clk),
+        .clk(clk_mono),
         .next_pc(next_pc),
         .pc(pc)
     );
 	 
-	 pc_display display_pc (
-        .pc(pc),		  // Pasamos el valor del PC al display
-		  .register(selected_register), // Le pasamos el registro
-		  .instruction(instruction),
-        .sel(sel),          // Pasamos el selector
-        .seg_display0(seg0), // Conectamos las salidas a los displays
-        .seg_display1(seg1),
-        .seg_display2(seg2),
-        .seg_display3(seg3)
-    );
+//	 pc_display display_pc (
+//        .pc(pc),		  // Pasamos el valor del PC al display
+//		  .register(selected_register), // Le pasamos el registro
+//		  .instruction(instruction),
+//        .sel(sel),          // Pasamos el selector
+//        .seg_display0(seg0), // Conectamos las salidas a los displays
+//        .seg_display1(seg1),
+//        .seg_display2(seg2),
+//        .seg_display3(seg3)
+//    );
 
     // Instancia del sumador
     PCAdder adder(
@@ -161,7 +175,7 @@ module monocicle (
 	 );
 	 
 	 memory_register mem_reg(
-			.clk(clk),              
+			.clk(clk_mono),              
 			.regWrite(Ruwr),         
 			.rs1(rs1),      
 			.rs2(rs2),      
@@ -170,8 +184,12 @@ module monocicle (
 			.readData1(ru1), 
 			.readData2(ru2),
 			
+			// pantalla para hexadecimal
 			.displaySelect(address_register),
-			.displayData(selected_register)
+			.displayData(selected_register),
+			//pantalla para vga
+			.vga_select(select_register_vga),
+			.vga_register_select(register_vga)
 	 );
 	 
 	 mux_1 muxAluA(
@@ -216,7 +234,7 @@ module monocicle (
 			.DMWr(DMWr),
 			.DMCtrl(DMCTrl),
 			.DataRd(read_data),
-			.clk(clk)
+			.clk(clk_mono)
 	 );
 	 
 	 mux_2 muxWrite(

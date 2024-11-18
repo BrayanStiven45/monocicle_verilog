@@ -1,6 +1,7 @@
 module sync(
 	
 	input clk_25,
+	input clk_50,
 	output hSync,
 	output vSync,
 	output video_on,

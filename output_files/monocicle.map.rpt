@@ -1,5 +1,5 @@
 Analysis & Synthesis report for monocicle
-Tue Nov 12 01:13:27 2024
+Fri Nov 15 18:53:01 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -17,15 +17,24 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   9. General Register Statistics
  10. Inverted Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: vgaController:vga|sync:syn
- 13. Parameter Settings for User Entity Instance: vgaController:vga|textMode:text
- 14. Port Connectivity Checks: "vgaController:vga|HexaToAscii32bits:ascii_pc"
- 15. Port Connectivity Checks: "vgaController:vga|HexaToAscii32bits:ascii_instruction"
- 16. Port Connectivity Checks: "vgaController:vga|ScreenRam:screen"
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
- 20. Analysis & Synthesis Suppressed Messages
+ 12. Parameter Settings for User Entity Instance: vga:vga_1|vga_controller:pt
+ 13. Parameter Settings for User Entity Instance: vga:vga_1|textMode:text
+ 14. Parameter Settings for User Entity Instance: vga:vga_1|binaryToAscii:ascii_op_0
+ 15. Parameter Settings for User Entity Instance: vga:vga_1|binaryToAscii:ascii_op_1
+ 16. Parameter Settings for User Entity Instance: vga:vga_1|binaryToAscii:ascii_rd
+ 17. Parameter Settings for User Entity Instance: vga:vga_1|binaryToAscii:ascii_fun3
+ 18. Parameter Settings for User Entity Instance: vga:vga_1|binaryToAscii:ascii_rs1
+ 19. Parameter Settings for User Entity Instance: vga:vga_1|binaryToAscii:ascii_rs2
+ 20. Parameter Settings for User Entity Instance: vga:vga_1|binaryToAscii:ascii_fun7
+ 21. Parameter Settings for User Entity Instance: divisor_25Mhz_a_1Hz:divisor
+ 22. Port Connectivity Checks: "memory_register:mem_reg"
+ 23. Port Connectivity Checks: "vga:vga_1|ScreenRam:screen"
+ 24. Port Connectivity Checks: "vga:vga_1|textMode:text"
+ 25. Port Connectivity Checks: "vga:vga_1|vga_controller:pt"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+ 29. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -52,14 +61,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Nov 12 01:13:26 2024          ;
+; Analysis & Synthesis Status     ; Successful - Fri Nov 15 18:53:00 2024          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; monocicle                                      ;
 ; Top-level Entity Name           ; monocicle                                      ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 2069                                           ;
-; Total pins                      ; 65                                             ;
+; Total registers                 ; 2119                                           ;
+; Total pins                      ; 34                                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0                                              ;
 ; Total DSP Blocks                ; 0                                              ;
@@ -174,7 +183,7 @@ Parallel compilation attempted to use more processors than were available, which
 ;                             ;             ;
 ; Usage by Processor          ; % Time Used ;
 ;     Processor 1             ; 100.0%      ;
-;     Processor 2             ;   0.1%      ;
+;     Processor 2             ;   0.0%      ;
 ;     Processors 3 (overused) ;   0.0%      ;
 ;     Processors 4 (overused) ;   0.0%      ;
 +-----------------------------+-------------+
@@ -198,128 +207,129 @@ Parallel compilation attempted to use more processors than were available, which
 ; ALU.v                            ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ALU.v                 ;         ;
 ; mux_1.v                          ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/mux_1.v               ;         ;
 ; mux_2.v                          ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/mux_2.v               ;         ;
-; hex_to_7seg.v                    ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/hex_to_7seg.v         ;         ;
-; pc_display.v                     ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/pc_display.v          ;         ;
 ; textMode.v                       ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/textMode.v            ;         ;
-; sync.v                           ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/sync.v                ;         ;
 ; HexaToAscii32bits.v              ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/HexaToAscii32bits.v   ;         ;
 ; FontRom.v                        ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/FontRom.v             ;         ;
 ; ScreenRam.v                      ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ScreenRam.v           ;         ;
-; vgaController.v                  ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vgaController.v       ;         ;
+; vga_controller.v                 ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vga_controller.v      ;         ;
+; binaryToAscii.v                  ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/binaryToAscii.v       ;         ;
+; divisor_25Mhz_a_1Hz.v            ; yes             ; User Verilog HDL File        ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/divisor_25Mhz_a_1Hz.v ;         ;
 ; instructions.mem                 ; yes             ; Auto-Found Unspecified File  ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instructions.mem      ;         ;
 ; charrom.mem                      ; yes             ; Auto-Found Unspecified File  ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/charrom.mem           ;         ;
 ; screenram.mem                    ; yes             ; Auto-Found Unspecified File  ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/screenram.mem         ;         ;
+; vga.v                            ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vga.v                 ;         ;
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 4924      ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 5490      ;
-;     -- 7 input functions                    ; 146       ;
-;     -- 6 input functions                    ; 4104      ;
-;     -- 5 input functions                    ; 539       ;
-;     -- 4 input functions                    ; 336       ;
-;     -- <=3 input functions                  ; 365       ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 2069      ;
-;                                             ;           ;
-; I/O pins                                    ; 65        ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 2048      ;
-; Total fan-out                               ; 36899     ;
-; Average fan-out                             ; 4.80      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                       ;
++---------------------------------------------+-------------------------------------+
+; Resource                                    ; Usage                               ;
++---------------------------------------------+-------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 4785                                ;
+;                                             ;                                     ;
+; Combinational ALUT usage for logic          ; 5607                                ;
+;     -- 7 input functions                    ; 140                                 ;
+;     -- 6 input functions                    ; 3713                                ;
+;     -- 5 input functions                    ; 552                                 ;
+;     -- 4 input functions                    ; 348                                 ;
+;     -- <=3 input functions                  ; 854                                 ;
+;                                             ;                                     ;
+; Dedicated logic registers                   ; 2119                                ;
+;                                             ;                                     ;
+; I/O pins                                    ; 34                                  ;
+;                                             ;                                     ;
+; Total DSP Blocks                            ; 0                                   ;
+;                                             ;                                     ;
+; Maximum fan-out node                        ; divisor_25Mhz_a_1Hz:divisor|clk_out ;
+; Maximum fan-out                             ; 2049                                ;
+; Total fan-out                               ; 36123                               ;
+; Average fan-out                             ; 4.63                                ;
++---------------------------------------------+-------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                          ;
-+---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Entity Name         ; Library Name ;
-+---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------+---------------------+--------------+
-; |monocicle                                  ; 5490 (0)            ; 2069 (0)                  ; 0                 ; 0          ; 65   ; 0            ; |monocicle                                                       ; monocicle           ; work         ;
-;    |ALU:alu|                                ; 144 (144)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|ALU:alu                                               ; ALU                 ; work         ;
-;    |Branch_Unit:Branch_U|                   ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Branch_Unit:Branch_U                                  ; Branch_Unit         ; work         ;
-;    |Control_Unit:con_unit|                  ; 13 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit                                 ; Control_Unit        ; work         ;
-;       |AluOp:aluop|                         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|AluOp:aluop                     ; AluOp               ; work         ;
-;       |Aluasrc:alua|                        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|Aluasrc:alua                    ; Aluasrc             ; work         ;
-;       |DMWr:dmwr|                           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|DMWr:dmwr                       ; DMWr                ; work         ;
-;       |RuDataWrSrc:rudata|                  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|RuDataWrSrc:rudata              ; RuDataWrSrc         ; work         ;
-;       |Ruwr:ruwr|                           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|Ruwr:ruwr                       ; Ruwr                ; work         ;
-;       |immsrc:imsrc|                        ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|immsrc:imsrc                    ; immsrc              ; work         ;
-;    |DataMemory:DataMem|                     ; 2491 (2491)         ; 1024 (1024)               ; 0                 ; 0          ; 0    ; 0            ; |monocicle|DataMemory:DataMem                                    ; DataMemory          ; work         ;
-;    |PC:p|                                   ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |monocicle|PC:p                                                  ; PC                  ; work         ;
-;    |PCAdder:adder|                          ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|PCAdder:adder                                         ; PCAdder             ; work         ;
-;    |immediate_generator:imm_gen|            ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|immediate_generator:imm_gen                           ; immediate_generator ; work         ;
-;    |instruction_memory:ins_mem|             ; 55 (55)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|instruction_memory:ins_mem                            ; instruction_memory  ; work         ;
-;    |memory_register:mem_reg|                ; 599 (599)           ; 992 (992)                 ; 0                 ; 0          ; 0    ; 0            ; |monocicle|memory_register:mem_reg                               ; memory_register     ; work         ;
-;    |mux_1:muxAluA|                          ; 53 (53)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|mux_1:muxAluA                                         ; mux_1               ; work         ;
-;    |mux_1:muxAluB|                          ; 57 (57)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|mux_1:muxAluB                                         ; mux_1               ; work         ;
-;    |mux_2:muxWrite|                         ; 1011 (1011)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|mux_2:muxWrite                                        ; mux_2               ; work         ;
-;    |pc_display:display_pc|                  ; 377 (349)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc                                 ; pc_display          ; work         ;
-;       |hex_to_7seg:display0|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc|hex_to_7seg:display0            ; hex_to_7seg         ; work         ;
-;       |hex_to_7seg:display1|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc|hex_to_7seg:display1            ; hex_to_7seg         ; work         ;
-;       |hex_to_7seg:display2|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc|hex_to_7seg:display2            ; hex_to_7seg         ; work         ;
-;       |hex_to_7seg:display3|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|pc_display:display_pc|hex_to_7seg:display3            ; hex_to_7seg         ; work         ;
-;    |vgaController:vga|                      ; 640 (28)            ; 21 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vgaController:vga                                     ; vgaController       ; work         ;
-;       |FontRom:font|                        ; 212 (212)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vgaController:vga|FontRom:font                        ; FontRom             ; work         ;
-;       |HexaToAscii32bits:ascii_instruction| ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vgaController:vga|HexaToAscii32bits:ascii_instruction ; HexaToAscii32bits   ; work         ;
-;       |HexaToAscii32bits:ascii_pc|          ; 28 (28)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vgaController:vga|HexaToAscii32bits:ascii_pc          ; HexaToAscii32bits   ; work         ;
-;       |ScreenRam:screen|                    ; 314 (314)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vgaController:vga|ScreenRam:screen                    ; ScreenRam           ; work         ;
-;       |clk50_25:clock_25|                   ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vgaController:vga|clk50_25:clock_25                   ; clk50_25            ; work         ;
-;       |sync:syn|                            ; 27 (27)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vgaController:vga|sync:syn                            ; sync                ; work         ;
-;       |textMode:text|                       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vgaController:vga|textMode:text                       ; textMode            ; work         ;
-+---------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------+---------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                            ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Entity Name         ; Library Name ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+---------------------+--------------+
+; |monocicle                               ; 5607 (1)            ; 2119 (1)                  ; 0                 ; 0          ; 34   ; 0            ; |monocicle                                            ; monocicle           ; work         ;
+;    |ALU:alu|                             ; 144 (144)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|ALU:alu                                    ; ALU                 ; work         ;
+;    |Branch_Unit:Branch_U|                ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Branch_Unit:Branch_U                       ; Branch_Unit         ; work         ;
+;    |Control_Unit:con_unit|               ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit                      ; Control_Unit        ; work         ;
+;       |AluOp:aluop|                      ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|AluOp:aluop          ; AluOp               ; work         ;
+;       |Aluasrc:alua|                     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|Aluasrc:alua         ; Aluasrc             ; work         ;
+;       |Alubsrc:alubsrc|                  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|Alubsrc:alubsrc      ; Alubsrc             ; work         ;
+;       |DMWr:dmwr|                        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|DMWr:dmwr            ; DMWr                ; work         ;
+;       |RuDataWrSrc:rudata|               ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|RuDataWrSrc:rudata   ; RuDataWrSrc         ; work         ;
+;       |Ruwr:ruwr|                        ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|Ruwr:ruwr            ; Ruwr                ; work         ;
+;       |immsrc:imsrc|                     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|Control_Unit:con_unit|immsrc:imsrc         ; immsrc              ; work         ;
+;    |DataMemory:DataMem|                  ; 2491 (2491)         ; 1024 (1024)               ; 0                 ; 0          ; 0    ; 0            ; |monocicle|DataMemory:DataMem                         ; DataMemory          ; work         ;
+;    |PC:p|                                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |monocicle|PC:p                                       ; PC                  ; work         ;
+;    |PCAdder:adder|                       ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|PCAdder:adder                              ; PCAdder             ; work         ;
+;    |divisor_25Mhz_a_1Hz:divisor|         ; 33 (33)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |monocicle|divisor_25Mhz_a_1Hz:divisor                ; divisor_25Mhz_a_1Hz ; work         ;
+;    |immediate_generator:imm_gen|         ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|immediate_generator:imm_gen                ; immediate_generator ; work         ;
+;    |instruction_memory:ins_mem|          ; 51 (51)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|instruction_memory:ins_mem                 ; instruction_memory  ; work         ;
+;    |memory_register:mem_reg|             ; 587 (587)           ; 992 (992)                 ; 0                 ; 0          ; 0    ; 0            ; |monocicle|memory_register:mem_reg                    ; memory_register     ; work         ;
+;    |mux_1:muxAluA|                       ; 51 (51)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|mux_1:muxAluA                              ; mux_1               ; work         ;
+;    |mux_1:muxAluB|                       ; 53 (53)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|mux_1:muxAluB                              ; mux_1               ; work         ;
+;    |mux_2:muxWrite|                      ; 1010 (1010)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|mux_2:muxWrite                             ; mux_2               ; work         ;
+;    |vga:vga_1|                           ; 1117 (106)          ; 43 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vga:vga_1                                  ; vga                 ; work         ;
+;       |FontRom:font|                     ; 263 (263)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vga:vga_1|FontRom:font                     ; FontRom             ; work         ;
+;       |HexaToAscii32bits:ascii_ins|      ; 20 (20)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vga:vga_1|HexaToAscii32bits:ascii_ins      ; HexaToAscii32bits   ; work         ;
+;       |HexaToAscii32bits:ascii_pc|       ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vga:vga_1|HexaToAscii32bits:ascii_pc       ; HexaToAscii32bits   ; work         ;
+;       |HexaToAscii32bits:ascii_register| ; 358 (358)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vga:vga_1|HexaToAscii32bits:ascii_register ; HexaToAscii32bits   ; work         ;
+;       |ScreenRam:screen|                 ; 310 (310)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vga:vga_1|ScreenRam:screen                 ; ScreenRam           ; work         ;
+;       |binaryToAscii:ascii_fun3|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vga:vga_1|binaryToAscii:ascii_fun3         ; binaryToAscii       ; work         ;
+;       |binaryToAscii:ascii_op_0|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vga:vga_1|binaryToAscii:ascii_op_0         ; binaryToAscii       ; work         ;
+;       |binaryToAscii:ascii_op_1|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vga:vga_1|binaryToAscii:ascii_op_1         ; binaryToAscii       ; work         ;
+;       |textMode:text|                    ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vga:vga_1|textMode:text                    ; textMode            ; work         ;
+;       |vga_controller:pt|                ; 32 (30)             ; 43 (42)                   ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vga:vga_1|vga_controller:pt                ; vga_controller      ; work         ;
+;          |clock50_25:c|                  ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |monocicle|vga:vga_1|vga_controller:pt|clock50_25:c   ; clock50_25          ; work         ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                    ;
-+----------------------------------------------+----------------------------------------+
-; Register name                                ; Reason for Removal                     ;
-+----------------------------------------------+----------------------------------------+
-; memory_register:mem_reg|registers[0][0]      ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][1]      ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][2]      ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][3]      ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][4]      ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][5]      ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][6]      ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][7]      ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][8]      ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][9]      ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][10]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][11]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][12]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][13]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][14]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][15]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][16]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][17]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][18]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][19]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][20]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][21]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][22]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][23]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][24]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][25]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][26]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][27]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][28]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][29]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][30]     ; Stuck at GND due to stuck port data_in ;
-; memory_register:mem_reg|registers[0][31]     ; Stuck at GND due to stuck port data_in ;
-; vgaController:vga|clk50_25:clock_25|state[1] ; Lost fanout                            ;
-; Total Number of Removed Registers = 33       ;                                        ;
-+----------------------------------------------+----------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                         ;
++---------------------------------------------------+----------------------------------------+
+; Register name                                     ; Reason for Removal                     ;
++---------------------------------------------------+----------------------------------------+
+; memory_register:mem_reg|registers[0][0]           ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][1]           ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][2]           ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][3]           ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][4]           ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][5]           ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][6]           ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][7]           ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][8]           ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][9]           ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][10]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][11]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][12]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][13]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][14]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][15]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][16]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][17]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][18]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][19]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][20]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][21]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][22]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][23]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][24]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][25]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][26]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][27]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][28]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][29]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][30]          ; Stuck at GND due to stuck port data_in ;
+; memory_register:mem_reg|registers[0][31]          ; Stuck at GND due to stuck port data_in ;
+; vga:vga_1|vga_controller:pt|clock50_25:c|state[1] ; Lost fanout                            ;
+; Total Number of Removed Registers = 33            ;                                        ;
++---------------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -327,12 +337,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2069  ;
-; Number of registers using Synchronous Clear  ; 20    ;
+; Total registers                              ; 2119  ;
+; Number of registers using Synchronous Clear  ; 47    ;
 ; Number of registers using Synchronous Load   ; 30    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2028  ;
+; Number of registers using Clock Enable       ; 2054  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -347,212 +357,302 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[127][1]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[126][5]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[125][2]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[124][6]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[123][6]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[122][1]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[121][4]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[120][0]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[119][0]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[118][0]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[117][0]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[116][3]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[115][7]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[114][3]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[113][6]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[112][6]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[111][2]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[110][7]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[109][7]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[108][7]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[107][0]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[106][6]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[105][0]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[104][0]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[103][2]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[102][4]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[101][0]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[100][6]                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[99][5]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[98][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[97][1]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[96][7]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[95][7]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[94][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[93][6]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[92][5]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[91][5]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[90][5]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[89][1]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[88][5]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[87][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[86][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[85][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[84][5]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[83][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[82][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[81][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[80][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[79][5]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[78][5]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[77][6]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[76][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[75][6]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[74][6]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[73][6]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[72][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[71][7]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[70][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[69][0]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[68][7]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[67][1]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[66][6]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[65][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[64][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[63][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[62][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[61][6]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[60][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[59][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[58][7]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[57][1]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[56][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[55][3]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[54][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[53][7]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[52][6]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[51][5]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[50][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[49][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[48][1]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[47][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[46][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[45][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[44][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[43][0]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[42][0]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[41][3]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[40][6]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[39][1]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[38][1]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[37][7]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[36][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[35][3]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[34][5]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[33][0]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[32][1]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[31][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[30][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[29][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[28][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[27][0]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[26][3]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[25][0]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[24][6]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[23][5]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[22][0]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[21][6]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[20][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[19][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[18][7]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[17][1]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[16][3]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[15][3]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[14][2]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[13][3]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[12][4]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[11][7]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[10][0]                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[9][0]                   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[8][2]                   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[7][3]                   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[6][2]                   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[5][2]                   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[4][2]                   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[3][2]                   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[2][2]                   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[1][2]                   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[0][2]                   ;
-; 8:1                ; 31 bits   ; 155 LEs       ; 62 LEs               ; 93 LEs                 ; No         ; |monocicle|ALU:alu|Mux8                                      ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |monocicle|mux_1:muxAluB|out[20]                             ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |monocicle|mux_1:muxAluB|out[13]                             ;
-; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; No         ; |monocicle|memory_register:mem_reg|Mux8                      ;
-; 16:1               ; 4 bits    ; 40 LEs        ; 36 LEs               ; 4 LEs                  ; No         ; |monocicle|vgaController:vga|HexaToAscii32bits:ascii_pc|Mux0 ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |monocicle|vgaController:vga|char[3]                         ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |monocicle|memory_register:mem_reg|Mux61                     ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |monocicle|mux_1:muxAluB|out[3]                              ;
-; 68:1               ; 7 bits    ; 315 LEs       ; 315 LEs              ; 0 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux28                              ;
-; 70:1               ; 8 bits    ; 368 LEs       ; 368 LEs              ; 0 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux8                               ;
-; 133:1              ; 7 bits    ; 616 LEs       ; 616 LEs              ; 0 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux19                              ;
-; 134:1              ; 8 bits    ; 712 LEs       ; 712 LEs              ; 0 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux2                               ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; No         ; |monocicle|pc_display:display_pc|Mux3                        ;
-; 70:1               ; 7 bits    ; 322 LEs       ; 322 LEs              ; 0 LEs                  ; No         ; |monocicle|pc_display:display_pc|Mux11                       ;
-; 69:1               ; 6 bits    ; 276 LEs       ; 276 LEs              ; 0 LEs                  ; No         ; |monocicle|pc_display:display_pc|Mux5                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[127][2]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[126][7]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[125][6]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[124][1]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[123][6]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[122][1]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[121][3]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[120][3]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[119][3]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[118][4]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[117][3]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[116][2]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[115][2]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[114][1]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[113][1]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[112][2]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[111][6]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[110][1]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[109][0]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[108][0]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[107][7]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[106][7]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[105][0]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[104][2]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[103][2]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[102][5]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[101][1]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[100][6]               ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[99][3]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[98][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[97][1]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[96][5]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[95][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[94][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[93][3]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[92][1]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[91][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[90][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[89][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[88][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[87][3]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[86][1]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[85][1]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[84][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[83][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[82][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[81][6]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[80][0]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[79][6]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[78][3]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[77][0]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[76][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[75][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[74][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[73][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[72][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[71][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[70][0]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[69][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[68][2]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[67][6]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[66][6]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[65][2]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[64][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[63][5]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[62][3]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[61][3]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[60][3]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[59][3]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[58][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[57][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[56][5]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[55][5]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[54][5]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[53][5]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[52][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[51][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[50][5]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[49][5]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[48][3]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[47][3]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[46][3]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[45][5]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[44][1]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[43][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[42][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[41][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[40][3]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[39][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[38][5]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[37][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[36][5]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[35][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[34][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[33][2]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[32][3]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[31][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[30][1]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[29][1]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[28][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[27][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[26][2]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[25][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[24][3]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[23][0]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[22][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[21][2]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[20][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[19][1]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[18][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[17][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[16][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[15][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[14][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[13][1]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[12][4]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[11][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[10][7]                ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[9][7]                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[8][7]                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[7][7]                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[6][7]                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[5][2]                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[4][3]                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[3][1]                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[2][0]                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[1][0]                 ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |monocicle|DataMemory:DataMem|memory[0][4]                 ;
+; 8:1                ; 31 bits   ; 155 LEs       ; 62 LEs               ; 93 LEs                 ; No         ; |monocicle|ALU:alu|Mux0                                    ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |monocicle|mux_1:muxAluB|out[23]                           ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |monocicle|mux_1:muxAluB|out[16]                           ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 36 LEs               ; 4 LEs                  ; No         ; |monocicle|vga:vga_1|HexaToAscii32bits:ascii_pc|Mux0       ;
+; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; No         ; |monocicle|memory_register:mem_reg|Mux0                    ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |monocicle|memory_register:mem_reg|Mux62                   ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |monocicle|mux_1:muxAluB|out[4]                            ;
+; 68:1               ; 7 bits    ; 315 LEs       ; 315 LEs              ; 0 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux25                            ;
+; 70:1               ; 8 bits    ; 368 LEs       ; 368 LEs              ; 0 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux11                            ;
+; 133:1              ; 7 bits    ; 616 LEs       ; 616 LEs              ; 0 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux23                            ;
+; 134:1              ; 8 bits    ; 712 LEs       ; 712 LEs              ; 0 LEs                  ; No         ; |monocicle|mux_2:muxWrite|Mux6                             ;
+; 14:1               ; 3 bits    ; 27 LEs        ; 27 LEs               ; 0 LEs                  ; No         ; |monocicle|vga:vga_1|char[3]                               ;
+; 264:1              ; 4 bits    ; 704 LEs       ; 696 LEs              ; 8 LEs                  ; No         ; |monocicle|vga:vga_1|HexaToAscii32bits:ascii_register|Mux3 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: vgaController:vga|sync:syn ;
-+----------------+-------+------------------------------------------------+
-; Parameter Name ; Value ; Type                                           ;
-+----------------+-------+------------------------------------------------+
-; HVISIBLE       ; 640   ; Signed Integer                                 ;
-; HFP            ; 16    ; Signed Integer                                 ;
-; HRETRACE       ; 96    ; Signed Integer                                 ;
-; HBP            ; 48    ; Signed Integer                                 ;
-; HDISPLAYMAX    ; 799   ; Signed Integer                                 ;
-; V_VISIBLE      ; 480   ; Signed Integer                                 ;
-; VFP            ; 10    ; Signed Integer                                 ;
-; VRETRACE       ; 2     ; Signed Integer                                 ;
-; VBP            ; 33    ; Signed Integer                                 ;
-; VDISPLAYMAX    ; 524   ; Signed Integer                                 ;
-+----------------+-------+------------------------------------------------+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga_1|vga_controller:pt ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; HD             ; 640   ; Signed Integer                                  ;
+; HF             ; 48    ; Signed Integer                                  ;
+; HB             ; 16    ; Signed Integer                                  ;
+; HR             ; 96    ; Signed Integer                                  ;
+; HMAX           ; 799   ; Signed Integer                                  ;
+; VD             ; 480   ; Signed Integer                                  ;
+; VF             ; 10    ; Signed Integer                                  ;
+; VB             ; 33    ; Signed Integer                                  ;
+; VR             ; 2     ; Signed Integer                                  ;
+; VMAX           ; 524   ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: vgaController:vga|textMode:text ;
-+--------------------------+--------------------------+------------------------+
-; Parameter Name           ; Value                    ; Type                   ;
-+--------------------------+--------------------------+------------------------+
-; color_char               ; 011001101111111101100110 ; Unsigned Binary        ;
-; color_background         ; 000100010001000100010001 ; Unsigned Binary        ;
-; color_display_no_visible ; 000000000000000000000000 ; Unsigned Binary        ;
-+--------------------------+--------------------------+------------------------+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga_1|textMode:text  ;
++--------------------------+--------------------------+-----------------+
+; Parameter Name           ; Value                    ; Type            ;
++--------------------------+--------------------------+-----------------+
+; color_char               ; 011001101111111101100110 ; Unsigned Binary ;
+; color_background         ; 000100010001000100010001 ; Unsigned Binary ;
+; color_display_no_visible ; 000000000000000000000000 ; Unsigned Binary ;
++--------------------------+--------------------------+-----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "vgaController:vga|HexaToAscii32bits:ascii_pc"                                                                                                                                   ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; col  ; Input ; Warning  ; Input port expression (7 bits) is wider than the input port (4 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga_1|binaryToAscii:ascii_op_0 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; size           ; 7     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "vgaController:vga|HexaToAscii32bits:ascii_instruction"                                                                                                                          ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; col  ; Input ; Warning  ; Input port expression (7 bits) is wider than the input port (4 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga_1|binaryToAscii:ascii_op_1 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; size           ; 7     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga_1|binaryToAscii:ascii_rd ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; size           ; 5     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga_1|binaryToAscii:ascii_fun3 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; size           ; 3     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga_1|binaryToAscii:ascii_rs1 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; size           ; 5     ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga_1|binaryToAscii:ascii_rs2 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; size           ; 5     ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga:vga_1|binaryToAscii:ascii_fun7 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; size           ; 7     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisor_25Mhz_a_1Hz:divisor ;
++----------------+----------+----------------------------------------------+
+; Parameter Name ; Value    ; Type                                         ;
++----------------+----------+----------------------------------------------+
+; DIVISOR        ; 25000000 ; Signed Integer                               ;
++----------------+----------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "memory_register:mem_reg"                                                                   ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; displayData ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga:vga_1|ScreenRam:screen"                                                                                          ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                              ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------+
+; d    ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (7 bits) it drives; bit(s) "d[7..7]" have no fanouts ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga:vga_1|textMode:text"                                                                                     ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; hsync    ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; vsync    ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; hsyncOut ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; vsyncOut ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "vgaController:vga|ScreenRam:screen"                                                 ;
+; Port Connectivity Checks: "vga:vga_1|vga_controller:pt"                                                        ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
-; d[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; y[9] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -561,31 +661,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 2069                        ;
+; arriav_ff             ; 2119                        ;
 ;     ENA               ; 2018                        ;
-;     ENA SCLR          ; 10                          ;
-;     SCLR              ; 10                          ;
+;     ENA SCLR          ; 36                          ;
+;     SCLR              ; 11                          ;
 ;     SLD               ; 30                          ;
-;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 5496                        ;
-;     arith             ; 178                         ;
-;         1 data inputs ; 144                         ;
+;     plain             ; 24                          ;
+; arriav_lcell_comb     ; 5609                        ;
+;     arith             ; 204                         ;
+;         1 data inputs ; 170                         ;
 ;         4 data inputs ; 2                           ;
 ;         5 data inputs ; 32                          ;
-;     extend            ; 146                         ;
-;         7 data inputs ; 146                         ;
-;     normal            ; 5172                        ;
+;     extend            ; 140                         ;
+;         7 data inputs ; 140                         ;
+;     normal            ; 5265                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 118                         ;
-;         3 data inputs ; 100                         ;
-;         4 data inputs ; 334                         ;
-;         5 data inputs ; 507                         ;
-;         6 data inputs ; 4104                        ;
-; boundary_port         ; 65                          ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 153                         ;
+;         3 data inputs ; 527                         ;
+;         4 data inputs ; 346                         ;
+;         5 data inputs ; 520                         ;
+;         6 data inputs ; 3713                        ;
+; boundary_port         ; 34                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 18.70                       ;
-; Average LUT depth     ; 13.91                       ;
+; Average LUT depth     ; 14.50                       ;
 +-----------------------+-----------------------------+
 
 
@@ -594,7 +694,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:48     ;
+; Top            ; 00:50:50     ;
 +----------------+--------------+
 
 
@@ -604,7 +704,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Nov 12 01:10:40 2024
+    Info: Processing started: Fri Nov 15 18:01:07 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off monocicle -c monocicle
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Warning (20031): Parallel compilation is enabled for 4 processors, but there are only 2 processors in the system. Runtime may increase due to over usage of the processor space.
@@ -650,11 +750,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file pc_disp
 Warning (12019): Can't analyze file -- file DataMemory_2.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file testbench_simulation.v
     Info (12023): Found entity 1: testbench_simulation File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/testbench_simulation.v Line: 3
-Info (12021): Found 4 design units, including 4 entities, in source file textmode.v
+Info (12021): Found 1 design units, including 1 entities, in source file textmode.v
     Info (12023): Found entity 1: textMode File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/textMode.v Line: 1
-    Info (12023): Found entity 2: color File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/textMode.v Line: 60
-    Info (12023): Found entity 3: clock50_25 File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/textMode.v Line: 105
-    Info (12023): Found entity 4: vga_controller File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/textMode.v Line: 118
 Info (12021): Found 1 design units, including 1 entities, in source file sync.v
     Info (12023): Found entity 1: sync File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/sync.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file hexatoascii32bits.v
@@ -663,23 +760,29 @@ Info (12021): Found 1 design units, including 1 entities, in source file fontrom
     Info (12023): Found entity 1: FontRom File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/FontRom.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file screenram.v
     Info (12023): Found entity 1: ScreenRam File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ScreenRam.v Line: 1
-Info (12021): Found 2 design units, including 2 entities, in source file vgacontroller.v
-    Info (12023): Found entity 1: vgaController File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vgaController.v Line: 1
-    Info (12023): Found entity 2: clk50_25 File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vgaController.v Line: 113
+Warning (12019): Can't analyze file -- file vgaController.v is missing
+Info (12021): Found 2 design units, including 2 entities, in source file vga_controller.v
+    Info (12023): Found entity 1: clock50_25 File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vga_controller.v Line: 4
+    Info (12023): Found entity 2: vga_controller File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vga_controller.v Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file binarytoascii.v
+    Info (12023): Found entity 1: binaryToAscii File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/binaryToAscii.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file divisor_25mhz_a_1hz.v
+    Info (12023): Found entity 1: divisor_25Mhz_a_1Hz File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/divisor_25Mhz_a_1Hz.v Line: 1
 Info (12127): Elaborating entity "monocicle" for the top level hierarchy
-Info (12128): Elaborating entity "vgaController" for hierarchy "vgaController:vga" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 96
-Warning (10230): Verilog HDL assignment warning at vgaController.v(105): truncated value with size 8 to match size of target (7) File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vgaController.v Line: 105
-Info (12128): Elaborating entity "clk50_25" for hierarchy "vgaController:vga|clk50_25:clock_25" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vgaController.v Line: 38
-Info (12128): Elaborating entity "sync" for hierarchy "vgaController:vga|sync:syn" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vgaController.v Line: 47
-Info (12128): Elaborating entity "textMode" for hierarchy "vgaController:vga|textMode:text" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vgaController.v Line: 63
+Warning (12125): Using design file vga.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: vga File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vga.v Line: 1
+Info (12128): Elaborating entity "vga" for hierarchy "vga:vga_1" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 106
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga:vga_1|vga_controller:pt" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vga.v Line: 33
+Info (12128): Elaborating entity "clock50_25" for hierarchy "vga:vga_1|vga_controller:pt|clock50_25:c" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vga_controller.v Line: 40
+Info (12128): Elaborating entity "textMode" for hierarchy "vga:vga_1|textMode:text" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vga.v Line: 56
 Warning (10034): Output port "hsyncOut" at textMode.v(10) has no driver File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/textMode.v Line: 10
 Warning (10034): Output port "vsyncOut" at textMode.v(11) has no driver File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/textMode.v Line: 11
-Info (12128): Elaborating entity "FontRom" for hierarchy "vgaController:vga|FontRom:font" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vgaController.v Line: 68
+Info (12128): Elaborating entity "FontRom" for hierarchy "vga:vga_1|FontRom:font" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vga.v Line: 65
 Warning (10850): Verilog HDL warning at FontRom.v(8): number of words (2046) in memory file does not match the number of elements in the address range [0:2047] File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/FontRom.v Line: 8
 Warning (10030): Net "rom.data_a" at FontRom.v(5) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/FontRom.v Line: 5
 Warning (10030): Net "rom.waddr_a" at FontRom.v(5) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/FontRom.v Line: 5
 Warning (10030): Net "rom.we_a" at FontRom.v(5) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/FontRom.v Line: 5
-Info (12128): Elaborating entity "ScreenRam" for hierarchy "vgaController:vga|ScreenRam:screen" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vgaController.v Line: 76
+Info (12128): Elaborating entity "ScreenRam" for hierarchy "vga:vga_1|ScreenRam:screen" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vga.v Line: 117
 Warning (10850): Verilog HDL warning at ScreenRam.v(8): number of words (3940) in memory file does not match the number of elements in the address range [0:4000] File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ScreenRam.v Line: 8
 Warning (10230): Verilog HDL assignment warning at screenRam.mem(1): truncated value with size 8 to match size of target (7) File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/screenRam.mem Line: 1
 Warning (10230): Verilog HDL assignment warning at screenRam.mem(2): truncated value with size 8 to match size of target (7) File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/screenRam.mem Line: 2
@@ -4524,17 +4627,20 @@ Warning (10230): Verilog HDL assignment warning at screenRam.mem(3900): truncate
 Warning (10030): Net "rom.data_a" at ScreenRam.v(5) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ScreenRam.v Line: 5
 Warning (10030): Net "rom.waddr_a" at ScreenRam.v(5) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ScreenRam.v Line: 5
 Warning (10030): Net "rom.we_a" at ScreenRam.v(5) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ScreenRam.v Line: 5
-Info (12128): Elaborating entity "HexaToAscii32bits" for hierarchy "vgaController:vga|HexaToAscii32bits:ascii_instruction" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vgaController.v Line: 86
-Info (12128): Elaborating entity "PC" for hierarchy "PC:p" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 104
-Info (12128): Elaborating entity "pc_display" for hierarchy "pc_display:display_pc" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 115
-Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "pc_display:display_pc|hex_to_7seg:display0" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/pc_display.v Line: 36
-Info (12128): Elaborating entity "PCAdder" for hierarchy "PCAdder:adder" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 121
-Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:ins_mem" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 128
+Info (12128): Elaborating entity "HexaToAscii32bits" for hierarchy "vga:vga_1|HexaToAscii32bits:ascii_ins" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vga.v Line: 125
+Info (12128): Elaborating entity "binaryToAscii" for hierarchy "vga:vga_1|binaryToAscii:ascii_op_0" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vga.v Line: 145
+Info (12128): Elaborating entity "binaryToAscii" for hierarchy "vga:vga_1|binaryToAscii:ascii_rd" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vga.v Line: 161
+Info (12128): Elaborating entity "binaryToAscii" for hierarchy "vga:vga_1|binaryToAscii:ascii_fun3" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/vga.v Line: 169
+Info (12128): Elaborating entity "divisor_25Mhz_a_1Hz" for hierarchy "divisor_25Mhz_a_1Hz:divisor" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 118
+Warning (10230): Verilog HDL assignment warning at divisor_25Mhz_a_1Hz.v(19): truncated value with size 32 to match size of target (26) File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/divisor_25Mhz_a_1Hz.v Line: 19
+Info (12128): Elaborating entity "PC" for hierarchy "PC:p" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 124
+Info (12128): Elaborating entity "PCAdder" for hierarchy "PCAdder:adder" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 141
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:ins_mem" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 148
 Warning (10030): Net "memory.data_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instruction_memory.v Line: 6
 Warning (10030): Net "memory.waddr_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instruction_memory.v Line: 6
 Warning (10030): Net "memory.we_a" at instruction_memory.v(6) has no driver or initial value, using a default initial value '0' File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/instruction_memory.v Line: 6
-Info (12128): Elaborating entity "instruction_decoder" for hierarchy "instruction_decoder:insdec" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 140
-Info (12128): Elaborating entity "Control_Unit" for hierarchy "Control_Unit:con_unit" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 155
+Info (12128): Elaborating entity "instruction_decoder" for hierarchy "instruction_decoder:insdec" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 160
+Info (12128): Elaborating entity "Control_Unit" for hierarchy "Control_Unit:con_unit" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 175
 Info (12128): Elaborating entity "Aluasrc" for hierarchy "Control_Unit:con_unit|Aluasrc:alua" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 19
 Info (12128): Elaborating entity "Ruwr" for hierarchy "Control_Unit:con_unit|Ruwr:ruwr" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 24
 Info (12128): Elaborating entity "immsrc" for hierarchy "Control_Unit:con_unit|immsrc:imsrc" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 29
@@ -4544,23 +4650,20 @@ Info (12128): Elaborating entity "Brop" for hierarchy "Control_Unit:con_unit|Bro
 Info (12128): Elaborating entity "DMWr" for hierarchy "Control_Unit:con_unit|DMWr:dmwr" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 52
 Info (12128): Elaborating entity "DMCTrl" for hierarchy "Control_Unit:con_unit|DMCTrl:dmctrl" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 58
 Info (12128): Elaborating entity "RuDataWrSrc" for hierarchy "Control_Unit:con_unit|RuDataWrSrc:rudata" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/Control_Unit.v Line: 63
-Info (12128): Elaborating entity "immediate_generator" for hierarchy "immediate_generator:imm_gen" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 161
-Info (12128): Elaborating entity "memory_register" for hierarchy "memory_register:mem_reg" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 175
-Info (12128): Elaborating entity "mux_1" for hierarchy "mux_1:muxAluA" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 182
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 196
-Info (12128): Elaborating entity "Branch_Unit" for hierarchy "Branch_Unit:Branch_U" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 204
-Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:DataMem" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 220
-Info (12128): Elaborating entity "mux_2" for hierarchy "mux_2:muxWrite" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 228
-Info (276014): Found 2 instances of uninferred RAM logic
-    Info (276007): RAM logic "vgaController:vga|ScreenRam:screen|rom" is uninferred due to asynchronous read logic File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/ScreenRam.v Line: 5
-    Info (276007): RAM logic "vgaController:vga|FontRom:font|rom" is uninferred due to asynchronous read logic File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/FontRom.v Line: 5
+Info (12128): Elaborating entity "immediate_generator" for hierarchy "immediate_generator:imm_gen" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 181
+Info (12128): Elaborating entity "memory_register" for hierarchy "memory_register:mem_reg" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 199
+Info (12128): Elaborating entity "mux_1" for hierarchy "mux_1:muxAluA" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 206
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 220
+Info (12128): Elaborating entity "Branch_Unit" for hierarchy "Branch_Unit:Branch_U" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 228
+Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:DataMem" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 244
+Info (12128): Elaborating entity "mux_2" for hierarchy "mux_2:muxWrite" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 252
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "vga:vga_1|FontRom:font|rom" is uninferred due to asynchronous read logic File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/FontRom.v Line: 5
 Critical Warning (127005): Memory depth (4096) in the design file differs from memory depth (4001) in the Memory Initialization File "C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/db/monocicle.ram0_ScreenRam_88527973.hdl.mif" -- setting initial value for remaining addresses to 0
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/db/monocicle.ram0_ScreenRam_88527973.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/db/monocicle.ram0_FontRom_36979116.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "hsync" is stuck at GND File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 9
-    Warning (13410): Pin "vsync" is stuck at GND File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 10
     Warning (13410): Pin "R[3]" is stuck at GND File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 11
     Warning (13410): Pin "R[7]" is stuck at GND File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 11
     Warning (13410): Pin "Bl[3]" is stuck at GND File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 13
@@ -4570,15 +4673,21 @@ Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/output_files/monocicle.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 6578 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 55 output pins
-    Info (21061): Implemented 6513 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3867 warnings
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "address_register[0]" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 38
+    Warning (15610): No output dependent on input pin "address_register[1]" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 38
+    Warning (15610): No output dependent on input pin "address_register[2]" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 38
+    Warning (15610): No output dependent on input pin "address_register[3]" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 38
+    Warning (15610): No output dependent on input pin "address_register[4]" File: C:/Users/valen/Escritorio/universidad/6semestre/ArquitecturadeComputadores/Monocicle_in_verilog/monocicle.v Line: 38
+Info (21057): Implemented 6684 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 27 output pins
+    Info (21061): Implemented 6650 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3873 warnings
     Info: Peak virtual memory: 4861 megabytes
-    Info: Processing ended: Tue Nov 12 01:13:27 2024
-    Info: Elapsed time: 00:02:47
-    Info: Total CPU time (on all processors): 00:02:47
+    Info: Processing ended: Fri Nov 15 18:53:01 2024
+    Info: Elapsed time: 00:51:54
+    Info: Total CPU time (on all processors): 00:03:05
 
 
 +------------------------------------------+

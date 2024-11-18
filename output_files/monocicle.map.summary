@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Tue Nov 12 01:13:26 2024
+Analysis & Synthesis Status : Successful - Fri Nov 15 18:53:00 2024
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : monocicle
 Top-level Entity Name : monocicle
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 2069
-Total pins : 65
+Total registers : 2119
+Total pins : 34
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
