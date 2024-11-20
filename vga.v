@@ -1,45 +1,50 @@
 module vga(
-  input clock,                 // 50 MHz clock on de1-soc
-  input [31:0] instruction,
-  input [31:0] pc,
-  input [6:0] opcode,
-  input [4:0] rd,
-  input [2:0] funct3,
-  input [4:0] rs1,
-  input [4:0] rs2,
-  input [6:0] funct7,
-  input [31:0] register, // Registro a mostrar
-  
-  output [4:0] register_select, // para seleccinar el registro a mostrar
-  output [7:0] vga_red,    // VGA outputs
-  output [7:0] vga_green,
-  output [7:0] vga_blue,
-  output vga_hsync,
-  output vga_vsync,
-  output vga_clock
+	input clock,                 // 50 MHz clock on de1-soc
+	input [31:0] instruction,
+	input [31:0] pc,
+	input [6:0] opcode,
+	input [4:0] rd,
+	input [2:0] funct3,
+	input [4:0] rs1,
+	input [4:0] rs2,
+	input [6:0] funct7,
+	input [31:0] register, // Registro a mostrar
+	input [31:0] rd_out,
+	input [31:0] rs1_out,
+	input [31:0] rs2_out,
+	input ruwr,
+	input [31:0] immediate,
+	
+	output reg [4:0] register_select, // para seleccinar los registros a mostrar
+	output [7:0] vga_red,    // VGA outputs
+	output [7:0] vga_green,
+	output [7:0] vga_blue,
+	output vga_hsync,
+	output vga_vsync,
+	output vga_clock
 );
-  // x and y coordinates (not used in this example)
-  wire [9:0] x;
-  wire [9:0] y;
-  wire videoOn;
-  // Creates an instance of a vga controller.
-  vga_controller pt(
-    .clk_50MHz(clock),  
-    .video_on(videoOn), 
-    .hsync(vga_hsync), 
-    .vsync(vga_vsync), 
-    .clk(vga_clock),
-    .x(x), .y(y)
-  );
-  
-  wire [7:0] d;
-  wire [10:0] romA;
-  wire [7:0] red;
-  wire [7:0] green;
-  wire [7:0] blue;
-  wire [6:0] char_ram;
-  
-   textMode text(
+// x and y coordinates (not used in this example)
+wire [9:0] x;
+wire [9:0] y;
+wire videoOn;
+// Creates an instance of a vga controller.
+vga_controller pt(
+	.clk_50MHz(clock),  
+	.video_on(videoOn), 
+	.hsync(vga_hsync), 
+	.vsync(vga_vsync), 
+	.clk(vga_clock),
+	.x(x), .y(y)
+);
+
+wire [7:0] d;
+wire [10:0] romA;
+wire [7:0] red;
+wire [7:0] green;
+wire [7:0] blue;
+wire [6:0] char_ram;
+
+textMode text(
 		.hsync(1'b0),
 		.vsync(1'b0),
 		.char(char),
@@ -66,8 +71,6 @@ module vga(
 	
 	wire [11:0] addrScreen;
 	wire [6:0] colHexaToAscii;
-	wire [3:0] col_ins; // para seleccionar el caracter que se va a proyectar de la instruccion
-	wire [3:0] col_pc;// para seleccionar el caracter que se va a proyectar del pc
 	wire [6:0] char_ins;
 	wire [6:0] char_pc;
 	wire [6:0] char_op_0;
@@ -77,31 +80,71 @@ module vga(
 	wire [6:0] char_rs1;
 	wire [6:0] char_rs2;
 	wire [6:0] char_fun7;
+	wire [6:0] char_fun7_decimal;
 	wire [6:0] char_register;
 	reg [6:0] char;
+	wire [6:0] char_rd_decimal; // la posicion en la que se guarda un valor en la memoria de registros
+	wire [6:0] char_rd_out;
+	wire [6:0] char_rs1_out;
+	wire [6:0] char_rs2_out;
+	wire [6:0] char_ruwr;
+	wire [6:0] char_imm; // para mostrar el inmediato
+
+	wire [3:0] col_ins; // para seleccionar el caracter que se va a proyectar de la instruccion
+	wire [3:0] col_pc;// para seleccionar el caracter que se va a proyectar del pc
 	wire [6:0] col_op_0;
 	wire [6:0] col_op_1;	// para seleccionar el caracter que se va a proyectar del opcode
-	
 	wire [4:0] col_rd;
 	wire [2:0] col_fun3;
 	wire [4:0] col_rs1;
 	wire [4:0] col_rs2;
 	wire [6:0] col_fun7;
-	wire [3:0] col_register;
+	wire col_fun7_decimal;
+	wire col_rd_decimal;
+	reg [3:0] col_register;
+	wire [3:0] col_ruwr;
+	wire [3:0] col_rd_out;
+	wire [3:0] col_rs1_out;
+	wire [3:0] col_rs2_out;
+	wire [3:0] col_imm; // para seleccionar el caracter que se va a proyectar del inmediato
 	
 	assign addrScreen[6:0] = x[9:3];
 	assign addrScreen[11:7] = y[8:4];
 	assign colHexaToAscii = x[9:3]; 	// Para saber en que posicion en X empieza un caracter
 	
 	// Seleccionar el caracter que se quiere mostrar segun la posicion de X
+	
+	
+	
+	// // Para mostrar la primera columna de los registros
+	// assign register_select_1 = y[8:4];
+	// assign col_register_1 = colHexaToAscii[3:0] - 4'd11; 
+
+	// // Para mostrar la Segunda columna de los registros
+	// assign register_select_2 = y[8:4] + 5'd11;
+	// assign col_register_2 = colHexaToAscii[3:0] - 4'd1; 
+	
+	// // Para mostrar la tercera columna de los registros
+	// assign register_select_3 = y[8:4] + 5'd22;
+	// assign col_register_3 = colHexaToAscii[3:0] - 4'd8; 
+
+	always @(*) begin
+		if( x >= 10'd11 && x <= 10'd21) begin
+			register_select = y[8:4];
+			col_register = colHexaToAscii[3:0] - 4'd11;
+		end else if (x >= 10'd22 && x <= 10'd32) begin
+			register_select = y[8:4] + 5'd11;
+			col_register = colHexaToAscii[3:0] - 4'd1;
+		end else if (x >= 10'd56 && x <= 10'd66) begin
+			register_select = y[8:4] + 5'd22;
+			col_register = colHexaToAscii[3:0] - 4'd8;
+		end else begin
+			register_select = 5'b0;
+		end
+	end
+
 	assign col_ins = colHexaToAscii[3:0] - 4'd1; 
 	assign col_pc = colHexaToAscii[3:0] - 4'd12;
-	
-	
-	assign register_select = y[8:4];
-	assign col_register = colHexaToAscii[3:0] - 4'd11;
-	
-	
 	assign col_rd = colHexaToAscii[4:0] - 5'd2;
 	assign col_fun3 = colHexaToAscii[2:0] - 3'd6;
 	assign col_rs1 = colHexaToAscii[4:0] - 5'd24;
@@ -109,14 +152,42 @@ module vga(
 	assign col_fun7 = colHexaToAscii[6:0] - 7'd18;
 	assign col_op_0 = colHexaToAscii[6:0] - 7'd40;
 	assign col_op_1 = colHexaToAscii[6:0] - 7'd11;
-	
+	assign col_fun7_decimal = colHexaToAscii[0] - 7'd1;
+	assign col_rd_decimal = colHexaToAscii[0] - 7'd1;
+	assign col_ruwr = colHexaToAscii[0];
+	assign col_rd_out = colHexaToAscii[3:0] - 4'd11;
+	assign col_rs1_out = colHexaToAscii[3:0] - 4'd1;
+	assign col_rs2_out = colHexaToAscii[3:0] - 4'd7;
+	assign col_imm = colHexaToAscii[3:0];
 //	
 	ScreenRam screen(
 		.addr(addrScreen),
 		.d(char_ram)
 	);
+
+	HexaToAscii32bits ascii_imm(
+		.in(immediate),
+		.col(col_imm),
+		.out(char_imm)
+	);
 	
-			
+	HexaToAscii32bits ascii_rd_out(
+		.in(rd_out),
+		.col(col_rd_out),
+		.out(char_rd_out)
+	);
+
+	HexaToAscii32bits ascii_rs1_out(
+		.in(rs1_out),
+		.col(col_rs1_out),
+		.out(char_rs1_out)
+	);
+
+	HexaToAscii32bits ascii_rs2_out(
+		.in(rs2_out),
+		.col(col_rs2_out),
+		.out(char_rs2_out)
+	);		
 	
 	HexaToAscii32bits ascii_ins(
 		.in(instruction),
@@ -134,6 +205,14 @@ module vga(
 		.in(register),
 		.col(col_register),
 		.out(char_register)
+	);
+
+	binaryToAscii #(
+		.size(1)
+	) ascii_op_0(
+		.in(ruwr),
+		.col(col_ruwr),
+		.out(char_ruwr)
 	);
 	
 	binaryToAscii #(
@@ -191,7 +270,34 @@ module vga(
 		.col(col_fun7),
 		.out(char_fun7)
 	);
-		
+
+	decimalToAscii  #(
+		.size_binary(3),
+		.size_decimal(1)
+	)ascii_funct3_decimal(
+		.in(funct3),
+		.col(1'b0),
+		.out(char_fun3_decimal)
+	);
+
+	decimalToAscii #(
+		.size_binary(7),
+		.size_decimal(2)
+	)ascii_funct7_decimal(
+		.in(funct7),
+		.col(col_fun7_decimal),
+		.out(char_fun7_decimal)
+	);
+	
+
+	decimalToAscii#(
+		.size_binary(5),
+		.size_decimal(2)
+	)ascii_rd_decimal(
+		.in(rd),
+		.col(col_rd_decimal),
+		.out(char_rd_decimal)
+	);
 
 	always @(*) begin
 		if (addrScreen >= 12'd1569 && addrScreen <= 12'd1579) begin
@@ -214,10 +320,26 @@ module vga(
 			char = char_fun7;
 		end else if (((x[9:3] >= 7'd11 && x[9:3] <= 7'd21)) && y[8:4] <= 5'd10) begin
 			char = char_register;
-//		end else if (((x[9:3] >= 7'd11 && x[9:3] <= 7'd21) || (x[9:3] >= 7'd33 && x[9:3] <= 7'd43)) && y[8:4] <= 5'd10) begin
-//			char = char_register;
-//		end else if ((x[9:3] >= 7'd55 && x[9:3] <= 7'd65) && y[8:4] <= 5'd9) begin
-//			char = char_register;
+		end else if (((x[9:3] >= 7'd22 && x[9:3] <= 7'd32)) && y[8:4] <= 5'd10) begin
+			char = char_register;
+		end else if (((x[9:3] >= 7'd56 && x[9:3] <= 7'd66)) && y[8:4] <= 5'd9) begin
+			char = char_register;
+		end else if (addrScreen == 12'd1948 ) begin
+			char = char_fun3_decimal;
+		end else if (addrScreen == 12'd1959 || addrScreen == 12'd1960) begin
+			char = char_fun7_decimal;
+		end else if (addrScreen == 12'd2054 || addrScreen == 12'd2054) begin
+			char = char_rd_decimal; 
+		end else if (addrScreen == 12'd1850) begin
+			char = char_ruwr;
+		end else if (addrScreen >= 12'd2059 && addrScreen <= 12'd2069) begin
+			char = char_rd_out;	
+		end else if (addrScreen >= 12'd2081 && addrScreen <= 12'd2091) begin
+			char = char_rs1_out;
+		end else if (addrScreen >= 12'd2103 && addrScreen <= 12'd2113) begin
+			char = char_rs2_out;
+		end else if (addrScreen >= 12'd2193 && addrScreen <= 12'd2203) begin
+			char = char_imm;
 		end else begin
 			char = char_ram;
 		end

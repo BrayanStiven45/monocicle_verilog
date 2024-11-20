@@ -6,9 +6,9 @@ module DataMemory (
     input [2:0] DMCtrl,
     output reg [31:0] DataRd
 );
-	 reg [31:0] data_read;
+	reg [31:0] data_read;
     reg [31:0] data_write;
-    reg [7:0] memory [0:127];  // Memoria de 128 palabras de 8 bits (para almacenamiento byte a byte)
+    reg [7:0] memory [0:255];  // Memoria de 256 palabras de 8 bits (para almacenamiento byte a byte)
 
     always @(posedge clk) begin
         if (DMWr) begin

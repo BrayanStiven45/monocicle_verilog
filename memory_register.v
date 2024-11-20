@@ -26,7 +26,7 @@ module memory_register (
         for (i = 0; i < 32; i = i + 1) begin
             registers[i] = 32'b0;
         end
-		  registers[2] = 32'd64;
+		  registers[2] = 32'd128;
     end
 
     // Leer los registros correspondientes

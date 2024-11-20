@@ -1,0 +1,14 @@
+module decimalToAscii 
+(
+    input [7:0] in,
+    input col,
+    output [7:0] out
+);
+    always @(*) begin
+        case(col)
+            2'b0 : out = in[3:0] + 8'd48;
+            2'b1 : out = in[7:4] + 8'd48;
+        endcase
+    end
+
+endmodule

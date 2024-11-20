@@ -95,6 +95,13 @@ module monocicle (
 		.rs1(rs1),
 		.rs2(rs2),
 		.funct7(funct7),
+		.rd_out(dataWR),
+		.rs1_out(ru1),
+		.rs2_out(ru2),
+		.ruwr(Ruwr),
+		.immediate(imm_gen32),
+
+
 		.register_select(select_register_vga),
 		.register(register_vga),
 		.vga_hsync(hsync),
@@ -105,14 +112,9 @@ module monocicle (
 		.vga_blue(Bl)
 	);
 
-	wire clk_mono;
-	reg activar;
-	always @(posedge clk) begin
-		 clk_mono <= ~clk_mono; // Alterna el estado en cada flanco positivo
-	end
 	
     PC p(
-        .clk(clk_mono),
+        .clk(clk),
         .next_pc(next_pc),
         .pc(pc)
     );
@@ -136,22 +138,22 @@ module monocicle (
 	 
 	 
 
-	 instruction_memory ins_mem(
-			.pc(pc),
-			.instruction(instruction)
-	 );
+	instruction_memory ins_mem(
+		.pc(pc),
+		.instruction(instruction)
+	);
 	
 	 
-	 instruction_decoder insdec(
-			.in(instruction),
-			.opcode(opcode),
-			.funct3(funct3),
-			.funct7(funct7),
-			.rs1(rs1),
-			.rs2(rs2),
-			.rd(rd),
-			.immediate(immediate)
-	 );
+	instruction_decoder insdec(
+		.in(instruction),
+		.opcode(opcode),
+		.funct3(funct3),
+		.funct7(funct7),
+		.rs1(rs1),
+		.rs2(rs2),
+		.rd(rd),
+		.immediate(immediate)
+	);
 	 
 	 Control_Unit con_unit(
 			.opcode(opcode),
