@@ -14,6 +14,7 @@ module vga(
 	input [31:0] rs2_out,
 	input ruwr,
 	input [31:0] immediate,
+	input print_ram,
 	
 	output reg [4:0] register_select, // para seleccinar los registros a mostrar
 	output [7:0] vga_red,    // VGA outputs
@@ -129,17 +130,17 @@ textMode text(
 	// assign col_register_3 = colHexaToAscii[3:0] - 4'd8; 
 
 	always @(*) begin
-		if( x >= 10'd11 && x <= 10'd21) begin
+		if( x[9:3] >= 7'd11 && x[9:3] <= 7'd21) begin
 			register_select = y[8:4];
 			col_register = colHexaToAscii[3:0] - 4'd11;
-		end else if (x >= 10'd22 && x <= 10'd32) begin
-			register_select = y[8:4] + 5'd11;
+		end else if (x[9:3] >= 7'd33 && x[9:3] <= 7'd43) begin
+			register_select = 5'd15;//y[8:4] + 5'd11;
 			col_register = colHexaToAscii[3:0] - 4'd1;
-		end else if (x >= 10'd56 && x <= 10'd66) begin
+		end else if (x[9:3] >= 7'd56 && x[9:3] <= 7'd66) begin
 			register_select = y[8:4] + 5'd22;
 			col_register = colHexaToAscii[3:0] - 4'd8;
 		end else begin
-			register_select = 5'b0;
+			register_select = 5'd15;
 		end
 	end
 
@@ -209,7 +210,7 @@ textMode text(
 
 	binaryToAscii #(
 		.size(1)
-	) ascii_op_0(
+	) ascii_ruwr(
 		.in(ruwr),
 		.col(col_ruwr),
 		.out(char_ruwr)
@@ -300,49 +301,53 @@ textMode text(
 	);
 
 	always @(*) begin
-		if (addrScreen >= 12'd1569 && addrScreen <= 12'd1579) begin
-			char = char_ins;
-		end else if (addrScreen >= 12'd1548 && addrScreen <= 12'd1558) begin
-			char = char_pc;
-		end else if (addrScreen >= 12'd1832 && addrScreen <= 12'd1838) begin
-			char = char_op_0;
-		end else if (addrScreen >= 12'd1931 && addrScreen <= 12'd1937) begin
-			char = char_op_1;
-		end else if (addrScreen >= 12'd1826 && addrScreen <= 12'd1830) begin
-			char = char_rd;
-		end else if (addrScreen >= 12'd1822 && addrScreen <= 12'd1824) begin
-			char = char_fun3;
-		end else if (addrScreen >= 12'd1816 && addrScreen <= 12'd1820) begin
-			char = char_rs1;
-		end else if (addrScreen >= 12'd1810 && addrScreen <= 12'd1814) begin
-			char = char_rs2;
-		end else if (addrScreen >= 12'd1802 && addrScreen <= 12'd1808) begin
-			char = char_fun7;
-		end else if (((x[9:3] >= 7'd11 && x[9:3] <= 7'd21)) && y[8:4] <= 5'd10) begin
-			char = char_register;
-		end else if (((x[9:3] >= 7'd22 && x[9:3] <= 7'd32)) && y[8:4] <= 5'd10) begin
-			char = char_register;
-		end else if (((x[9:3] >= 7'd56 && x[9:3] <= 7'd66)) && y[8:4] <= 5'd9) begin
-			char = char_register;
-		end else if (addrScreen == 12'd1948 ) begin
-			char = char_fun3_decimal;
-		end else if (addrScreen == 12'd1959 || addrScreen == 12'd1960) begin
-			char = char_fun7_decimal;
-		end else if (addrScreen == 12'd2054 || addrScreen == 12'd2054) begin
-			char = char_rd_decimal; 
-		end else if (addrScreen == 12'd1850) begin
-			char = char_ruwr;
-		end else if (addrScreen >= 12'd2059 && addrScreen <= 12'd2069) begin
-			char = char_rd_out;	
-		end else if (addrScreen >= 12'd2081 && addrScreen <= 12'd2091) begin
-			char = char_rs1_out;
-		end else if (addrScreen >= 12'd2103 && addrScreen <= 12'd2113) begin
-			char = char_rs2_out;
-		end else if (addrScreen >= 12'd2193 && addrScreen <= 12'd2203) begin
-			char = char_imm;
-		end else begin
-			char = char_ram;
+		if(!print_ram) begin
+			if (addrScreen >= 12'd1569 && addrScreen <= 12'd1579) begin
+				char = char_ins;
+			end else if (addrScreen >= 12'd1548 && addrScreen <= 12'd1558) begin
+				char = char_pc;
+			end else if (addrScreen >= 12'd1832 && addrScreen <= 12'd1838) begin
+				char = char_op_0;
+			end else if (addrScreen >= 12'd1931 && addrScreen <= 12'd1937) begin
+				char = char_op_1;
+			end else if (addrScreen >= 12'd1826 && addrScreen <= 12'd1830) begin
+				char = char_rd;
+			end else if (addrScreen >= 12'd1822 && addrScreen <= 12'd1824) begin
+				char = char_fun3;
+			end else if (addrScreen >= 12'd1816 && addrScreen <= 12'd1820) begin
+				char = char_rs1;
+			end else if (addrScreen >= 12'd1810 && addrScreen <= 12'd1814) begin
+				char = char_rs2;
+			end else if (addrScreen >= 12'd1802 && addrScreen <= 12'd1808) begin
+				char = char_fun7;
+			end else if (((x[9:3] >= 7'd11 && x[9:3] <= 7'd21)) && y[8:4] <= 5'd10) begin
+				char = char_register;
+			end else if (((x[9:3] >= 7'd33 && x[9:3] <= 7'd43)) && y[8:4] <= 5'd10) begin
+				char = char_register;
+			end else if (((x[9:3] >= 7'd56 && x[9:3] <= 7'd66)) && y[8:4] <= 5'd9) begin
+				char = char_register;
+			end else if (addrScreen == 12'd1948 ) begin
+				char = char_fun3_decimal;
+			end else if (addrScreen == 12'd1959 || addrScreen == 12'd1960) begin
+				char = char_fun7_decimal;
+			end else if (addrScreen == 12'd2054 || addrScreen == 12'd2054) begin
+				char = char_rd_decimal; 
+			end else if (addrScreen == 12'd1849) begin
+				char = char_ruwr;
+			end else if (addrScreen >= 12'd2059 && addrScreen <= 12'd2069) begin
+				char = char_rd_out;	
+			end else if (addrScreen >= 12'd2081 && addrScreen <= 12'd2091) begin
+				char = char_rs1_out;
+			end else if (addrScreen >= 12'd2103 && addrScreen <= 12'd2113) begin
+				char = char_rs2_out;
+			end else if (addrScreen >= 12'd2193 && addrScreen <= 12'd2203) begin
+				char = char_imm;
+			end else begin
+				char = char_ram;
+			end
+		end else begin	
 		end
+
 	end
 endmodule
 

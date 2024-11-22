@@ -16,7 +16,7 @@ module ALU (
       4'b0111: ALURes = A ^ B;          // XOR
       4'b1000: ALURes = A | B;          // OR
       4'b1001: ALURes = A & B;          // AND
-      default: ALURes = 32'b0;          // Valor por defecto
+      default: ALURes = B;          // Valor por defecto
     endcase
   end
 endmodule

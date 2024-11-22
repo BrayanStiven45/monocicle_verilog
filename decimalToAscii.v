@@ -1,6 +1,6 @@
 module decimalToAscii #(
     parameter size_binary = 4,
-    parameter size_decimal = 8,
+    parameter size_decimal = 8
 )
 (
     input [(size_binary - 1):0] in,
@@ -11,10 +11,11 @@ module decimalToAscii #(
     reg [7:0] ascii [(size_decimal-1):0]; // es el arreglo que guardo los valores ascii de cada digito del decimal
     reg [3:0] decimal [(size_decimal-1):0]; // es el arreglo que guardo los valores decimales de cada digito del decimal
     reg [(size_binary - 1):0] in_apo;
+	 integer i;
 
     initial begin
         // se inicializa el vector ascii con espacios
-        for(int i = 0; i < size_decimal; i = i + 1) begin
+        for(i = 0; i <= size_decimal-1; i = i + 1) begin
             ascii[i] = 8'h20;
             decimal[i] = 4'd0;
         end
@@ -24,7 +25,7 @@ module decimalToAscii #(
         
         // Se toma cada digito del decimal 
         in_apo = in;
-        for(int i = 0; i < size_decimal; i = i + 1) begin
+        for(i = 0; i <= size_decimal-1; i = i + 1) begin
             ascii[i] = (in_apo % 10) + 8'd48;
             in_apo = in_apo / 10;
         end

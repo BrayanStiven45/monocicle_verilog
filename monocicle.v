@@ -13,27 +13,31 @@ module monocicle (
 	 output [7:0] Bl,
 	 output vga_clk25,
 	 input clk50,
+	 input print_ram, // si es 1 se muestra la ram y si es 0 se muestra la screen ram
 	 
 	 // datos para seleccionar el registro de la memoria de registros
 	 input [4:0] address_register
 	 
 	 
 	 //salidas para prueba en testbench de modelsim
-//	 output wire [31:0] pc_out,
-//    output wire [31:0] ins_memory_out,
-//	 output wire [31:0] alures_1,
-//    output wire [31:0] data_ram,
-//	 output wire [31:0] out_rs1,
-//	 output wire [31:0] out_rs2,
-//	 output wire [2:0] dmctrl,
-//	 output wire dmwr,
-//	 output wire [31:0] registro,
-//	 output wire [31:0] read_muestra,
-//	 output wire [8:0] address_of_ram,
-//	 output wire clk_ram,
-//	 output wire ruwr_2,
-//	 output wire [4:0] out_rd,
-//	 output wire [1:0] rudatawrsrc
+	// output wire [31:0] pc_out,
+	// output wire [31:0] ins_memory_out,
+	// output wire [31:0] alures_1,
+	// output wire [31:0] data_ram,
+	// output wire [31:0] out_rs1,
+	// output wire [31:0] out_rs2,
+	// output wire [2:0] dmctrl,
+	// output wire dmwr,
+	// output wire [31:0] registro,
+	// output wire [31:0] read_muestra,
+	// output wire [8:0] address_of_ram,
+	// output wire clk_ram,
+	// output wire ruwr_2,
+	// output wire [4:0] out_rd,
+	// output wire [1:0] rudatawrsrc,
+	// output wire next_pcrc,
+	// output wire [31:0] imm_32,
+	// output wire [3:0] aluop
 //	 
 );
 	
@@ -69,19 +73,22 @@ module monocicle (
 	wire [31:0] read_data;
 	
 	// Asignaciones a las salidas para el testBench
-//	assign pc_out = pc;
-//	assign ins_memory_out = instruction;
-//	assign alures_1 = AluRes;
-//	assign data_ram = read_data;
-//	assign out_rs1 = ru1;
-//	assign out_rs2 = ru2;
-//	assign out_rd = rd;
-//	assign dmctrl = DMCTrl;
-//	assign dmwr = DMWr;
-//	assign registro = selected_register;
-//	assign read_muestra = read_data;
-//	assign ruwr_2 = Ruwr;
-//	assign rudatawrsrc = RuDataWrSrc;
+	// assign pc_out = pc;
+	// assign ins_memory_out = instruction;
+	// assign alures_1 = AluRes;
+	// assign data_ram = read_data;
+	// assign out_rs1 = ru1;
+	// assign out_rs2 = ru2;
+	// assign out_rd = rd;
+	// assign dmctrl = DMCTrl;
+	// assign dmwr = DMWr;
+	// assign registro = selected_register;
+	// assign read_muestra = read_data;
+	// assign ruwr_2 = Ruwr;
+	// assign rudatawrsrc = RuDataWrSrc;
+	// assign next_pcrc = NextPCSrc;
+	// assign imm_32 = imm_gen32;
+	// assign aluop = AluOp;
 
 	wire [4:0] select_register_vga; // para seleccionar el registro que se mostrara en la vga
 	wire [31:0] register_vga;
@@ -100,6 +107,7 @@ module monocicle (
 		.rs2_out(ru2),
 		.ruwr(Ruwr),
 		.immediate(imm_gen32),
+		.print_ram(print_ram),
 
 
 		.register_select(select_register_vga),
@@ -155,44 +163,44 @@ module monocicle (
 		.immediate(immediate)
 	);
 	 
-	 Control_Unit con_unit(
-			.opcode(opcode),
-			.funct3(funct3),
-			.funct7(funct7),
-			.AluaSrc(AluaSrc),
-			.Ruwr(Ruwr),
-			.immsrc(immsrc),
-			.AlubSrc(AlubSrc),
-			.AluOp(AluOp),
-			.BrOp(BrOp),
-			.DMWr(DMWr),
-			.DMCTrl(DMCTrl),
-			.RuDataWrSrc(RuDataWrSrc)
-	 );
+	Control_Unit con_unit(
+		.opcode(opcode),
+		.funct3(funct3),
+		.funct7(funct7),
+		.AluaSrc(AluaSrc),
+		.Ruwr(Ruwr),
+		.immsrc(immsrc),
+		.AlubSrc(AlubSrc),
+		.AluOp(AluOp),
+		.BrOp(BrOp),
+		.DMWr(DMWr),
+		.DMCTrl(DMCTrl),
+		.RuDataWrSrc(RuDataWrSrc)
+	);
 	 
-	 immediate_generator imm_gen(
-			.immediate(immediate),
-			.immsrc(immsrc),
-			.out(imm_gen32)
-	 );
+	immediate_generator imm_gen(
+		.immediate(immediate),
+		.immsrc(immsrc),
+		.out(imm_gen32)
+	);
 	 
-	 memory_register mem_reg(
-			.clk(clk_mono),              
-			.regWrite(Ruwr),         
-			.rs1(rs1),      
-			.rs2(rs2),      
-			.rd(rd),        
-			.writeData(dataWR), 
-			.readData1(ru1), 
-			.readData2(ru2),
-			
-			// pantalla para hexadecimal
-			.displaySelect(address_register),
-			.displayData(selected_register),
-			//pantalla para vga
-			.vga_select(select_register_vga),
-			.vga_register_select(register_vga)
-	 );
+	memory_register mem_reg(
+		.clk(clk),              
+		.regWrite(Ruwr),         
+		.rs1(rs1),      
+		.rs2(rs2),      
+		.rd(rd),        
+		.writeData(dataWR), 
+		.readData1(ru1), 
+		.readData2(ru2),
+		
+		// pantalla para hexadecimal
+		.displaySelect(address_register),
+		.displayData(selected_register),
+		//pantalla para vga
+		.vga_select(select_register_vga),
+		.vga_register_select(register_vga)
+	);
 	 
 	 mux_1 muxAluA(
 			.in_0(ru1),
@@ -236,7 +244,10 @@ module monocicle (
 			.DMWr(DMWr),
 			.DMCtrl(DMCTrl),
 			.DataRd(read_data),
-			.clk(clk_mono)
+			.clk(clk),
+
+			.address_2(addr_ram_vga),
+			.DataRd_2(data_ram_vga)
 	 );
 	 
 	 mux_2 muxWrite(

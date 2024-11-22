@@ -13,8 +13,8 @@ module memory_register (
     output wire [31:0] displayData, // Salida del registro para mostrar en la FPGA
 	 
 	 //Para mostrar en la FPGA por pantalla vga
-	 input wire [4:0] vga_select,
-	 output wire [31:0] vga_register_select
+    input wire [4:0] vga_select,
+    output wire [31:0] vga_register_select
 );
 
     // Definir los 32 registros de 32 bits
@@ -26,7 +26,7 @@ module memory_register (
         for (i = 0; i < 32; i = i + 1) begin
             registers[i] = 32'b0;
         end
-		  registers[2] = 32'd128;
+        registers[2] = 32'd4092;
     end
 
     // Leer los registros correspondientes
@@ -34,14 +34,15 @@ module memory_register (
     assign readData2 = registers[rs2];
 	 
     assign displayData = registers[displaySelect];
-	 assign vga_register_select = registers[vga_select];
+	assign vga_register_select = registers[vga_select];
 
     // Escritura en el registro rd cuando regWrite está activo
     always @(posedge clk) begin
         if (regWrite && rd != 5'b00000) begin
-            registers[rd] <= writeData;
+            registers[rd] = writeData;
+        end else begin
+            registers[0] = 32'b0; // Forzar el registro x0 a 0 en cada ciclo
         end
-        registers[0] <= 32'b0; // Forzar el registro x0 a 0 en cada ciclo
     end
 
 endmodule

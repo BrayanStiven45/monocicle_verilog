@@ -18,26 +18,33 @@ module testbench_simulation;
 	 wire ruwr;
 	 wire [4:0] out_rd;
 	 wire [1:0] rudatawrsrc;
+	 wire next_pc;
+	 wire [31:0] imm_32;
+	 wire [3:0] aluop;
 
     monocicle uut(
         .clk(clk),
-        .sel(3'b0),
-        .address_register(5'b1011),
+		  .clk50(0),
+//        .sel(3'b0),
+        .address_register(5'b1111),
         .pc_out(pc_out),
         .ins_memory_out(ins_memory_out),
         .alures_1(alures_1),
         .data_ram(data_ram),
-		  .out_rs1(out_rs1),
-		  .out_rs2(out_rs2),
-		  .dmctrl(dmctrl),
-		  .dmwr(dmwr),
-		  .registro(registro),
-		  .read_muestra(read_muestra),
-		  .address_of_ram(address_of_ram),
-		  .clk_ram(clk_ram),
-		  .ruwr_2(ruwr),
-		  .out_rd(out_rd),
-		  .rudatawrsrc(rudatawrsrc)
+		.out_rs1(out_rs1),
+		.out_rs2(out_rs2),
+		.dmctrl(dmctrl),
+		.dmwr(dmwr),
+		.registro(registro),
+		.read_muestra(read_muestra),
+		.address_of_ram(address_of_ram),
+		.clk_ram(clk_ram),
+		.ruwr_2(ruwr),
+		.out_rd(out_rd),
+		.rudatawrsrc(rudatawrsrc),
+		.next_pcrc(next_pc),
+		.imm_32(imm_32),
+		.aluop(aluop)
     );
 
     initial begin
@@ -47,8 +54,8 @@ module testbench_simulation;
     end
 
     initial begin
-        $monitor("At time %0t:pc = %b, instruction = %b, AluRes = %b, rudatawrsrc = %b, rd = %b, registro = %b, data_ram = %b",
-                 $time,pc_out,ins_memory_out, alures_1, rudatawrsrc,out_rd, registro ,data_ram);
+        $monitor("At time %0t:pc = %b, instruction = %b, AluRes = %b, imm_32 = %b, AluOp = %b, registro = %b, data_ram = %b",
+                 $time,pc_out,ins_memory_out, alures_1, imm_32,aluop, registro ,data_ram);
         #500;
         $finish;
     end

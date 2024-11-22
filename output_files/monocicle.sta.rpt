@@ -1,5 +1,5 @@
 Timing Analyzer report for monocicle
-Tue Nov 19 15:16:08 2024
+Wed Nov 20 19:16:15 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -99,14 +99,14 @@ Parallel compilation attempted to use more processors than were available, which
 ; Number detected on machine  ; 2           ;
 ; Maximum allowed             ; 4           ;
 ;                             ;             ;
-; Average used                ; 1.96        ;
+; Average used                ; 2.08        ;
 ; Maximum used                ; 4           ;
 ;                             ;             ;
 ; Usage by Processor          ; % Time Used ;
 ;     Processor 1             ; 100.0%      ;
-;     Processor 2             ;  32.8%      ;
-;     Processors 3 (overused) ;  32.0%      ;
-;     Processors 4 (overused) ;  31.2%      ;
+;     Processor 2             ;  36.9%      ;
+;     Processors 3 (overused) ;  36.0%      ;
+;     Processors 4 (overused) ;  35.4%      ;
 +-----------------------------+-------------+
 
 
@@ -118,19 +118,19 @@ Parallel compilation attempted to use more processors than were available, which
 ; clk                                               ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                                               ;
 ; clk50                                             ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk50 }                                             ;
 ; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { vga:vga_1|vga_controller:pt|clock50_25:c|state[0] } ;
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { vga:vga_1|vga_controller:pt|h_count_reg[0] }        ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { vga:vga_1|vga_controller:pt|h_count_reg[3] }        ;
 +---------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary                                               ;
-+------------+-----------------+--------------------------------------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name                                 ; Note ;
-+------------+-----------------+--------------------------------------------+------+
-; 97.3 MHz   ; 97.3 MHz        ; vga:vga_1|vga_controller:pt|h_count_reg[0] ;      ;
-; 107.07 MHz ; 107.07 MHz      ; clk                                        ;      ;
-; 567.21 MHz ; 567.21 MHz      ; clk50                                      ;      ;
-+------------+-----------------+--------------------------------------------+------+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                                                                                               ;
++------------+-----------------+--------------------------------------------+------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                                 ; Note                                                 ;
++------------+-----------------+--------------------------------------------+------------------------------------------------------+
+; 97.15 MHz  ; 97.15 MHz       ; clk                                        ;                                                      ;
+; 99.01 MHz  ; 99.01 MHz       ; vga:vga_1|vga_controller:pt|h_count_reg[3] ;                                                      ;
+; 670.69 MHz ; 665.78 MHz      ; clk50                                      ; limit due to low minimum pulse width violation (tcl) ;
++------------+-----------------+--------------------------------------------+------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -145,10 +145,10 @@ HTML report is unavailable in plain text report export.
 +---------------------------------------------------+--------+---------------+
 ; Clock                                             ; Slack  ; End Point TNS ;
 +---------------------------------------------------+--------+---------------+
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; -9.176 ; -35.670       ;
-; clk                                               ; -8.340 ; -413.939      ;
-; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -6.066 ; -120.409      ;
-; clk50                                             ; -2.672 ; -48.766       ;
+; clk                                               ; -9.293 ; -402.393      ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; -8.145 ; -29.304       ;
+; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -6.292 ; -123.595      ;
+; clk50                                             ; -2.569 ; -48.844       ;
 +---------------------------------------------------+--------+---------------+
 
 
@@ -157,10 +157,10 @@ HTML report is unavailable in plain text report export.
 +---------------------------------------------------+-------+---------------+
 ; Clock                                             ; Slack ; End Point TNS ;
 +---------------------------------------------------+-------+---------------+
-; clk50                                             ; 0.280 ; 0.000         ;
-; clk                                               ; 0.737 ; 0.000         ;
-; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 1.218 ; 0.000         ;
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; 1.771 ; 0.000         ;
+; clk50                                             ; 0.331 ; 0.000         ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; 0.921 ; 0.000         ;
+; clk                                               ; 1.312 ; 0.000         ;
+; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 1.562 ; 0.000         ;
 +---------------------------------------------------+-------+---------------+
 
 
@@ -181,10 +181,10 @@ No paths to report.
 +---------------------------------------------------+--------+---------------+
 ; Clock                                             ; Slack  ; End Point TNS ;
 +---------------------------------------------------+--------+---------------+
-; clk                                               ; -0.523 ; -50.198       ;
-; clk50                                             ; -0.394 ; -14.491       ;
-; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -0.394 ; -11.133       ;
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; -0.064 ; -0.176        ;
+; clk                                               ; -0.703 ; -53.311       ;
+; clk50                                             ; -0.394 ; -14.632       ;
+; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -0.394 ; -12.451       ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; -0.317 ; -2.438        ;
 +---------------------------------------------------+--------+---------------+
 
 
@@ -199,9 +199,9 @@ No synchronizer chains to report.
 +------------+-----------------+--------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                 ; Note ;
 +------------+-----------------+--------------------------------------------+------+
-; 99.7 MHz   ; 99.7 MHz        ; vga:vga_1|vga_controller:pt|h_count_reg[0] ;      ;
-; 109.55 MHz ; 109.55 MHz      ; clk                                        ;      ;
-; 577.03 MHz ; 577.03 MHz      ; clk50                                      ;      ;
+; 99.11 MHz  ; 99.11 MHz       ; clk                                        ;      ;
+; 101.09 MHz ; 101.09 MHz      ; vga:vga_1|vga_controller:pt|h_count_reg[3] ;      ;
+; 664.45 MHz ; 664.45 MHz      ; clk50                                      ;      ;
 +------------+-----------------+--------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -211,10 +211,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------+--------+---------------+
 ; Clock                                             ; Slack  ; End Point TNS ;
 +---------------------------------------------------+--------+---------------+
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; -9.151 ; -35.638       ;
-; clk                                               ; -8.128 ; -408.660      ;
-; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -6.089 ; -121.443      ;
-; clk50                                             ; -2.321 ; -42.200       ;
+; clk                                               ; -9.090 ; -393.723      ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; -8.230 ; -29.688       ;
+; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -6.362 ; -124.521      ;
+; clk50                                             ; -2.235 ; -42.359       ;
 +---------------------------------------------------+--------+---------------+
 
 
@@ -223,10 +223,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------+-------+---------------+
 ; Clock                                             ; Slack ; End Point TNS ;
 +---------------------------------------------------+-------+---------------+
-; clk50                                             ; 0.006 ; 0.000         ;
-; clk                                               ; 0.688 ; 0.000         ;
-; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 1.276 ; 0.000         ;
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; 1.622 ; 0.000         ;
+; clk50                                             ; 0.149 ; 0.000         ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; 0.808 ; 0.000         ;
+; clk                                               ; 1.261 ; 0.000         ;
+; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 1.575 ; 0.000         ;
 +---------------------------------------------------+-------+---------------+
 
 
@@ -247,10 +247,10 @@ No paths to report.
 +---------------------------------------------------+--------+---------------+
 ; Clock                                             ; Slack  ; End Point TNS ;
 +---------------------------------------------------+--------+---------------+
-; clk                                               ; -0.499 ; -48.571       ;
-; clk50                                             ; -0.394 ; -13.314       ;
-; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -0.394 ; -10.950       ;
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; -0.083 ; -0.252        ;
+; clk                                               ; -0.708 ; -55.300       ;
+; clk50                                             ; -0.394 ; -13.435       ;
+; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -0.394 ; -12.106       ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; -0.346 ; -3.237        ;
 +---------------------------------------------------+--------+---------------+
 
 
@@ -265,10 +265,10 @@ No synchronizer chains to report.
 +---------------------------------------------------+--------+---------------+
 ; Clock                                             ; Slack  ; End Point TNS ;
 +---------------------------------------------------+--------+---------------+
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; -5.326 ; -20.621       ;
-; clk                                               ; -4.727 ; -231.042      ;
-; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -3.192 ; -63.457       ;
-; clk50                                             ; -2.022 ; -37.809       ;
+; clk                                               ; -5.150 ; -220.929      ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; -4.609 ; -16.118       ;
+; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -3.389 ; -66.115       ;
+; clk50                                             ; -1.999 ; -37.510       ;
 +---------------------------------------------------+--------+---------------+
 
 
@@ -277,10 +277,10 @@ No synchronizer chains to report.
 +---------------------------------------------------+-------+---------------+
 ; Clock                                             ; Slack ; End Point TNS ;
 +---------------------------------------------------+-------+---------------+
-; clk50                                             ; 0.170 ; 0.000         ;
-; clk                                               ; 0.429 ; 0.000         ;
-; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 0.683 ; 0.000         ;
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; 1.177 ; 0.000         ;
+; clk50                                             ; 0.187 ; 0.000         ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; 0.666 ; 0.000         ;
+; clk                                               ; 0.721 ; 0.000         ;
+; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 1.134 ; 0.000         ;
 +---------------------------------------------------+-------+---------------+
 
 
@@ -301,10 +301,10 @@ No paths to report.
 +---------------------------------------------------+--------+---------------+
 ; Clock                                             ; Slack  ; End Point TNS ;
 +---------------------------------------------------+--------+---------------+
-; clk                                               ; -0.640 ; -51.823       ;
-; clk50                                             ; -0.390 ; -9.971        ;
-; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 0.057  ; 0.000         ;
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; 0.211  ; 0.000         ;
+; clk                                               ; -0.841 ; -62.549       ;
+; clk50                                             ; -0.386 ; -10.034       ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; 0.023  ; 0.000         ;
+; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 0.034  ; 0.000         ;
 +---------------------------------------------------+--------+---------------+
 
 
@@ -319,10 +319,10 @@ No synchronizer chains to report.
 +---------------------------------------------------+--------+---------------+
 ; Clock                                             ; Slack  ; End Point TNS ;
 +---------------------------------------------------+--------+---------------+
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; -4.845 ; -18.853       ;
-; clk                                               ; -4.157 ; -203.020      ;
-; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -3.007 ; -59.940       ;
-; clk50                                             ; -1.596 ; -29.663       ;
+; clk                                               ; -4.577 ; -195.504      ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; -4.227 ; -14.881       ;
+; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -3.193 ; -62.255       ;
+; clk50                                             ; -1.583 ; -29.553       ;
 +---------------------------------------------------+--------+---------------+
 
 
@@ -331,10 +331,10 @@ No synchronizer chains to report.
 +---------------------------------------------------+-------+---------------+
 ; Clock                                             ; Slack ; End Point TNS ;
 +---------------------------------------------------+-------+---------------+
-; clk50                                             ; 0.152 ; 0.000         ;
-; clk                                               ; 0.390 ; 0.000         ;
-; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 0.623 ; 0.000         ;
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; 1.019 ; 0.000         ;
+; clk50                                             ; 0.170 ; 0.000         ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; 0.608 ; 0.000         ;
+; clk                                               ; 0.656 ; 0.000         ;
+; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 1.001 ; 0.000         ;
 +---------------------------------------------------+-------+---------------+
 
 
@@ -355,10 +355,10 @@ No paths to report.
 +---------------------------------------------------+--------+---------------+
 ; Clock                                             ; Slack  ; End Point TNS ;
 +---------------------------------------------------+--------+---------------+
-; clk                                               ; -0.663 ; -54.746       ;
-; clk50                                             ; -0.431 ; -12.211       ;
-; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 0.083  ; 0.000         ;
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; 0.216  ; 0.000         ;
+; clk                                               ; -0.860 ; -64.722       ;
+; clk50                                             ; -0.429 ; -12.311       ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; 0.054  ; 0.000         ;
+; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 0.061  ; 0.000         ;
 +---------------------------------------------------+--------+---------------+
 
 
@@ -373,16 +373,16 @@ No synchronizer chains to report.
 +----------------------------------------------------+----------+-------+----------+---------+---------------------+
 ; Clock                                              ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack                                   ; -9.176   ; 0.006 ; N/A      ; N/A     ; -0.663              ;
-;  clk                                               ; -8.340   ; 0.390 ; N/A      ; N/A     ; -0.663              ;
-;  clk50                                             ; -2.672   ; 0.006 ; N/A      ; N/A     ; -0.431              ;
-;  vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -6.089   ; 0.623 ; N/A      ; N/A     ; -0.394              ;
-;  vga:vga_1|vga_controller:pt|h_count_reg[0]        ; -9.176   ; 1.019 ; N/A      ; N/A     ; -0.083              ;
-; Design-wide TNS                                    ; -618.784 ; 0.0   ; 0.0      ; 0.0     ; -75.998             ;
-;  clk                                               ; -413.939 ; 0.000 ; N/A      ; N/A     ; -54.746             ;
-;  clk50                                             ; -48.766  ; 0.000 ; N/A      ; N/A     ; -14.491             ;
-;  vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -121.443 ; 0.000 ; N/A      ; N/A     ; -11.133             ;
-;  vga:vga_1|vga_controller:pt|h_count_reg[0]        ; -35.670  ; 0.000 ; N/A      ; N/A     ; -0.252              ;
+; Worst-case Slack                                   ; -9.293   ; 0.149 ; N/A      ; N/A     ; -0.860              ;
+;  clk                                               ; -9.293   ; 0.656 ; N/A      ; N/A     ; -0.860              ;
+;  clk50                                             ; -2.569   ; 0.149 ; N/A      ; N/A     ; -0.429              ;
+;  vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -6.362   ; 1.001 ; N/A      ; N/A     ; -0.394              ;
+;  vga:vga_1|vga_controller:pt|h_count_reg[3]        ; -8.230   ; 0.608 ; N/A      ; N/A     ; -0.346              ;
+; Design-wide TNS                                    ; -604.136 ; 0.0   ; 0.0      ; 0.0     ; -84.078             ;
+;  clk                                               ; -402.393 ; 0.000 ; N/A      ; N/A     ; -64.722             ;
+;  clk50                                             ; -48.844  ; 0.000 ; N/A      ; N/A     ; -14.632             ;
+;  vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; -124.521 ; 0.000 ; N/A      ; N/A     ; -12.451             ;
+;  vga:vga_1|vga_controller:pt|h_count_reg[3]        ; -29.688  ; 0.000 ; N/A      ; N/A     ; -3.237              ;
 +----------------------------------------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -581,13 +581,13 @@ No synchronizer chains to report.
 +---------------------------------------------------+---------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                        ; To Clock                                          ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------+---------------------------------------------------+----------+----------+----------+----------+
-; clk                                               ; clk                                               ; 2801622  ; 0        ; 0        ; 0        ;
+; clk                                               ; clk                                               ; 3298856  ; 0        ; 0        ; 0        ;
 ; clk50                                             ; clk50                                             ; 16       ; 0        ; 0        ; 0        ;
 ; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; clk50                                             ; 1        ; 21       ; 0        ; 0        ;
-; clk50                                             ; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 0        ; 0        ; 380      ; 0        ;
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 0        ; 0        ; 30       ; 30       ;
-; clk50                                             ; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; 190      ; 0        ; 190      ; 0        ;
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; 16       ; 16       ; 16       ; 16       ;
+; clk50                                             ; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 0        ; 0        ; 383      ; 0        ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 0        ; 0        ; 27       ; 27       ;
+; clk50                                             ; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; 124      ; 0        ; 124      ; 0        ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; 28       ; 28       ; 28       ; 28       ;
 +---------------------------------------------------+---------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -597,13 +597,13 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------------------------------------+---------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                        ; To Clock                                          ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------+---------------------------------------------------+----------+----------+----------+----------+
-; clk                                               ; clk                                               ; 2801622  ; 0        ; 0        ; 0        ;
+; clk                                               ; clk                                               ; 3298856  ; 0        ; 0        ; 0        ;
 ; clk50                                             ; clk50                                             ; 16       ; 0        ; 0        ; 0        ;
 ; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; clk50                                             ; 1        ; 21       ; 0        ; 0        ;
-; clk50                                             ; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 0        ; 0        ; 380      ; 0        ;
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 0        ; 0        ; 30       ; 30       ;
-; clk50                                             ; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; 190      ; 0        ; 190      ; 0        ;
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; 16       ; 16       ; 16       ; 16       ;
+; clk50                                             ; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 0        ; 0        ; 383      ; 0        ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; 0        ; 0        ; 27       ; 27       ;
+; clk50                                             ; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; 124      ; 0        ; 124      ; 0        ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; 28       ; 28       ; 28       ; 28       ;
 +---------------------------------------------------+---------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -630,7 +630,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Input Ports       ; 0     ; 0    ;
 ; Unconstrained Input Port Paths  ; 0     ; 0    ;
 ; Unconstrained Output Ports      ; 23    ; 23   ;
-; Unconstrained Output Port Paths ; 1333  ; 1333 ;
+; Unconstrained Output Port Paths ; 1279  ; 1279 ;
 +---------------------------------+-------+------+
 
 
@@ -642,7 +642,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; clk                                               ; clk                                               ; Base ; Constrained ;
 ; clk50                                             ; clk50                                             ; Base ; Constrained ;
 ; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; vga:vga_1|vga_controller:pt|clock50_25:c|state[0] ; Base ; Constrained ;
-; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; vga:vga_1|vga_controller:pt|h_count_reg[0]        ; Base ; Constrained ;
+; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; vga:vga_1|vga_controller:pt|h_count_reg[3]        ; Base ; Constrained ;
 +---------------------------------------------------+---------------------------------------------------+------+-------------+
 
 
@@ -714,7 +714,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Nov 19 15:15:44 2024
+    Info: Processing started: Wed Nov 20 19:15:38 2024
 Info: Command: quartus_sta monocicle -c monocicle
 Info: qsta_default_script.tcl version: #1
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
@@ -725,130 +725,130 @@ Warning (335093): The Timing Analyzer is analyzing 4 combinational loops as latc
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'monocicle.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
     Info (332105): create_clock -period 1.000 -name clk50 clk50
     Info (332105): create_clock -period 1.000 -name vga:vga_1|vga_controller:pt|clock50_25:c|state[0] vga:vga_1|vga_controller:pt|clock50_25:c|state[0]
-    Info (332105): create_clock -period 1.000 -name clk clk
-    Info (332105): create_clock -period 1.000 -name vga:vga_1|vga_controller:pt|h_count_reg[0] vga:vga_1|vga_controller:pt|h_count_reg[0]
+    Info (332105): create_clock -period 1.000 -name vga:vga_1|vga_controller:pt|h_count_reg[3] vga:vga_1|vga_controller:pt|h_count_reg[3]
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.176
+Info (332146): Worst-case setup slack is -9.293
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.176             -35.670 vga:vga_1|vga_controller:pt|h_count_reg[0] 
-    Info (332119):    -8.340            -413.939 clk 
-    Info (332119):    -6.066            -120.409 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
-    Info (332119):    -2.672             -48.766 clk50 
-Info (332146): Worst-case hold slack is 0.280
+    Info (332119):    -9.293            -402.393 clk 
+    Info (332119):    -8.145             -29.304 vga:vga_1|vga_controller:pt|h_count_reg[3] 
+    Info (332119):    -6.292            -123.595 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
+    Info (332119):    -2.569             -48.844 clk50 
+Info (332146): Worst-case hold slack is 0.331
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.280               0.000 clk50 
-    Info (332119):     0.737               0.000 clk 
-    Info (332119):     1.218               0.000 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
-    Info (332119):     1.771               0.000 vga:vga_1|vga_controller:pt|h_count_reg[0] 
+    Info (332119):     0.331               0.000 clk50 
+    Info (332119):     0.921               0.000 vga:vga_1|vga_controller:pt|h_count_reg[3] 
+    Info (332119):     1.312               0.000 clk 
+    Info (332119):     1.562               0.000 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.523
+Info (332146): Worst-case minimum pulse width slack is -0.703
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.523             -50.198 clk 
-    Info (332119):    -0.394             -14.491 clk50 
-    Info (332119):    -0.394             -11.133 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
-    Info (332119):    -0.064              -0.176 vga:vga_1|vga_controller:pt|h_count_reg[0] 
+    Info (332119):    -0.703             -53.311 clk 
+    Info (332119):    -0.394             -14.632 clk50 
+    Info (332119):    -0.394             -12.451 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
+    Info (332119):    -0.317              -2.438 vga:vga_1|vga_controller:pt|h_count_reg[3] 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.151
+Info (332146): Worst-case setup slack is -9.090
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.151             -35.638 vga:vga_1|vga_controller:pt|h_count_reg[0] 
-    Info (332119):    -8.128            -408.660 clk 
-    Info (332119):    -6.089            -121.443 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
-    Info (332119):    -2.321             -42.200 clk50 
-Info (332146): Worst-case hold slack is 0.006
+    Info (332119):    -9.090            -393.723 clk 
+    Info (332119):    -8.230             -29.688 vga:vga_1|vga_controller:pt|h_count_reg[3] 
+    Info (332119):    -6.362            -124.521 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
+    Info (332119):    -2.235             -42.359 clk50 
+Info (332146): Worst-case hold slack is 0.149
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.006               0.000 clk50 
-    Info (332119):     0.688               0.000 clk 
-    Info (332119):     1.276               0.000 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
-    Info (332119):     1.622               0.000 vga:vga_1|vga_controller:pt|h_count_reg[0] 
+    Info (332119):     0.149               0.000 clk50 
+    Info (332119):     0.808               0.000 vga:vga_1|vga_controller:pt|h_count_reg[3] 
+    Info (332119):     1.261               0.000 clk 
+    Info (332119):     1.575               0.000 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.499
+Info (332146): Worst-case minimum pulse width slack is -0.708
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.499             -48.571 clk 
-    Info (332119):    -0.394             -13.314 clk50 
-    Info (332119):    -0.394             -10.950 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
-    Info (332119):    -0.083              -0.252 vga:vga_1|vga_controller:pt|h_count_reg[0] 
+    Info (332119):    -0.708             -55.300 clk 
+    Info (332119):    -0.394             -13.435 clk50 
+    Info (332119):    -0.394             -12.106 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
+    Info (332119):    -0.346              -3.237 vga:vga_1|vga_controller:pt|h_count_reg[3] 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -5.326
+Info (332146): Worst-case setup slack is -5.150
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.326             -20.621 vga:vga_1|vga_controller:pt|h_count_reg[0] 
-    Info (332119):    -4.727            -231.042 clk 
-    Info (332119):    -3.192             -63.457 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
-    Info (332119):    -2.022             -37.809 clk50 
-Info (332146): Worst-case hold slack is 0.170
+    Info (332119):    -5.150            -220.929 clk 
+    Info (332119):    -4.609             -16.118 vga:vga_1|vga_controller:pt|h_count_reg[3] 
+    Info (332119):    -3.389             -66.115 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
+    Info (332119):    -1.999             -37.510 clk50 
+Info (332146): Worst-case hold slack is 0.187
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.170               0.000 clk50 
-    Info (332119):     0.429               0.000 clk 
-    Info (332119):     0.683               0.000 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
-    Info (332119):     1.177               0.000 vga:vga_1|vga_controller:pt|h_count_reg[0] 
+    Info (332119):     0.187               0.000 clk50 
+    Info (332119):     0.666               0.000 vga:vga_1|vga_controller:pt|h_count_reg[3] 
+    Info (332119):     0.721               0.000 clk 
+    Info (332119):     1.134               0.000 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.640
+Info (332146): Worst-case minimum pulse width slack is -0.841
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.640             -51.823 clk 
-    Info (332119):    -0.390              -9.971 clk50 
-    Info (332119):     0.057               0.000 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
-    Info (332119):     0.211               0.000 vga:vga_1|vga_controller:pt|h_count_reg[0] 
+    Info (332119):    -0.841             -62.549 clk 
+    Info (332119):    -0.386             -10.034 clk50 
+    Info (332119):     0.023               0.000 vga:vga_1|vga_controller:pt|h_count_reg[3] 
+    Info (332119):     0.034               0.000 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.845
+Info (332146): Worst-case setup slack is -4.577
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.845             -18.853 vga:vga_1|vga_controller:pt|h_count_reg[0] 
-    Info (332119):    -4.157            -203.020 clk 
-    Info (332119):    -3.007             -59.940 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
-    Info (332119):    -1.596             -29.663 clk50 
-Info (332146): Worst-case hold slack is 0.152
+    Info (332119):    -4.577            -195.504 clk 
+    Info (332119):    -4.227             -14.881 vga:vga_1|vga_controller:pt|h_count_reg[3] 
+    Info (332119):    -3.193             -62.255 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
+    Info (332119):    -1.583             -29.553 clk50 
+Info (332146): Worst-case hold slack is 0.170
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.152               0.000 clk50 
-    Info (332119):     0.390               0.000 clk 
-    Info (332119):     0.623               0.000 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
-    Info (332119):     1.019               0.000 vga:vga_1|vga_controller:pt|h_count_reg[0] 
+    Info (332119):     0.170               0.000 clk50 
+    Info (332119):     0.608               0.000 vga:vga_1|vga_controller:pt|h_count_reg[3] 
+    Info (332119):     0.656               0.000 clk 
+    Info (332119):     1.001               0.000 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.663
+Info (332146): Worst-case minimum pulse width slack is -0.860
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.663             -54.746 clk 
-    Info (332119):    -0.431             -12.211 clk50 
-    Info (332119):     0.083               0.000 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
-    Info (332119):     0.216               0.000 vga:vga_1|vga_controller:pt|h_count_reg[0] 
+    Info (332119):    -0.860             -64.722 clk 
+    Info (332119):    -0.429             -12.311 clk50 
+    Info (332119):     0.054               0.000 vga:vga_1|vga_controller:pt|h_count_reg[3] 
+    Info (332119):     0.061               0.000 vga:vga_1|vga_controller:pt|clock50_25:c|state[0] 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5169 megabytes
-    Info: Processing ended: Tue Nov 19 15:16:08 2024
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 5178 megabytes
+    Info: Processing ended: Wed Nov 20 19:16:15 2024
+    Info: Elapsed time: 00:00:37
+    Info: Total CPU time (on all processors): 00:00:33
 
 
